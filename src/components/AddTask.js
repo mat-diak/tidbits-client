@@ -1,11 +1,25 @@
 import { useState } from "react";
 
-const AddTask = () => {
+const AddTask = ({ onAdd }) => {
   const [task, setTask] = useState();
   const [times, setTimes] = useState();
 
+  const onSubmit = (e) => {
+    e.preventDefault(); // this prevents page refreshing
+
+    if (!task) {
+      alert("Please add a task");
+      return;
+    }
+    // if passes, then call onAdd
+    onAdd({ task, times });
+
+    setTask("");
+    setTimes("");
+  };
+
   return (
-    <form className="add-form">
+    <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
         <label>Task</label>
         <input

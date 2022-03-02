@@ -7,7 +7,7 @@ const App = () => {
     {
       id: 1,
       text: "Read a book",
-      completed_reps: 4,
+      completed_reps: 2,
       target_reps: 5,
     },
     {
@@ -19,10 +19,20 @@ const App = () => {
     {
       id: 3,
       text: "Pet your cards",
-      completed_reps: 10,
+      completed_reps: 3,
       target_reps: 10,
     },
   ]);
+
+  // Add Tasks
+  const addTask = (returnedValue) => {
+    // console.log(returnedValue);
+    const id = Math.floor(Math.random() * 10000);
+    // console.log(id);
+    const newTask = { id, ...returnedValue };
+    console.log(newTask);
+    setTasks([...tasks, newTask]);
+  };
 
   // Add Count to Completed Reps
   const onDone = (id) => {
@@ -35,12 +45,10 @@ const App = () => {
     );
   };
 
-  // Add Tasks to List
-
   return (
     <div>
       <h1>Snacks</h1>
-      <AddTask />
+      <AddTask onAdd={addTask} />
       <TaskList tasks={tasks} onDone={onDone} />
     </div>
   );
