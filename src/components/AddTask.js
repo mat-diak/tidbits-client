@@ -6,8 +6,9 @@ const AddTask = ({ onAdd }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if(onAdd) onAdd(inputText)
+    if(onAdd) onAdd(inputText, inputCounter)
     setinputText("");
+    setinputCounter(0)
   }
 
   const updatedInput = e => {
@@ -21,7 +22,7 @@ const AddTask = ({ onAdd }) => {
 
   return (
     <form>
-      <input type="text" className="add" value={inputText} onChange={updatedInput}></input>
+      <input type="text" className="add" value={inputText} onChange={updatedInput} placeholder="Add a task.."></input>
       <p>How many times a day? <button className="counter-btn" type="submit" onClick={incrementCount}>{inputCounter}</button></p>
       <button type="submit" className="add-button" onClick={handleSubmit}>
         Submit

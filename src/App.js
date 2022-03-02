@@ -25,10 +25,12 @@ const App = () => {
     },
   ]);
 
-  const addTask = (task) => {
+  const addTask = (task, reps) => {
     setTasks([...tasks, {
       id: tasks.length + 1,
-      text: task
+      text: task,
+      target_reps: reps,
+      completed_reps: reps
     }])
   }
 
