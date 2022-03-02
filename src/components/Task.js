@@ -1,5 +1,10 @@
-// const Task = () => {
-//   return <div>THIS IS A TASK</div>;
-// };
+const Task = (task) => {
+  return (
+    <div>
+      {" "}
+      <h3> {`${task.text}`} </h3>
+    </div>
+  );
+};
 
-// export default Task;
+export default Task;
