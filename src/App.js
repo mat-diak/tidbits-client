@@ -3,6 +3,7 @@ import TaskList from "./components/TaskList";
 import { useState } from "react";
 
 const App = () => {
+  const [taskOne, setTaskOne] = useState("");
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -24,11 +25,21 @@ const App = () => {
     },
   ]);
 
+  const addTask = (task) => {
+    setTasks([...tasks, {
+      id: tasks.length + 1,
+      text: task
+    }])
+  }
+
   return (
     <div>
       <h1>Snacks</h1>
-      <AddTask />
+      <AddTask onAdd={addTask}/>
       <TaskList tasks={tasks} />
+      <div>
+      <p>{taskOne}</p>
+      </div>
     </div>
   );
 };
