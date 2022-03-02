@@ -1,7 +1,6 @@
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
 import { useState } from "react";
-import DoneButton from "./components/DoneButton";
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -35,6 +34,8 @@ const App = () => {
       )
     );
   };
+
+  // Add Tasks to List
 
   return (
     <div>
