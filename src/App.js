@@ -25,16 +25,22 @@ const App = () => {
     },
   ]);
 
-  const doneButton = () => {
-    console.log("I clicked done!");
+  // Add Count to Completed Reps
+  const onDone = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id && task.completed_reps < task.target_reps
+          ? { ...task, completed_reps: task.completed_reps + 1 }
+          : task
+      )
+    );
   };
 
   return (
     <div>
       <h1>Snacks</h1>
       <AddTask />
-      <TaskList tasks={tasks} />
-      <DoneButton doneButton={doneButton} />
+      <TaskList tasks={tasks} onDone={onDone} />
     </div>
   );
 };

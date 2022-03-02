@@ -1,5 +1,5 @@
-const DoneButton = ({ doneButton }) => {
-  return <button onClick={doneButton}> done </button>;
+const DoneButton = () => {
+  return <button>done</button>;
 };
 
 export default DoneButton;

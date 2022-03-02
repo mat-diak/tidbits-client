@@ -1,11 +1,17 @@
-// import DoneButton from "./DoneButton";
+import DoneButton from "./DoneButton";
 
-const Task = ({ task }) => {
+const Task = ({ task, onDone }) => {
   return (
     <div>
       {" "}
       <h3> {`${task.text} ${task.completed_reps} / ${task.target_reps}`} </h3>
-      {/* <DoneButton onClick={onDone} /> */}
+      <p
+        onClick={() => {
+          onDone(task.id);
+        }}
+      >
+        <DoneButton />
+      </p>
     </div>
   );
 };
