@@ -8,23 +8,34 @@ const App = () => {
     {
       id: 1,
       text: "Read a book",
-      target_reps: 4,
-      completed_reps: 5,
+      completed_reps: 2,
+      target_reps: 5,
     },
     {
       id: 2,
       text: "Read the news (politics)",
-      target_reps: 0,
-      completed_reps: 1,
+      completed_reps: 0,
+      target_reps: 1,
     },
     {
       id: 3,
       text: "Pet your cards",
+      completed_reps: 3,
       target_reps: 10,
-      completed_reps: 10,
     },
   ]);
 
+  // Add Count to Completed Reps
+  const onDone = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id && task.completed_reps < task.target_reps
+          ? { ...task, completed_reps: task.completed_reps + 1 }
+          : task
+      )
+    );
+  };
+  
   const addTask = (task, reps) => {
     setTasks([...tasks, {
       id: tasks.length + 1,
@@ -37,8 +48,8 @@ const App = () => {
   return (
     <div>
       <h1>Snacks</h1>
-      <AddTask onAdd={addTask}/>
-      <TaskList tasks={tasks} />
+      <AddTask onAdd={addTask} />
+      <TaskList tasks={tasks} onDone={onDone} />
       <div>
       <p>{taskOne}</p>
       </div>

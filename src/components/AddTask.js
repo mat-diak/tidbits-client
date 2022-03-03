@@ -7,6 +7,11 @@ const AddTask = ({ onAdd }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if(onAdd) onAdd(inputText, inputCounter)
+    
+    if (!task) {
+      alert("Please add a task");
+      return;
+    }
     setinputText("");
     setinputCounter(0)
   }
