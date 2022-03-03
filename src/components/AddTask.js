@@ -1,44 +1,37 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const AddTask = ({ onAdd }) => {
-  const [task, setTask] = useState();
-  const [times, setTimes] = useState();
+  const [inputText, setinputText] = React.useState("");
+  const [inputCounter, setinputCounter] = React.useState(0);
 
-  const onSubmit = (e) => {
-    e.preventDefault(); // this prevents page refreshing
-
+  const handleSubmit = e => {
+    e.preventDefault();
+    if(onAdd) onAdd(inputText, inputCounter)
+    
     if (!task) {
       alert("Please add a task");
       return;
     }
-    // if passes, then call onAdd
-    onAdd({ task, times });
+    setinputText("");
+    setinputCounter(0)
+  }
 
-    setTask("");
-    setTimes("");
-  };
+  const updatedInput = e => {
+    setinputText(e.currentTarget.value)
+  }
+
+  const incrementCount = e => {
+    e.preventDefault();
+    setinputCounter(inputCounter + 1)
+  }
 
   return (
-    <form className="add-form" onSubmit={onSubmit}>
-      <div className="form-control">
-        <label>Task</label>
-        <input
-          type="text"
-          placeholder="describe the snack"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
-      </div>
-      <div className="form-control form-control-check">
-        <label>How many times a day? </label>
-        <input
-          type="number"
-          value={times}
-          onChange={(e) => setTimes(e.target.value)}
-        />
-      </div>
-
-      <input type="submit" value="Submit" className="btn btn-block" />
+    <form>
+      <input type="text" className="add" value={inputText} onChange={updatedInput} placeholder="Add a task.."></input>
+      <p>How many times a day? <button className="counter-btn" type="submit" onClick={incrementCount}>{inputCounter}</button></p>
+      <button type="submit" className="add-button" onClick={handleSubmit}>
+        Submit
+      </button>
     </form>
   );
 };

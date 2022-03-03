@@ -3,6 +3,7 @@ import TaskList from "./components/TaskList";
 import { useState } from "react";
 
 const App = () => {
+  const [taskOne, setTaskOne] = useState("");
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -24,16 +25,6 @@ const App = () => {
     },
   ]);
 
-  // Add Tasks
-  const addTask = (returnedValue) => {
-    // console.log(returnedValue);
-    const id = Math.floor(Math.random() * 10000);
-    // console.log(id);
-    const newTask = { id, ...returnedValue };
-    console.log(newTask);
-    setTasks([...tasks, newTask]);
-  };
-
   // Add Count to Completed Reps
   const onDone = (id) => {
     setTasks(
@@ -44,12 +35,24 @@ const App = () => {
       )
     );
   };
+  
+  const addTask = (task, reps) => {
+    setTasks([...tasks, {
+      id: tasks.length + 1,
+      text: task,
+      target_reps: reps,
+      completed_reps: reps
+    }])
+  }
 
   return (
     <div>
       <h1>Snacks</h1>
       <AddTask onAdd={addTask} />
       <TaskList tasks={tasks} onDone={onDone} />
+      <div>
+      <p>{taskOne}</p>
+      </div>
     </div>
   );
 };
