@@ -1,4 +1,3 @@
-import Task from "./Task";
 import DoneButton from "./DoneButton";
 
 const TaskList = ({ tasks, onDone }) => {

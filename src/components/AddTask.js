@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const AddTask = ({ onAdd }) => {
-  const [inputText, setinputText] = React.useState("");
-  const [inputCounter, setinputCounter] = React.useState(0);
+  const [inputText, setinputText] = useState("");
+  const [inputCounter, setinputCounter] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();

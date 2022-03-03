@@ -3,7 +3,6 @@ import TaskList from "./components/TaskList";
 import { useState } from "react";
 
 const App = () => {
-  const [taskOne, setTaskOne] = useState("");
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -53,9 +52,6 @@ const App = () => {
       <h1>Snacks</h1>
       <AddTask onAdd={addTask} />
       <TaskList tasks={tasks} onDone={onDone} />
-      <div>
-        <p>{taskOne}</p>
-      </div>
     </div>
   );
 };
