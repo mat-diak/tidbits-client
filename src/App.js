@@ -35,15 +35,18 @@ const App = () => {
       )
     );
   };
-  
+
   const addTask = (task, reps) => {
-    setTasks([...tasks, {
-      id: tasks.length + 1,
-      text: task,
-      target_reps: reps,
-      completed_reps: reps
-    }])
-  }
+    setTasks([
+      ...tasks,
+      {
+        id: tasks.length + 1,
+        text: task,
+        completed_reps: 0,
+        target_reps: reps,
+      },
+    ]);
+  };
 
   return (
     <div>
@@ -51,7 +54,7 @@ const App = () => {
       <AddTask onAdd={addTask} />
       <TaskList tasks={tasks} onDone={onDone} />
       <div>
-      <p>{taskOne}</p>
+        <p>{taskOne}</p>
       </div>
     </div>
   );
