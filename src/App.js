@@ -1,28 +1,19 @@
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
-import { useState } from "react";
+import axios from './components/axios';
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: "Read a book",
-      completed_reps: 2,
-      target_reps: 5,
-    },
-    {
-      id: 2,
-      text: "Read the news (politics)",
-      completed_reps: 0,
-      target_reps: 1,
-    },
-    {
-      id: 3,
-      text: "Pet your cards",
-      completed_reps: 3,
-      target_reps: 10,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const req = await axios.get('/api/tasks')
+      setTasks(req.data)
+    }
+
+    fetchData()
+  }, [])
 
   // Add Count to Completed Reps
   const onDone = (id) => {
