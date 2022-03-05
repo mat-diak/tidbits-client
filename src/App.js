@@ -1,48 +1,64 @@
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
-import axios from './components/axios';
+import axiosRestApi from "./components/axios";
 import { useState, useEffect } from "react";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const req = await axios.get('/api/tasks')
-      setTasks(req.data)
+    async function fetchTasks() {
+      const req = await axiosRestApi.get("/api/tasks");
+      setTasks(req.data);
     }
 
-    fetchData()
-  }, [])
+    fetchTasks();
+  }, []);
 
   // Add Count to Completed Reps
-  const onDone = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id && task.completed_reps < task.target_reps
-          ? { ...task, completed_reps: task.completed_reps + 1 }
-          : task
-      )
-    );
+  const onDone = async (id) => {
+    const consideredTask = tasks
+      .filter((task) => {
+        return task._id === id;
+      })
+      .at(0);
+
+    if (consideredTask.completedReps < consideredTask.targetReps) {
+      const req = await axiosRestApi.put(`/api/tasks/${id}`, {
+        $inc: {
+          completedReps: 1,
+        },
+      });
+      const updatedTask = req.data;
+      setTasks(
+        tasks.map((task) => (task._id === updatedTask._id ? updatedTask : task))
+      );
+    } else {
+      alert("This is completed");
+    }
   };
 
-  const addTask = (task, reps) => {
-    setTasks([
-      ...tasks,
-      {
-        id: tasks.length + 1,
-        text: task,
-        completed_reps: 0,
-        target_reps: reps,
-      },
-    ]);
+  const addTask = async (text, reps) => {
+    const task = {
+      text: text,
+      completedReps: 0,
+      targetReps: reps,
+    };
+
+    const req = await axiosRestApi.post("api/tasks", task);
+
+    setTasks([...tasks, req.data]);
   };
 
   return (
     <div>
       <h1>Snacks</h1>
       <AddTask onAdd={addTask} />
-      <TaskList tasks={tasks} onDone={onDone} />
+      {tasks.length > 0 ? (
+        <TaskList tasks={tasks} onDone={onDone} />
+      ) : (
+        "There is currently no tasks"
+      )}
     </div>
   );
 };
