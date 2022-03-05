@@ -7,50 +7,47 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchTasks() {
       const req = await axiosRestApi.get("/api/tasks");
       setTasks(req.data);
     }
 
-    fetchData();
+    fetchTasks();
   }, []);
 
   // Add Count to Completed Reps
-  const onDone = (id) => {
-  //  TODO Update the completed reps in the database
-   
-    setTasks(
-      tasks.map((task) =>
-        task.id === id && task.completed_reps < task.target_reps
-          ? { ...task, completed_reps: task.completed_reps + 1 }
-          : task
-      )
-    );
+  const onDone = async (id) => {
+    const consideredTask = tasks
+      .filter((task) => {
+        return task._id === id;
+      })
+      .at(0);
+
+    if (consideredTask.completedReps < consideredTask.targetReps) {
+      const req = await axiosRestApi.put(`/api/tasks/${id}`, {
+        $inc: {
+          completedReps: 1,
+        },
+      });
+      const updatedTask = req.data;
+      setTasks(
+        tasks.map((task) => (task._id === updatedTask._id ? updatedTask : task))
+      );
+    } else {
+      alert("This is completed");
+    }
   };
 
   const addTask = async (text, reps) => {
-    // TODO Add a task to database
     const task = {
       text: text,
       completedReps: 0,
-      targetReps: reps
-    }
+      targetReps: reps,
+    };
 
-    // !! This is working fetch method !!
-    // const res = await fetch('http://localhost:5000/api/tasks', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(task)
-    // })
-    // const persistedTask = await res.json()
+    const req = await axiosRestApi.post("api/tasks", task);
 
-    const req = await axiosRestApi.post('api/tasks', task)
-    const persistedTask = req.data
-    console.log(tasks)
-    
-    setTasks([...tasks, persistedTask]);
+    setTasks([...tasks, req.data]);
   };
 
   return (

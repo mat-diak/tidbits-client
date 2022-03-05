@@ -6,7 +6,7 @@ const Task = ({ task, onDone }) => {
       {task.text} {task.completedReps}/{task.targetReps}
       <p
         onClick={() => {
-          onDone(task.id);
+          onDone(task._id);
         }}
       >
         <DoneButton />
