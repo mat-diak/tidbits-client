@@ -1,12 +1,13 @@
 import DoneButton from "./DoneButton";
+import Card from "react-bootstrap/Card"
 
 const TaskList = ({ tasks, onDone }) => {
   return (
-    <div>
+    <Card className="task-list-card">
       <div>TaskList</div>
       {tasks &&
         tasks.map((task) => (
-          <div key={task.id}>
+          <Card key={task.id} className="task-card">
             {task.text} {task.completed_reps}/{task.target_reps}
             <p
               onClick={() => {
@@ -15,9 +16,9 @@ const TaskList = ({ tasks, onDone }) => {
             >
               <DoneButton />
             </p>
-          </div>
+          </Card>
         ))}
-    </div>
+    </Card>
   );
 };
 

@@ -1,0 +1,48 @@
+* {
+  margin: auto;
+  text-align: center;
+}
+
+.counter-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  width: 2em;
+  border-radius: 1em;
+}
+
+.tasks-page {
+  display: flex;
+  align-content: flex-start;
+}
+
+.add-task-card {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  height: 100%;
+  width: 40%
+}
+
+.add-task-form {
+  margin: 1em;
+}
+
+.task-list-card {
+  margin: 1em auto;
+  height: 100%;
+  width: 60%;
+  padding: 1em;
+}
+
+.task-card {
+  margin: .5em auto;
+  width: 80%;
+}
+
+.add {
+  margin: 1em auto;
+  height: 3em;
+  width: 80%;
+}

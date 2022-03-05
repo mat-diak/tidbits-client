@@ -1,6 +1,9 @@
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
 import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.css"
+import "./styles.css"
+
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -50,8 +53,10 @@ const App = () => {
   return (
     <div>
       <h1>Snacks</h1>
-      <AddTask onAdd={addTask} />
-      <TaskList tasks={tasks} onDone={onDone} />
+      <div className="tasks-page">
+        <AddTask onAdd={addTask} />
+        <TaskList tasks={tasks} onDone={onDone} />
+      </div>
     </div>
   );
 };

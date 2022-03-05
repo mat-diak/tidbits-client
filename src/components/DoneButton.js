@@ -1,5 +1,7 @@
+import Button from "react-bootstrap/Button"
+
 const DoneButton = () => {
-  return <button>done</button>;
+  return <Button variant="success">done</Button>;
 };
 
 export default DoneButton;
