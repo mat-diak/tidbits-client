@@ -1,7 +1,9 @@
-import AddTask from "./components/AddTask";
-import TaskList from "./components/TaskList";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import axiosRestApi from "./components/axios";
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -51,15 +53,15 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Snacks</h1>
-      <AddTask onAdd={addTask} />
-      {tasks.length > 0 ? (
-        <TaskList tasks={tasks} onDone={onDone} />
-      ) : (
-        "There is currently no tasks"
-      )}
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Dashboard tasks={tasks} onAdd={addTask} onDone={onDone} />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 
