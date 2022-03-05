@@ -48,7 +48,8 @@ const App = () => {
 
     const req = await axiosRestApi.post('api/tasks', task)
     const persistedTask = req.data
-
+    console.log(tasks)
+    
     setTasks([...tasks, persistedTask]);
   };
 
