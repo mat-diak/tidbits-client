@@ -1,4 +1,4 @@
-import DoneButton from "./DoneButton";
+import Task from "./Task";
 
 const TaskList = ({ tasks, onDone }) => {
   return (
@@ -6,16 +6,7 @@ const TaskList = ({ tasks, onDone }) => {
       <div>TaskList</div>
       {tasks &&
         tasks.map((task) => (
-          <div key={task.id}>
-            {task.text} {task.completed_reps}/{task.target_reps}
-            <p
-              onClick={() => {
-                onDone(task.id);
-              }}
-            >
-              <DoneButton />
-            </p>
-          </div>
+          <Task key={task._id} task={task} onDone={onDone} />
         ))}
     </div>
   );
