@@ -61,7 +61,7 @@ const App = () => {
         {tasks.length > 0 ? (
           <TaskList tasks={tasks} onDone={onDone} />
         ) : (
-          "There are currently tasks"
+          "There are currently no tasks"
         )}
       </div>
     </div>
