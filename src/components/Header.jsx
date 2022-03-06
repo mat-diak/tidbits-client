@@ -21,24 +21,14 @@ function Header() {
         <div className="logo">
           <Link to="/">Habite</Link>
         </div>
-        <ul>
+        <ul>  
           {user ? (<li>
             <button className="btn" onClick={onLogout}>
               <FaSignOutAlt />
               Log out
               </button>
-          </li>) : (<><li>
-            <Link to="/hello">
-              <FaSignInAlt />
-              Log in
-            </Link>
-          </li>
-          <li>
-            <Link to="/hello">
-              <FaUser />
-              Register
-            </Link>
-          </li></>)}
+              <div>Logged in as {user.name}</div>
+          </li>) : (<></>)}
         </ul>
       </div>
     </header>

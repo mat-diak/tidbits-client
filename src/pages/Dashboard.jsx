@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axiosRestApi from "../components/axios";
+import restApi from "../features/tasks/tasksService";
 
 function Dashboard() {
   // For redirecting to different pages
@@ -20,24 +21,12 @@ function Dashboard() {
   }, [user, navigate])
   
   const [tasks, setTasks] = useState([]);
-
+  
   // gets all user tasks
   useEffect(() => {
     async function fetchTasks() {
-      
-      // the requests now need a second argument with the user token
-      // {
-      //   headers: {
-      //     Authorization: `Bearer ${user.token}`
-      //   }
-      // }
-
-      const req = await axiosRestApi.get("/api/tasks", {
-        headers: {
-          Authorization: `Bearer ${user.token}`
-        }
-      });
-      setTasks(req.data);
+      const tasks = await restApi.getTasks(user)
+      setTasks(tasks)
     }
 
     fetchTasks();
@@ -82,15 +71,12 @@ function Dashboard() {
       user: user.id
     };
 
-    const config = {
-      headers: {
-        Authorization: `Bearer ${user.token}`
-      }
-    }
+    const createdTask = await restApi.createTask({
+      task,
+      token: user.token
+    })
 
-    const req = await axiosRestApi.post("/api/tasks", task, config);
-
-    setTasks([...tasks, req.data]);
+    setTasks([...tasks, createdTask]);
   };
 
 
