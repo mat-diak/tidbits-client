@@ -6,7 +6,7 @@ import Register from "../components/Register";
 import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Login";
 import { Container } from "react-bootstrap";
-import Spinner from '../components/Spinner'
+import Spinner from "../components/Spinner";
 
 function Hello() {
   const [registerData, setRegisterData] = useState({
@@ -16,7 +16,8 @@ function Hello() {
     registerPassword2: "",
   });
 
-  const { registerName, registerEmail, registerPassword, registerPassword2 } = registerData;
+  const { registerName, registerEmail, registerPassword, registerPassword2 } =
+    registerData;
 
   const [loginData, setLoginData] = useState({
     loginEmail: "",
@@ -78,14 +79,14 @@ function Hello() {
 
     const userData = {
       email: loginEmail,
-      password: loginPassword
-    }
+      password: loginPassword,
+    };
 
-    dispatch(login(userData))
+    dispatch(login(userData));
   };
 
-  if(isLoading) {
-    return <Spinner />
+  if (isLoading) {
+    return <Spinner />;
   }
 
   return (

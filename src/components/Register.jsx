@@ -2,7 +2,8 @@ import { FaUser } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 
 function Register({ onChange, onSubmit, registerData }) {
-  const { registerName, registerEmail, registerPassword, registerPassword2 } = registerData;
+  const { registerName, registerEmail, registerPassword, registerPassword2 } =
+    registerData;
 
   return (
     <>

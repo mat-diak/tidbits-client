@@ -1,19 +1,18 @@
-import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
+import { FaSignOutAlt} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout, reset } from '../features/auth/authSlice'
-
+import { logout, reset } from "../features/auth/authSlice";
 
 function Header() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {user} = useSelector((state) => state.auth)
+  const { user } = useSelector((state) => state.auth);
 
   const onLogout = () => {
-    dispatch(logout())
-    dispatch(reset())
-    navigate('/hello')
-  }
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/hello");
+  };
 
   return (
     <header>
@@ -21,14 +20,18 @@ function Header() {
         <div className="logo">
           <Link to="/">Habite</Link>
         </div>
-        <ul>  
-          {user ? (<li>
-            <button className="btn" onClick={onLogout}>
-              <FaSignOutAlt />
-              Log out
+        <ul>
+          {user ? (
+            <li>
+              <button className="btn" onClick={onLogout}>
+                <FaSignOutAlt />
+                Log out
               </button>
               <div>Logged in as {user.name}</div>
-          </li>) : (<></>)}
+            </li>
+          ) : (
+            <></>
+          )}
         </ul>
       </div>
     </header>
