@@ -1,6 +1,5 @@
 import { FaSignInAlt } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
 
 function Login({ onChange, onSubmit, loginData }) {
   const { email, password } = loginData;
