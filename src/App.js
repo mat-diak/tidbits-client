@@ -1,9 +1,10 @@
 import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Hello from "./pages/Hello";
+import Header from "./components/Header";
 import axiosRestApi from "./components/axios";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -55,11 +56,18 @@ const App = () => {
   return (
     <>
       <Router>
-        <Routes>
-          <Route path='/' element={<Dashboard tasks={tasks} onAdd={addTask} onDone={onDone} />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </Routes>
+        <Container>
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Dashboard tasks={tasks} onAdd={addTask} onDone={onDone} />
+              }
+            />
+            <Route path="/hello" element={<Hello />} />
+          </Routes>
+        </Container>
       </Router>
     </>
   );
