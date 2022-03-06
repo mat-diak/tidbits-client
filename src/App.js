@@ -48,7 +48,7 @@ const App = () => {
       targetReps: reps,
     };
 
-    const req = await axiosRestApi.post("api/tasks", task);
+    const req = await axiosRestApi.post("/api/tasks", task);
 
     setTasks([...tasks, req.data]);
   };
@@ -61,7 +61,7 @@ const App = () => {
         {tasks.length > 0 ? (
           <TaskList tasks={tasks} onDone={onDone} />
         ) : (
-          "There is currently no tasks"
+          "There are currently tasks"
         )}
       </div>
     </div>

@@ -3,12 +3,12 @@ import Card from "react-bootstrap/Card"
 
 const Task = ({ task, onDone }) => {
   return (
-    <Card key={task.id} className="task-card">
+    <Card key={task._id} className="task-card">
       <div className="task-text">{task.text}</div>
       <div className="task-counter">
-        <div className="task-reps">{task.completed_reps}/{task.target_reps}</div>
+        <div className="task-reps">{task.completedReps}/{task.targetReps}</div>
         <div className="task-btn">
-          <DoneButton taskId={task.id} onDone={onDone} />
+          <DoneButton taskId={task._id} onDone={onDone} />
         </div>
       </div>
     </Card>
