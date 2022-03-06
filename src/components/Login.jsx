@@ -2,7 +2,7 @@ import { FaSignInAlt } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 
 function Login({ onChange, onSubmit, loginData }) {
-  const { email, password } = loginData;
+  const { loginEmail, loginPassword } = loginData;
 
   return (
     <>
@@ -20,8 +20,8 @@ function Login({ onChange, onSubmit, loginData }) {
               type="email"
               className="form-control"
               id="loginEmail"
-              name="email"
-              value={email}
+              name="loginEmail"
+              value={loginEmail}
               placeholder="enter your email"
               onChange={onChange}
             />
@@ -29,8 +29,8 @@ function Login({ onChange, onSubmit, loginData }) {
               type="password"
               className="form-control"
               id="loginPassword"
-              name="password"
-              value={password}
+              name="loginPassword"
+              value={loginPassword}
               placeholder="enter your password"
               onChange={onChange}
             />

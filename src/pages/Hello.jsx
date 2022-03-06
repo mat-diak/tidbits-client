@@ -3,20 +3,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Register from "../components/Register";
-import { register, reset } from "../features/auth/authSlice";
+import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Login";
 import { Container } from "react-bootstrap";
 import Spinner from '../components/Spinner'
 
 function Hello() {
   const [registerData, setRegisterData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password2: "",
+    registerName: "",
+    registerEmail: "",
+    registerPassword: "",
+    registerPassword2: "",
   });
 
-  const { name, email, password, password2 } = registerData;
+  const { registerName, registerEmail, registerPassword, registerPassword2 } = registerData;
 
   const [loginData, setLoginData] = useState({
     loginEmail: "",
@@ -58,19 +58,30 @@ function Hello() {
     }));
   };
 
-  const onSubmit = (e) => {
+  const onRegisterSubmit = (e) => {
     e.preventDefault();
 
-    if (password !== password2) {
+    if (registerPassword !== registerPassword2) {
       toast.error("Password do not match");
     } else {
       const userData = {
-        name,
-        email,
-        password,
+        name: registerName,
+        email: registerEmail,
+        password: registerPassword,
       };
       dispatch(register(userData));
     }
+  };
+
+  const onLoginSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      email: loginEmail,
+      password: loginPassword
+    }
+
+    dispatch(login(userData))
   };
 
   if(isLoading) {
@@ -83,7 +94,7 @@ function Hello() {
         <div className="row">
           <div className="col-6">
             <Login
-              onSubmit={onSubmit}
+              onSubmit={onLoginSubmit}
               onChange={onLoginChange}
               loginData={loginData}
             />
@@ -91,7 +102,7 @@ function Hello() {
 
           <div className="col-6">
             <Register
-              onSubmit={onSubmit}
+              onSubmit={onRegisterSubmit}
               onChange={onRegisterChange}
               registerData={registerData}
             />
