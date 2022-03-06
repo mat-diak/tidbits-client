@@ -34,20 +34,20 @@ const AddTask = ({ onAdd }) => {
         <Form.Group>
         <Form.Control
           type="text"
-          className="add"
+          className="add-task-input"
           value={inputText}
           onChange={updatedInput}
           placeholder="Add a task.."
         ></Form.Control>
         <p>
           How many times a day?{" "}
-          <Button variant="info" className="counter-btn" type="submit" onClick={incrementCount}>
+          <button className="counter-btn" type="submit" onClick={incrementCount}>
             {inputCounter}
-          </Button>
+          </button>
         </p>
-        <Button type="submit" className="add-button" onClick={handleSubmit}>
+        <button type="submit" className="add-task-button" onClick={handleSubmit}>
           Submit
-        </Button>
+        </button>
         </Form.Group>
       </Form>
     </div>

@@ -51,9 +51,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="tasks-page">
       <h1>Snacks</h1>
-      <div className="tasks-page">
+      <div className="tasks-page-body">
         <AddTask onAdd={addTask} />
         <TaskList tasks={tasks} onDone={onDone} />
       </div>

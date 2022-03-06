@@ -1,25 +1,17 @@
-import DoneButton from "./DoneButton";
+import Task from "./Task"
 import Card from "react-bootstrap/Card"
 
 const TaskList = ({ tasks, onDone }) => {
   return (
     <Card className="task-list-card">
-      <div>TaskList</div>
-      {tasks &&
-        tasks.map((task) => (
-          <Card key={task.id} className="task-card">
-            {task.text} {task.completed_reps}/{task.target_reps}
-            <p
-              onClick={() => {
-                onDone(task.id);
-              }}
-            >
-              <DoneButton />
-            </p>
-          </Card>
+      <h2>TaskList</h2>
+      <div className="task-list">
+        {tasks && tasks.map((task) => (
+          <Task task={task} onDone={onDone} />
         ))}
+      </div>
     </Card>
-  );
-};
+  )
+}
 
 export default TaskList;

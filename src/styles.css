@@ -1,5 +1,5 @@
 * {
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
 }
 
@@ -7,42 +7,120 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  margin-left: .5em;
   height: 2em;
   width: 2em;
   border-radius: 1em;
+  border-color: black;
+  background-color: #fff;
 }
 
-.tasks-page {
-  display: flex;
-  align-content: flex-start;
+.add-task-button {
+  background-color: lightsalmon;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: .5em 1em;
 }
 
-.add-task-card {
+.add-task-button:hover {
+  background-color: rgb(255, 120, 67);
+}
+
+.tasks-page-body {
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
+  /* justify-content: space-between; */
+  justify-content: center;
+  width: 100%;
+}
+
+.task-list-card.card {
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
   height: 100%;
-  width: 40%
+  width: 60%;
+  border-radius: 1em;
 }
 
 .add-task-form {
   margin: 1em;
+  height: 100%
 }
 
-.task-list-card {
-  margin: 1em auto;
-  height: 100%;
-  width: 60%;
-  padding: 1em;
-}
-
-.task-card {
-  margin: .5em auto;
-  width: 80%;
-}
-
-.add {
+.add-task-input {
   margin: 1em auto;
   height: 3em;
   width: 80%;
+}
+
+.task-list-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  height: 100%;
+  width: 60%;
+  padding: 1em;
+  background-color: #eeeeee;
+  border: none;
+}
+
+.task-list {
+  margin: auto;
+  width: 80%;
+}
+
+.task-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1.5em auto;
+  padding: 0;
+  width: 100%;
+  border: none;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 .5em 1em .4em rgba(0, 0, 0, .2);
+}
+
+div.task-text {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+}
+
+div.task-counter {
+  margin: 0;
+  background-color: #afafaf;
+  padding: .5em;
+  /* border-radius: 1em; */
+}
+
+div.task-reps {
+  color: #fff
+}
+
+div.task-btn {
+  align-items: center;
+  margin: .5em;
+}
+
+.done-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  color: white;
+  height: 2em;
+  width: 2em;
+  border-radius: 1em;
+  background-color: teal;
+  border: none;
+}
+
+.done-btn:hover {
+  background-color: rgb(1, 180, 180);
 }
