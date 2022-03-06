@@ -6,12 +6,32 @@ import { useSelector } from 'react-redux'
 import axiosRestApi from "../components/axios";
 
 function Dashboard() {
+  // For redirecting to different pages
   const navigate = useNavigate()
+  
+  // Find the current user state; i.e. is someone logged in?
   const { user } = useSelector((state) => state.auth)
+  
+  // redirects to Hello page if not logged in
+  useEffect(() => {
+    if(!user) {
+      navigate('/hello')
+    }
+  }, [user, navigate])
+  
   const [tasks, setTasks] = useState([]);
 
+  // gets all user tasks
   useEffect(() => {
     async function fetchTasks() {
+      
+      // the requests now need a second argument with the user token
+      // {
+      //   headers: {
+      //     Authorization: `Bearer ${user.token}`
+      //   }
+      // }
+
       const req = await axiosRestApi.get("/api/tasks", {
         headers: {
           Authorization: `Bearer ${user.token}`
@@ -22,13 +42,6 @@ function Dashboard() {
 
     fetchTasks();
   }, []);
-
-  // redirects to Hello page if not logged in
-  useEffect(() => {
-    if(!user) {
-      navigate('/hello')
-    }
-  }, [user, navigate])
 
   // Add Count to Completed Reps
   const onDone = async (id) => {
