@@ -19,7 +19,7 @@ function Login({ onChange, onSubmit, loginData }) {
             <input
               type="email"
               className="form-control"
-              id="login-email"
+              id="loginEmail"
               name="email"
               value={email}
               placeholder="enter your email"
@@ -28,7 +28,7 @@ function Login({ onChange, onSubmit, loginData }) {
             <input
               type="password"
               className="form-control"
-              id="login-password"
+              id="loginPassword"
               name="password"
               value={password}
               placeholder="enter your password"

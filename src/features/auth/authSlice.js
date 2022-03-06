@@ -30,6 +30,11 @@ export const register = createAsyncThunk(
   }
 );
 
+// // Log out user
+// export const logout = async () => {
+
+// }
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -44,17 +49,17 @@ export const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(register.pending, (state) => {
-        state.isLoading = true
+        state.isLoading = true;
       })
       .addCase(register.fulfilled, (state, action) => {
-        state.isLoading = false
-        state.isSuccess = true
-        state.user = action.payload
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.user = action.payload;
       })
       .addCase(register.rejected, (state, action) => {
-        state.isLoading = false
-        state.isError = true
-        state.message = action.payload
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
         state.user = null;
       });
   },

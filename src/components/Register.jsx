@@ -1,6 +1,5 @@
 import { FaUser } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
 
 function Register({ onChange, onSubmit, registerData }) {
   const { name, email, password, password2 } = registerData;
