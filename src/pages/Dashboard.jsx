@@ -8,13 +8,12 @@ function Dashboard({ tasks, onAdd, onDone }) {
   const navigate = useNavigate()
   const { user } = useSelector((state) => state.auth)
 
-  console.log(user)
   // redirects to Hello page if not logged in
-  // useEffect(() => {
-  //   if(!user) {
-  //     navigate('/hello')
-  //   }
-  // }, [user, navigate])
+  useEffect(() => {
+    if(!user) {
+      navigate('/hello')
+    }
+  }, [user, navigate])
 
 
   return (
