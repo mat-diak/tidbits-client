@@ -5,15 +5,15 @@ import { Container } from "react-bootstrap";
 
 function Hello() {
   const [registerData, setRegisterData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password2: "",
+    registerName: "",
+    registerEmail: "",
+    registerPassword: "",
+    registerPassword2: "",
   });
 
   const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
+    loginEmail: "",
+    loginPassword: "",
   });
 
   const onRegisterChange = (e) => {
