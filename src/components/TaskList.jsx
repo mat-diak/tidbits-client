@@ -1,15 +1,17 @@
-import Task from "./Task";
+import Task from "./Task"
+import Card from "react-bootstrap/Card"
 
 const TaskList = ({ tasks, onDone }) => {
   return (
-    <div>
-      <div>TaskList</div>
-      {tasks &&
-        tasks.map((task) => (
-          <Task key={task._id} task={task} onDone={onDone} />
+    <Card className="task-list-card">
+      <h2>TaskList</h2>
+      <div className="task-list">
+        {tasks && tasks.map((task) => (
+          <Task task={task} onDone={onDone} />
         ))}
-    </div>
-  );
-};
+      </div>
+    </Card>
+  )
+}
 
 export default TaskList;
