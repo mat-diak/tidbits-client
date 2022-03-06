@@ -1,7 +1,22 @@
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function Dashboard({ tasks, onAdd, onDone }) {
+  const navigate = useNavigate()
+  const { user } = useSelector((state) => state.auth)
+
+  console.log(user)
+  // redirects to Hello page if not logged in
+  // useEffect(() => {
+  //   if(!user) {
+  //     navigate('/hello')
+  //   }
+  // }, [user, navigate])
+
+
   return (
     <div>
       <h1>Snacks</h1>
