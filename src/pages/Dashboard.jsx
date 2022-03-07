@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
+import { toast } from "react-toastify";
 
 function Dashboard() {
   // For redirecting to different pages
@@ -57,6 +58,10 @@ function Dashboard() {
   };
 
   const addTask = async (text, reps) => {
+    if (!text) {
+      toast.error("Describe the task!");
+    }
+    
     const task = {
       text: text,
       completedReps: 0,

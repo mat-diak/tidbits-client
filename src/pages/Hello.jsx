@@ -63,7 +63,7 @@ function Hello() {
     e.preventDefault();
 
     if (registerPassword !== registerPassword2) {
-      toast.error("Password do not match");
+      toast.error("Passwords don't match");
     } else {
       const userData = {
         name: registerName,
