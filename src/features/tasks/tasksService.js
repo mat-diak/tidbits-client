@@ -51,19 +51,17 @@ const incrementTaskReps = async (data) => {
 };
 
 const deleteTask = async (data) => {
-  const { id, user } = data
-  
+  const { id, user } = data;
+
   const config = {
     headers: {
-      Authorization: `Bearer ${user.token}`
-    }
-  }
+      Authorization: `Bearer ${user.token}`,
+    },
+  };
 
-  const req = await axios.delete(
-    `${API_URL}${id}`, config
-  );
+  const req = await axios.delete(`${API_URL}${id}`, config);
 
-  return req.data
+  return req.data;
 };
 
 const restApi = {
