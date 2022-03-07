@@ -5,6 +5,7 @@
   margin: 1em auto;
   height: 100%;
   width: 60%;
+  max-width: 850px;
   padding: 1em;
   background-color: #eeeeee;
   border-radius: 1em;

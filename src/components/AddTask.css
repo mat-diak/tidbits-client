@@ -6,7 +6,7 @@
 .add-task-input {
   margin: 1em auto;
   height: 3em;
-  width: 80%;
+  max-width: 700px;
 }
 
 .counter-btn {
