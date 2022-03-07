@@ -28,7 +28,9 @@ function Dashboard() {
       setTasks(tasks);
     }
 
-    fetchTasks();
+    if (user) {
+      fetchTasks();
+    }
   }, [user]);
 
   // Add Count to Completed Reps

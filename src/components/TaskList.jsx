@@ -7,7 +7,7 @@ const TaskList = ({ tasks, onDone }) => {
       <h2>TaskList</h2>
       <div className="task-list">
         {tasks && tasks.map((task) => (
-          <Task task={task} onDone={onDone} />
+          <Task key={task._id} task={task} onDone={onDone} />
         ))}
       </div>
     </Card>
