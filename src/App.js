@@ -1,5 +1,6 @@
 import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
+import StatsModal from "./components/StatsModal"
 import axiosRestApi from "./components/axios";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css"
@@ -57,6 +58,7 @@ const App = () => {
     <div className="tasks-page">
       <h1>Snacks</h1>
       <div className="tasks-page-body">
+        <StatsModal />
         <AddTask onAdd={addTask} />
         {tasks.length > 0 ? (
           <TaskList tasks={tasks} onDone={onDone} />
