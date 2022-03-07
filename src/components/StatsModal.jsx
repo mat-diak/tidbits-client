@@ -1,5 +1,6 @@
 import Modal from "react-modal"
 import React, { useState } from "react"
+import StatsProgress from "./StatsProgress"
 import Card from "react-bootstrap/Card"
 import "./StatsModal.css"
 
@@ -15,16 +16,7 @@ const StatsModal = ({ tasks }) => {
       <Modal portalClassName="stats-modal" isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <h2>TaskList</h2>
         <div className="stats-modal-group">
-          <div className="progress-section">
-            {tasks && tasks.map((task) => (
-              <div key={task._id} className="progress-task-card">
-                <div className="progress-task-text">{task.text}</div>
-                <div className="progress-bar-task">
-                  <div className="progress-task-reps">{task.completedReps}/{task.targetReps}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <StatsProgress tasks={tasks} />
         </div>
       </Modal>
     </>
