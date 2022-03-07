@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
+import { ToastContainer } from "react-bootstrap";
 
 function Dashboard() {
   // For redirecting to different pages
@@ -53,7 +54,7 @@ function Dashboard() {
         tasks.map((task) => (task._id === updatedTask._id ? updatedTask : task))
       );
     } else {
-      alert("This is completed");
+      toast("This is completed");
     }
   };
 
@@ -76,6 +77,16 @@ function Dashboard() {
 
     setTasks([...tasks, createdTask]);
   };
+
+  // const deleteTask = async (task) => {
+  //   const config = {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`
+  //     }
+  //   }
+  // example format for making a request
+  //   axios.delete(url, task, config)
+  // }
 
   return (
     <div>
