@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
+import { toast } from "react-toastify";
 
 const AddTask = ({ onAdd }) => {
   const [inputText, setinputText] = useState("");
@@ -10,8 +11,8 @@ const AddTask = ({ onAdd }) => {
     e.preventDefault();
     if (onAdd) onAdd(inputText, inputRepCounter, inputDayCounter);
 
-    if (!onAdd) {
-      alert("Please add a task");
+    if (!inputText) {
+      toast("Describe the task!")
       return;
     }
     setinputText("");
