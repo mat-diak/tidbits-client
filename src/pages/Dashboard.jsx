@@ -57,10 +57,6 @@ function Dashboard() {
   };
 
   const addTask = async (text, reps, endInDays) => {
-    // if (!text) {
-    //   toast.error("Describe the task!");
-    // }
-
     const task = {
       text: text,
       completedReps: 0,
