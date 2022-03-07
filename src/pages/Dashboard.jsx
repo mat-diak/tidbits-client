@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
-import { ToastContainer } from "react-bootstrap";
 
 function Dashboard() {
   // For redirecting to different pages
