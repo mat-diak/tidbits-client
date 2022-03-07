@@ -12,7 +12,7 @@ const AddTask = ({ onAdd }) => {
     if (onAdd) onAdd(inputText, inputRepCounter, inputDayCounter);
 
     if (!inputText) {
-      toast("Describe the task!")
+      toast("Describe the task!");
       return;
     }
     setinputText("");

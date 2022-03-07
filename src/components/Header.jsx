@@ -18,7 +18,7 @@ function Header() {
     <header>
       <div className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="logo">
-          <Link to="/">Habite</Link>
+          Tidbits
         </div>
         <ul>
           {user ? (

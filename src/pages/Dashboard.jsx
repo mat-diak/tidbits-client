@@ -73,22 +73,21 @@ function Dashboard() {
     setTasks([...tasks, createdTask]);
   };
 
-  // const deleteTask = async (task) => {
-  //   const config = {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`
-  //     }
-  //   }
-  // example format for making a request
-  //   axios.delete(url, task, config)
-  // }
+  const onDelete = async (id) => {
+    const res = await restApi.deleteTask({
+      id,
+      user
+    })
+
+    setTasks(tasks.filter((task) => task._id !== res.id))
+  }
 
   return (
     <div>
       <h1>Snacks</h1>
       <AddTask onAdd={addTask} />
       {tasks.length > 0 ? (
-        <TaskList tasks={tasks} onDone={onDone} />
+        <TaskList tasks={tasks} onDone={onDone} onDelete={onDelete}/>
       ) : (
         "You have no tasks"
       )}
