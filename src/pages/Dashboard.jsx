@@ -36,18 +36,17 @@ function Dashboard() {
 
   // Add Count to Completed Reps
   const onDone = async (id) => {
-    const consideredTask = tasks
-      .find((task) => {
-        return task._id === id;
-      });
+    const consideredTask = tasks.find((task) => {
+      return task._id === id;
+    });
 
     if (consideredTask.completedReps < consideredTask.targetReps) {
       const data = {
         token: user.token,
-        taskId: id
-      }
+        taskId: id,
+      };
 
-      const updatedTask = await restApi.incrementTaskReps(data)
+      const updatedTask = await restApi.incrementTaskReps(data);
 
       setTasks(
         tasks.map((task) => (task._id === updatedTask._id ? updatedTask : task))
@@ -61,7 +60,7 @@ function Dashboard() {
     if (!text) {
       toast.error("Describe the task!");
     }
-    
+
     const task = {
       text: text,
       completedReps: 0,
