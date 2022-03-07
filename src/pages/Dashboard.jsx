@@ -46,8 +46,6 @@ function Dashboard() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      console.log("..config", config);
-
       const premadeTasks = await axios.get(
         "http://localhost:5000/api/premadetasks",
         config
@@ -66,7 +64,6 @@ function Dashboard() {
     const consideredTask = tasks.find((task) => {
       return task._id === id;
     });
-    console.log(consideredTask);
 
     if (consideredTask.completedReps < consideredTask.targetReps) {
       const data = {
@@ -105,18 +102,24 @@ function Dashboard() {
 
   // copies tasks from Premade to Usermade
   const onCopy = async (id) => {
+    // find the task that we were interacting with
     const consideredTask = premadeTasks.find((task) => {
       return task._id === id;
     });
+
+    // add taskOwner ID to the task
     const taskOwner = { user: user.id };
 
+    // combine premade task with task owenr details
     const task = { ...consideredTask, ...taskOwner };
 
+    // add task to the task list
     const createdTask = await restApi.createTask({
       task,
       token: user.token,
     });
 
+    // set task using created tasks
     setTasks([...tasks, createdTask]);
   };
 
