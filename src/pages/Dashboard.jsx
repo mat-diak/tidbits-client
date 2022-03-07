@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 function Dashboard() {
   // For redirecting to different pages
@@ -21,6 +22,7 @@ function Dashboard() {
   }, [user, navigate]);
 
   const [tasks, setTasks] = useState([]);
+  const [premadeTasks, setPremadeTasks] = useState([]);
 
   // gets all user tasks
   useEffect(() => {
@@ -31,6 +33,27 @@ function Dashboard() {
 
     if (user) {
       fetchTasks();
+    }
+  }, [user]);
+
+  // gets all premade tasks
+  useEffect(() => {
+    async function fetchPremadeTasks() {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+
+      const premadeTasks = await axios.get(
+        "http://localhost:5000/api/premadetasks",
+        config
+      );
+      setPremadeTasks(premadeTasks.data.text);
+    }
+
+    if (user) {
+      fetchPremadeTasks();
     }
   }, [user]);
 
@@ -90,6 +113,7 @@ function Dashboard() {
     <div>
       <h1>Snacks</h1>
       <AddTask onAdd={addTask} />
+      <div className="div">{premadeTasks}</div>
       {tasks.length > 0 ? (
         <TaskList tasks={tasks} onDone={onDone} />
       ) : (
