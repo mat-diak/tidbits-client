@@ -1,5 +1,6 @@
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
+import PremadeTaskList from "../components/PremadeTaskList";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -28,6 +29,7 @@ function Dashboard() {
   useEffect(() => {
     async function fetchTasks() {
       const tasks = await restApi.getTasks(user);
+
       setTasks(tasks);
     }
 
@@ -49,7 +51,8 @@ function Dashboard() {
         "http://localhost:5000/api/premadetasks",
         config
       );
-      setPremadeTasks(premadeTasks.data.text);
+
+      setPremadeTasks(premadeTasks.data);
     }
 
     if (user) {
@@ -113,7 +116,8 @@ function Dashboard() {
     <div>
       <h1>Snacks</h1>
       <AddTask onAdd={addTask} />
-      <div className="div">{premadeTasks}</div>
+      <PremadeTaskList tasks={premadeTasks} />
+
       {tasks.length > 0 ? (
         <TaskList tasks={tasks} onDone={onDone} />
       ) : (
