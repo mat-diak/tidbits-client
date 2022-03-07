@@ -1,5 +1,6 @@
 import DoneButton from "./DoneButton";
 import Card from "react-bootstrap/Card"
+import "./Task.css"
 
 const Task = ({ task, onDone }) => {
   return (

@@ -1,0 +1,17 @@
+.task-list-card.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em auto;
+  height: 100%;
+  width: 60%;
+  padding: 1em;
+  background-color: #eeeeee;
+  border-radius: 1em;
+  border: none;
+}
+
+.task-list {
+  margin: auto;
+  width: 80%;
+}

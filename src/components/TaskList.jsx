@@ -1,5 +1,6 @@
 import Task from "./Task"
 import Card from "react-bootstrap/Card"
+import "./TaskList.css"
 
 const TaskList = ({ tasks, onDone }) => {
   return (
