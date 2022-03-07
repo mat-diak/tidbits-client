@@ -58,7 +58,7 @@ const App = () => {
     <div className="tasks-page">
       <h1>Snacks</h1>
       <div className="tasks-page-body">
-        <StatsModal />
+        <StatsModal tasks={tasks} />
         <AddTask onAdd={addTask} />
         {tasks.length > 0 ? (
           <TaskList tasks={tasks} onDone={onDone} />

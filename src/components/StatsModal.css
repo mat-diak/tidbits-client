@@ -1,0 +1,39 @@
+/* .stats-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+} */
+
+.stats-modal-group {
+  display: flex;
+}
+
+.progress-section {
+  width: 55%;
+  padding: 1em;
+}
+
+.progress-task-card {
+  margin: 1.5em auto;
+}
+
+.progress-task-text {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1em;
+
+}
+
+.progress-bar-task {
+  background-color: green;
+  border-radius: 2em;
+}
+
+.progress-task-reps {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1em;
+}
