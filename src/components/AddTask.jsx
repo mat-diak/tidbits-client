@@ -3,27 +3,34 @@ import Form from "react-bootstrap/Form";
 
 const AddTask = ({ onAdd }) => {
   const [inputText, setinputText] = useState("");
-  const [inputCounter, setinputCounter] = useState(0);
+  const [inputRepCounter, setinputRepCounter] = useState(1);
+  const [inputDayCounter, setinputDayCounter] = useState(1);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (onAdd) onAdd(inputText, inputCounter);
+    if (onAdd) onAdd(inputText, inputRepCounter, inputDayCounter);
 
     if (!onAdd) {
       alert("Please add a task");
       return;
     }
     setinputText("");
-    setinputCounter(0);
+    setinputRepCounter(1);
+    setinputDayCounter(1);
   };
 
   const updatedInput = (e) => {
     setinputText(e.currentTarget.value);
   };
 
-  const incrementCount = (e) => {
+  const incrementRepCount = (e) => {
     e.preventDefault();
-    setinputCounter(inputCounter + 1);
+    setinputRepCounter(inputRepCounter + 1);
+  };
+
+  const incrementDayCount = (e) => {
+    e.preventDefault();
+    setinputDayCounter(inputDayCounter + 1);
   };
 
   return (
@@ -38,13 +45,23 @@ const AddTask = ({ onAdd }) => {
             placeholder="Add a task.."
           ></Form.Control>
           <p>
+            How many days do you wanna keep the habit for?
+            <button
+              className="counter-btn"
+              type="submit"
+              onClick={incrementDayCount}
+            >
+              {inputDayCounter}
+            </button>
+          </p>
+          <p>
             How many times a day?{" "}
             <button
               className="counter-btn"
               type="submit"
-              onClick={incrementCount}
+              onClick={incrementRepCount}
             >
-              {inputCounter}
+              {inputRepCounter}
             </button>
           </p>
           <button

@@ -56,16 +56,17 @@ function Dashboard() {
     }
   };
 
-  const addTask = async (text, reps) => {
-    if (!text) {
-      toast.error("Describe the task!");
-    }
+  const addTask = async (text, reps, endInDays) => {
+    // if (!text) {
+    //   toast.error("Describe the task!");
+    // }
 
     const task = {
       text: text,
       completedReps: 0,
       targetReps: reps,
       user: user.id,
+      endInDays: endInDays,
     };
 
     const createdTask = await restApi.createTask({
