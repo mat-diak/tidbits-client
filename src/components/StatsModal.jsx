@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import StatsProgress from "./StatsProgress";
 import "./StatsModal.css";
 
-Modal.setAppElement("#root");
+// Modal.setAppElement("#root");
+// if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 const StatsModal = ({ tasks }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
