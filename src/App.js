@@ -12,13 +12,13 @@ const App = () => {
   return (
     <>
       <Router>
-        <Container>
+        <div>
           <Header />
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/hello" element={<Hello />} />
           </Routes>
-        </Container>
+        </div>
       </Router>
       <ToastContainer />
     </>

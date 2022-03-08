@@ -1,4 +1,5 @@
-import AddTask from "../components/AddTask";
+// import AddTask from "../components/AddTask";
+import Navbar from "../components/Navbar";
 import TaskList from "../components/TaskList";
 import PremadeTaskList from "../components/PremadeTaskList";
 import { useState, useEffect } from "react";
@@ -8,6 +9,7 @@ import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import { Container } from "react-bootstrap";
 
 function Dashboard() {
   // For redirecting to different pages
@@ -119,7 +121,6 @@ function Dashboard() {
     });
 
     setTasks([...tasks, createdTask]);
-    toggleAddTask(!showAddTask);
   };
 
   const onDelete = async (id) => {
@@ -138,39 +139,38 @@ function Dashboard() {
     (task) => task.completedReps === task.targetReps
   );
 
-  // Toggling Add Task Form
-  const [showAddTask, toggleAddTask] = useState(false);
-
   return (
-    <div>
-      <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} />
-      <Button onClick={() => toggleAddTask(!showAddTask)}>
-        Add a new task
-      </Button>
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {ongoingTasks.length > 0 ? (
-        <TaskList
-          key={"ongoingTasks"}
-          tasks={ongoingTasks}
-          onDone={onDone}
-          onDelete={onDelete}
-          headline={"Tidbits for today"}
-        />
-      ) : (
-        "You have no tasks"
-      )}
-
-      {completedTasks.length > 0 ? (
-        <TaskList
-          key={"completedTasks"}
-          tasks={completedTasks}
-          onDone={onDone}
-          onDelete={onDelete}
-          headline={"Completed tidbits"}
-        />
-      ) : (
-        "You have not completed any tidbits today"
-      )}
+    <div className="row d-flex justify-content-between">
+      {/* -------- */}
+      <div className="col-3">
+        <Navbar premadeTasks={premadeTasks} onCopy={onCopy} onAdd={addTask} />
+      </div>
+      <div className="col-4">
+        {ongoingTasks.length > 0 ? (
+          <TaskList
+            key={"ongoingTasks"}
+            tasks={ongoingTasks}
+            onDone={onDone}
+            onDelete={onDelete}
+            headline={"Tidbits for today"}
+          />
+        ) : (
+          "You have no tasks"
+        )}
+      </div>
+      <div className="col-4">
+        {completedTasks.length > 0 ? (
+          <TaskList
+            key={"completedTasks"}
+            tasks={completedTasks}
+            onDone={onDone}
+            onDelete={onDelete}
+            headline={"Completed tidbits"}
+          />
+        ) : (
+          "You have not completed any tidbits today"
+        )}
+      </div>
     </div>
   );
 }

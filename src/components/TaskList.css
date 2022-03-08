@@ -1,10 +1,10 @@
 .task-list-card.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center; */
   margin: 1em auto;
   height: 100%;
-  width: 60%;
+  width: 95%;
   max-width: 850px;
   padding: 1em;
   background-color: #eeeeee;

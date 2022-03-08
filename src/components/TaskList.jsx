@@ -16,14 +16,14 @@ const TaskList = ({ tasks, onDone, onDelete, headline }) => {
           {tasks &&
             tasks.map((task) => (
               <Task
-              key={task._id}
-              task={task}
-              onDone={onDone}
-              onDelete={onDelete}
+                key={task._id}
+                task={task}
+                onDone={onDone}
+                onDelete={onDelete}
               />
-          ))}
-          </div>
+            ))}
         </div>
+      </div>
     </Card>
   );
 };
