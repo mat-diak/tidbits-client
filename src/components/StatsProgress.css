@@ -15,8 +15,9 @@
 }
 
 .progress-bar-task {
-  background-color: green;
-  border-radius: 2em;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .progress-task-reps {
