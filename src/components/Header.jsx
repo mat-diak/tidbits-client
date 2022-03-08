@@ -2,6 +2,10 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 function Header() {
   const navigate = useNavigate();
@@ -16,22 +20,22 @@ function Header() {
 
   return (
     <header>
-      <div className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="logo">Tidbits</div>
-        <ul>
-          {user ? (
-            <li>
-              <button className="btn" onClick={onLogout}>
-                <FaSignOutAlt />
-                Log out
-              </button>
-              <div>Logged in as {user.name}</div>
-            </li>
-          ) : (
-            <></>
-          )}
-        </ul>
-      </div>
+      <Navbar>
+        <Container>
+          <Navbar.Brand>Tidbits</Navbar.Brand>
+          <Navbar.Collapse className="justify-content-end">
+            {user && (
+              <>
+                <Navbar.Text>Hello, {user.name}</Navbar.Text>
+                <Nav.Link onClick={onLogout}>
+                  <FaSignOutAlt />
+                  Log out
+                </Nav.Link>
+              </>
+            )}
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   );
 }

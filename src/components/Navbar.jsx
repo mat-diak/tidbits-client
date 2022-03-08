@@ -5,7 +5,7 @@ import { BiCookie } from "react-icons/bi";
 import { useState } from "react";
 import AddTask from "./AddTask";
 import PremadeTaskList from "./PremadeTaskList";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 function Navbar({ premadeTasks, onCopy, onAdd }) {
   // Toggling Add Task Form
@@ -31,10 +31,12 @@ function Navbar({ premadeTasks, onCopy, onAdd }) {
         </Button>
 
         {/* button for premade tasks */}
-        <Button onClick={() => {
-          resetNavbar();
-          togglePremadeList(!showPremadeList);
-        }}>
+        <Button
+          onClick={() => {
+            resetNavbar();
+            togglePremadeList(!showPremadeList);
+          }}
+        >
           <MdKitchen />
         </Button>
       </div>
@@ -42,7 +44,9 @@ function Navbar({ premadeTasks, onCopy, onAdd }) {
       {/* */}
       <div className="col-10 main-navbar">
         {showAddTask && <AddTask onAdd={onAdd} />}
-        {showPremadeList &&  <PremadeTaskList tasks={premadeTasks} onCopy={onCopy}/>}
+        {showPremadeList && (
+          <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} />
+        )}
       </div>
     </div>
   );
