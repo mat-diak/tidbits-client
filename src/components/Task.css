@@ -1,0 +1,35 @@
+.task-card.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1.5em auto;
+  padding: 0;
+  width: 100%;
+  max-width: 700px;
+  border: none;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 0.5em 1em 0.4em rgba(0, 0, 0, 0.2);
+}
+
+div.task-text {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+}
+
+div.task-counter {
+  margin: 0;
+  background-color: #afafaf;
+  padding: 0.5em;
+  /* border-radius: 1em; */
+}
+
+div.task-reps {
+  color: #fff;
+}
+
+div.task-btn {
+  align-items: center;
+  margin: 0.5em;
+}

@@ -1,0 +1,15 @@
+* {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: #ddd;
+}
+
+.tasks-page-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}

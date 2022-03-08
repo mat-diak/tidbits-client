@@ -1,0 +1,16 @@
+.done-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  color: white;
+  height: 2em;
+  width: 2em;
+  border-radius: 1em;
+  background-color: teal;
+  border: none;
+}
+
+.done-btn:hover {
+  background-color: rgb(1, 180, 180);
+}
