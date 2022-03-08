@@ -1,5 +1,5 @@
 import { FaSignOutAlt } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 
@@ -17,9 +17,7 @@ function Header() {
   return (
     <header>
       <div className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="logo">
-          <Link to="/">Habite</Link>
-        </div>
+        <div className="logo">Tidbits</div>
         <ul>
           {user ? (
             <li>

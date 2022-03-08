@@ -1,18 +1,15 @@
-import DoneButton from "./DoneButton";
+import TaskDaysToGo from "./TaskDaysToGo";
+import TaskReps from "./TaskReps";
+import DeleteTaskButton from "./DeleteTaskButton";
 import Card from "react-bootstrap/Card";
 
-const Task = ({ task, onDone }) => {
+const Task = ({ task, onDone, onDelete }) => {
   return (
     <Card key={task._id} className="task-card">
+      <DeleteTaskButton task={task} onDelete={onDelete} />
+      <TaskDaysToGo task={task} />
       <div className="task-text">{task.text}</div>
-      <div className="task-counter">
-        <div className="task-reps">
-          {task.completedReps}/{task.targetReps}
-        </div>
-        <div className="task-btn">
-          <DoneButton taskId={task._id} onDone={onDone} />
-        </div>
-      </div>
+      <TaskReps task={task} onDone={onDone} />
     </Card>
   );
 };

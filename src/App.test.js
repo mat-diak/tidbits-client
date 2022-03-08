@@ -7,6 +7,6 @@ import App from "./App";
 //   expect(screen.getByText("Snacks")).toBeInTheDocument();
 // });
 
-it('works', () => {
-  expect(1).toEqual(1)
-}) 
+it("works", () => {
+  expect(1).toEqual(1);
+});
