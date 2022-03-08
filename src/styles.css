@@ -1,5 +1,10 @@
 * {
   text-align: center;
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: #ddd;
 }
 
 .tasks-page-body {

@@ -11,9 +11,9 @@ const StatsModal = ({ tasks }) => {
 
   return (
     <>
-      <button onClick={() => setModalIsOpen(true)}>Stats</button>
+      <button className="stats-btn" onClick={() => setModalIsOpen(true)}>Stats</button>
 
-      <Modal portalClassName="stats-modal" isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+      <Modal className="stats-modal" overlayClassName="stats-modal-overlay" isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <h2>TaskList</h2>
         <div className="stats-modal-group">
           <StatsProgress tasks={tasks} />

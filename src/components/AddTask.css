@@ -22,7 +22,7 @@
 }
 
 .add-task-button {
-  background-color: lightsalmon;
+  background-color: rgb(255, 120, 67);
   color: white;
   border: none;
   border-radius: 2em;
@@ -30,5 +30,7 @@
 }
 
 .add-task-button:hover {
-  background-color: rgb(255, 120, 67);
+  background-color: lightsalmon;
+  color: black;
+  transition: .2s;
 }

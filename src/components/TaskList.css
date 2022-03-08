@@ -12,6 +12,19 @@
   border: none;
 }
 
+.task-list-header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-list-header-spacer {
+  height: 40px;
+  width: 70px;
+  border-radius: 2em;
+  background-color: none;
+}
+
 .task-list {
   margin: auto;
   width: 80%;
