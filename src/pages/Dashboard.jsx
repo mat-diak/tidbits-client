@@ -8,6 +8,16 @@ import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import {arrayMove} from 'react-sortable-hoc';
+import {SortableContainer} from 'react-sortable-hoc';
+
+// -----------
+
+const SortableList = SortableContainer(TaskList);
+
+// -------
+
+
 
 function Dashboard() {
   // For redirecting to different pages
@@ -123,6 +133,9 @@ function Dashboard() {
   };
 
   const onDelete = async (id) => {
+    
+    console.log("Before", "Hello")
+    
     const res = await restApi.deleteTask({
       id,
       user,
@@ -141,6 +154,17 @@ function Dashboard() {
   // Toggling Add Task Form
   const [showAddTask, toggleAddTask] = useState(false);
 
+  // ----------
+
+  console.log(tasks)
+
+  const onSortEnd = (e) =>{
+    var sortedTasks = arrayMove(tasks, e.oldIndex, e.newIndex )
+    setTasks(sortedTasks)
+  };
+
+  //  ---------
+
   return (
     <div>
       <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} />
@@ -149,18 +173,19 @@ function Dashboard() {
       </Button>
       {showAddTask && <AddTask onAdd={addTask} />}
       {ongoingTasks.length > 0 ? (
-        <TaskList
+        <SortableList
           key={"ongoingTasks"}
           tasks={ongoingTasks}
           onDone={onDone}
           onDelete={onDelete}
           headline={"Tidbits for today"}
+          onSortEnd={onSortEnd}
         />
       ) : (
         "You have no tasks"
       )}
 
-      {completedTasks.length > 0 ? (
+      {/* {completedTasks.length > 0 ? (
         <TaskList
           key={"completedTasks"}
           tasks={completedTasks}
@@ -170,7 +195,7 @@ function Dashboard() {
         />
       ) : (
         "You have not completed any tidbits today"
-      )}
+      )} */}
     </div>
   );
 }

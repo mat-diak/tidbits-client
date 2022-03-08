@@ -2,6 +2,9 @@ import Task from "./Task";
 import Card from "react-bootstrap/Card";
 import StatsModal from "./StatsModal";
 import "./TaskList.css";
+import {SortableElement} from 'react-sortable-hoc';
+
+const SortableItem = SortableElement(Task) 
 
 const TaskList = ({ tasks, onDone, onDelete, headline }) => {
   return (
@@ -14,14 +17,15 @@ const TaskList = ({ tasks, onDone, onDelete, headline }) => {
             <StatsModal tasks={tasks} />
           </div>
           {tasks &&
-            tasks.map((task) => (
-              <Task
+            tasks.map((task, i) => {
+              return <SortableItem
               key={task._id}
               task={task}
+              index={i}
               onDone={onDone}
               onDelete={onDelete}
               />
-          ))}
+            })}
           </div>
         </div>
     </Card>

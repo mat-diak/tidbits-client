@@ -6,7 +6,7 @@ import "./Task.css";
 
 const Task = ({ task, onDone, onDelete }) => {
   return (
-    <Card key={task._id} className="task-card">
+    <Card key={task.id} className="task-card">
       <DeleteTaskButton task={task} onDelete={onDelete} />
       <TaskDaysToGo task={task} />
       <div className="task-text">{task.text}</div>
