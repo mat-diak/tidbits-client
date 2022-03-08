@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
+import Button from 'react-bootstrap/Button'
 
 function Dashboard() {
   // For redirecting to different pages
@@ -71,6 +72,7 @@ function Dashboard() {
     });
 
     setTasks([...tasks, createdTask]);
+    toggleAddTask(!showAddTask)
   };
 
   const onDelete = async (id) => {
@@ -82,15 +84,43 @@ function Dashboard() {
     setTasks(tasks.filter((task) => task._id !== res.id));
   };
 
+  const ongoingTasks = tasks.filter(
+    (task) => task.completedReps !== task.targetReps
+  );
+  const completedTasks = tasks.filter(
+    (task) => task.completedReps === task.targetReps
+  );
+
+  // Toggling Add area
+  const [showAddTask, toggleAddTask] = useState(false)
+
   return (
     <div>
-      <h1>Snacks</h1>
-      <AddTask onAdd={addTask} />
-      {tasks.length > 0 ? (
-        <TaskList tasks={tasks} onDone={onDone} onDelete={onDelete} />
-      ) : (
-        "You have no tasks"
-      )}
+     <Button onClick={() => toggleAddTask(!showAddTask)}>Add a new task</Button>
+     {showAddTask && <AddTask onAdd={addTask} />}
+          {ongoingTasks.length > 0 ? (
+            <TaskList
+              key={"ongoingTasks"}
+              tasks={ongoingTasks}
+              onDone={onDone}
+              onDelete={onDelete}
+              headline={'Tidbits for today'}
+            />
+          ) : (
+            "You have no tasks"
+          )}
+
+          {completedTasks.length > 0 ? (
+            <TaskList
+              key={'completedTasks'}
+              tasks={completedTasks}
+              onDone={onDone}
+              onDelete={onDelete}
+              headline={'Completed tidbits'}
+            />
+          ) : (
+            "You have not completed any tidbits today"
+          )}
     </div>
   );
 }
