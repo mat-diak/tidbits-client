@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
-import Button from 'react-bootstrap/Button'
+import Button from "react-bootstrap/Button";
 import axios from "axios";
 
 function Dashboard() {
@@ -119,7 +119,7 @@ function Dashboard() {
     });
 
     setTasks([...tasks, createdTask]);
-    toggleAddTask(!showAddTask)
+    toggleAddTask(!showAddTask);
   };
 
   const onDelete = async (id) => {
@@ -139,36 +139,38 @@ function Dashboard() {
   );
 
   // Toggling Add Task Form
-  const [showAddTask, toggleAddTask] = useState(false)
+  const [showAddTask, toggleAddTask] = useState(false);
 
   return (
     <div>
-     <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} />
-     <Button onClick={() => toggleAddTask(!showAddTask)}>Add a new task</Button>
-     {showAddTask && <AddTask onAdd={addTask} />}
-          {ongoingTasks.length > 0 ? (
-            <TaskList
-              key={"ongoingTasks"}
-              tasks={ongoingTasks}
-              onDone={onDone}
-              onDelete={onDelete}
-              headline={'Tidbits for today'}
-            />
-          ) : (
-            "You have no tasks"
-          )}
+      <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} />
+      <Button onClick={() => toggleAddTask(!showAddTask)}>
+        Add a new task
+      </Button>
+      {showAddTask && <AddTask onAdd={addTask} />}
+      {ongoingTasks.length > 0 ? (
+        <TaskList
+          key={"ongoingTasks"}
+          tasks={ongoingTasks}
+          onDone={onDone}
+          onDelete={onDelete}
+          headline={"Tidbits for today"}
+        />
+      ) : (
+        "You have no tasks"
+      )}
 
-          {completedTasks.length > 0 ? (
-            <TaskList
-              key={'completedTasks'}
-              tasks={completedTasks}
-              onDone={onDone}
-              onDelete={onDelete}
-              headline={'Completed tidbits'}
-            />
-          ) : (
-            "You have not completed any tidbits today"
-          )}
+      {completedTasks.length > 0 ? (
+        <TaskList
+          key={"completedTasks"}
+          tasks={completedTasks}
+          onDone={onDone}
+          onDelete={onDelete}
+          headline={"Completed tidbits"}
+        />
+      ) : (
+        "You have not completed any tidbits today"
+      )}
     </div>
   );
 }
