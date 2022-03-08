@@ -1,11 +1,13 @@
 import AddTask from "../components/AddTask";
 import TaskList from "../components/TaskList";
+import PremadeTaskList from "../components/PremadeTaskList";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import Button from 'react-bootstrap/Button'
+import axios from "axios";
 
 function Dashboard() {
   // For redirecting to different pages
@@ -22,16 +24,40 @@ function Dashboard() {
   }, [user, navigate]);
 
   const [tasks, setTasks] = useState([]);
+  const [premadeTasks, setPremadeTasks] = useState([]);
 
   // gets all user tasks
   useEffect(() => {
     async function fetchTasks() {
       const tasks = await restApi.getTasks(user);
+
       setTasks(tasks);
     }
 
     if (user) {
       fetchTasks();
+    }
+  }, [user]);
+
+  // gets all premade tasks
+  useEffect(() => {
+    async function fetchPremadeTasks() {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+
+      const premadeTasks = await axios.get(
+        "http://localhost:5000/api/premadetasks",
+        config
+      );
+
+      setPremadeTasks(premadeTasks.data);
+    }
+
+    if (user) {
+      fetchPremadeTasks();
     }
   }, [user]);
 
@@ -96,6 +122,7 @@ function Dashboard() {
 
   return (
     <div>
+     <PremadeTaskList tasks={premadeTasks} />
      <Button onClick={() => toggleAddTask(!showAddTask)}>Add a new task</Button>
      {showAddTask && <AddTask onAdd={addTask} />}
           {ongoingTasks.length > 0 ? (
