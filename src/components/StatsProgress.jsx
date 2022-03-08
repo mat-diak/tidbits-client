@@ -15,7 +15,7 @@ const StatsProgress = ({ tasks }) => {
             visualParts={[
               {
                 percentage: `${(task.completedReps / task.targetReps) * 100}%`,
-                color: "lightgreen"
+                color: "teal"
               }
             ]}
           />

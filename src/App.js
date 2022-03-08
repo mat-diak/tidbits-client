@@ -4,7 +4,7 @@ import StatsModal from "./components/StatsModal"
 import axiosRestApi from "./components/axios";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css"
-import "./styles.css"
+import "./App.css"
 
 
 const App = () => {
