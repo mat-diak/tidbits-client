@@ -2,6 +2,7 @@ import TaskDaysToGo from "./TaskDaysToGo";
 import TaskReps from "./TaskReps";
 import DeleteTaskButton from "./DeleteTaskButton";
 import Card from "react-bootstrap/Card";
+import "./Task.css";
 
 const Task = ({ task, onDone, onDelete }) => {
   return (

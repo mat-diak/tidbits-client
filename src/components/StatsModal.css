@@ -1,0 +1,46 @@
+.stats-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  margin-top: -0.5em;
+}
+
+.stats-btn:hover {
+  background-color: rgb(1, 180, 180);
+  transition: 0.2s;
+}
+
+.stats-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.stats-modal {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 1em;
+  outline: none;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.stats-modal-group {
+  display: flex;
+}
