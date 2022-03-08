@@ -1,0 +1,36 @@
+.add-task-form {
+  margin: 2em 2em 1em;
+  height: 100%
+}
+
+.add-task-input {
+  margin: 1em auto;
+  height: 3em;
+  max-width: 700px;
+}
+
+.counter-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .5em;
+  height: 2em;
+  width: 2em;
+  border-radius: 1em;
+  border-color: black;
+  background-color: #fff;
+}
+
+.add-task-button {
+  background-color: rgb(255, 120, 67);
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: .5em 1em;
+}
+
+.add-task-button:hover {
+  background-color: lightsalmon;
+  color: black;
+  transition: .2s;
+}

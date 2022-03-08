@@ -8,6 +8,10 @@ import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import StatsModal from "./components/StatsModal"
+
+// MAYBE DELETE
+import axiosRestApi from "./components/axios";
 
 function Dashboard() {
   // For redirecting to different pages

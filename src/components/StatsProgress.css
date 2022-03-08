@@ -1,0 +1,27 @@
+.progress-section {
+  width: 55%;
+  padding: 1em;
+}
+
+.progress-task-card {
+  margin: 1.5em auto;
+}
+
+.progress-task-text {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1em;
+
+}
+
+.progress-bar-task {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.progress-task-reps {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1em;
+}

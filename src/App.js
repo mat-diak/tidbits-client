@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.css";
-import "./styles.css";
+import "./App.css"
 
 const App = () => {
   return (
