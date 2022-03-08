@@ -185,8 +185,8 @@ function Dashboard() {
         "You have no tasks"
       )}
 
-      {/* {completedTasks.length > 0 ? (
-        <TaskList
+      {completedTasks.length > 0 ? (
+        <SortableList
           key={"completedTasks"}
           tasks={completedTasks}
           onDone={onDone}
@@ -195,7 +195,7 @@ function Dashboard() {
         />
       ) : (
         "You have not completed any tidbits today"
-      )} */}
+      )}
     </div>
   );
 }
