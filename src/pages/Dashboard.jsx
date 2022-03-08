@@ -91,7 +91,7 @@ function Dashboard() {
     (task) => task.completedReps === task.targetReps
   );
 
-  // Toggling Add area
+  // Toggling Add Task Form
   const [showAddTask, toggleAddTask] = useState(false)
 
   return (

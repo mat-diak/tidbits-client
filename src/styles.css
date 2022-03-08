@@ -30,7 +30,6 @@
 .tasks-page-body {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   justify-content: center;
   width: 100%;
 }
@@ -39,7 +38,6 @@
   margin: 1em auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   height: 100%;
   width: 60%;
   border-radius: 1em;
@@ -96,7 +94,6 @@ div.task-counter {
   margin: 0;
   background-color: #afafaf;
   padding: 0.5em;
-  /* border-radius: 1em; */
 }
 
 div.task-reps {
