@@ -7,7 +7,7 @@ import "./Task.css";
 
 const Task = ({ task, onDone, onDelete }) => {
   return (
-    <Card className="task-card" key={task._id} className="task-card">
+    <Card className="task-card" key={task._id}>
       <Card.Header className="task-details">
         <Nav variant="pills" defaultActiveKey="#first">
           <Nav.Item>

@@ -5,7 +5,6 @@ import { logout, reset } from "../features/auth/authSlice";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 
 function Header() {
   const navigate = useNavigate();

@@ -4,14 +4,6 @@ import { useState } from "react";
 import PremadeTaskList from "./PremadeTaskList";
 import "./PremadeTask.css";
 
-const options = [
-  {
-    name: "Enable both scrolling & backdrop",
-    scroll: true,
-    backdrop: true,
-  },
-];
-
 function PremadesNavbar({ name, premadeTasks, onCopy }) {
   const [show, setShow] = useState(false);
 
