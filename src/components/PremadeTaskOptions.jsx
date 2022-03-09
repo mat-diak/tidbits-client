@@ -3,6 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import "./PremadeTaskOptions.css";
 
 function PremadeTaskOptions({ taskOptions }) {
+  console.log(taskOptions)
   return (
     <Card className="premade-option">
       <ListGroup variant="flush">

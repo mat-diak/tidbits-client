@@ -145,30 +145,26 @@ function Dashboard() {
       </div>
 
       <div className="col-4">
-        {ongoingTasks.length > 0 ? (
+       
           <TaskList
             key={"ongoingTasks"}
             tasks={ongoingTasks}
             onDone={onDone}
             onDelete={onDelete}
             headline={"Tidbits for today"}
+            message={'No tidbits left for today'}
           />
-        ) : (
-          "You have no tasks"
-        )}
+       
       </div>
       <div className="col-4">
-        {completedTasks.length > 0 ? (
-          <TaskList
-            key={"completedTasks"}
-            tasks={completedTasks}
-            onDone={onDone}
-            onDelete={onDelete}
-            headline={"Completed tidbits"}
-          />
-        ) : (
-          "You have not completed any tidbits today"
-        )}
+        <TaskList
+          key={"completedTasks"}
+          tasks={completedTasks}
+          onDone={onDone}
+          onDelete={onDelete}
+          headline={"Completed tidbits"}
+          message={"No tidbits completed today"}
+        />
       </div>
     </div>
   );

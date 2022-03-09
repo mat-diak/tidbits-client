@@ -8,10 +8,10 @@ import "./Task.css";
 const Task = ({ task, onDone, onDelete }) => {
   return (
     <Card className="task-card" key={task._id}>
-      <Card.Header className="task-details">
-        <Nav variant="pills" defaultActiveKey="#first">
+      <Card.Header>
+        <Nav className="task-details" variant="pills" defaultActiveKey="#first">
           <Nav.Item>
-            <TaskReps className="col-3" task={task} onDone={onDone} />
+            <TaskReps task={task} onDone={onDone} />
           </Nav.Item>
           <Nav.Item>
             <TaskDaysToGo task={task} />
