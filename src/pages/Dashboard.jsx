@@ -178,7 +178,7 @@ function Dashboard() {
           tasks={completedTasks}
           onDone={onDone}
           onDelete={onDelete}
-          headline={"Completed tidbits"}
+          headline={"Completed tidbits for today"}
           message={"No tidbits completed today"}
         />
       </div>
