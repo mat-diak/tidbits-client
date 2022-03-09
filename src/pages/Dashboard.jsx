@@ -138,20 +138,23 @@ function Dashboard() {
     <div className="row d-flex justify-content-between">
       {/* -------- */}
       <div className="col-3">
-        <Navbar tasks={tasks} premadeTasks={premadeTasks} onCopy={onCopy} onAdd={addTask} />
+        <Navbar
+          tasks={tasks}
+          premadeTasks={premadeTasks}
+          onCopy={onCopy}
+          onAdd={addTask}
+        />
       </div>
 
       <div className="col-4">
-       
-          <TaskList
-            key={"ongoingTasks"}
-            tasks={ongoingTasks}
-            onDone={onDone}
-            onDelete={onDelete}
-            headline={"Tidbits for today"}
-            message={'No tidbits left for today'}
-          />
-       
+        <TaskList
+          key={"ongoingTasks"}
+          tasks={ongoingTasks}
+          onDone={onDone}
+          onDelete={onDelete}
+          headline={"Tidbits for today"}
+          message={"No tidbits left for today"}
+        />
       </div>
       <div className="col-4">
         <TaskList

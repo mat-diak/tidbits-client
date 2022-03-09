@@ -13,7 +13,12 @@ const StatsModal = ({ tasks }) => {
 
   return (
     <>
-      <Button variant="secondary" className="navbar-button" onClick={() => setModalIsOpen(true)}>
+      <Button
+        variant="secondary"
+        className="navbar-button me-2"
+        onClick={() => setModalIsOpen(true)}
+        style={{borderRadius: "1em", width: "180px"}}
+      >
         tidbits overview
       </Button>
       <Modal
