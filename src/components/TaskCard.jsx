@@ -17,13 +17,15 @@ function TaskCard({ task, onDone, onDelete }) {
       <Task key={task._id} task={task} onDone={onDone} onDelete={onDelete} />
 
       {/* render options if in ongoing tasks*/}
-      {!taskFinished(task) && <Button
-        className="navbar-button"
-        variant="outline-info"
-        onClick={() => toggleOptions(!showOptions)}
-      >
-        <MdOutlineExpandMore />
-      </Button>}
+      {!taskFinished(task) && (
+        <Button
+          className="navbar-button"
+          variant="outline-info"
+          onClick={() => toggleOptions(!showOptions)}
+        >
+          <MdOutlineExpandMore />
+        </Button>
+      )}
       {showOptions && <PremadeTaskOptions />}
     </>
   );

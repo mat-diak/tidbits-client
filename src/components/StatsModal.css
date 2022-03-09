@@ -1,13 +1,13 @@
 .stats-btn {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: teal;
+  align-items: center; */
+  background-color: rgb(124, 212, 212);
   color: white;
   border: none;
   border-radius: 2em;
   padding: 0.5em 1em;
-  margin-top: -0.5em;
+  margin-top: 0.5em;
 }
 
 .stats-btn:hover {
@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, as0, 0.75);
 }
 
 .stats-modal {
