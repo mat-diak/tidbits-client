@@ -155,6 +155,7 @@ function Dashboard() {
       {/* -------- */}
       <div className="col-3">
         <Navbar
+          tasks={tasks}
           premadeTasks={premadeTasks}
           onCopy={onCopy}
           onAdd={addTask}
