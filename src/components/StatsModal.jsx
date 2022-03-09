@@ -1,6 +1,7 @@
 import Modal from "react-modal";
 import React, { useState } from "react";
 import StatsProgress from "./StatsProgress";
+import StatsChart from "./StatsChart";
 import "./StatsModal.css";
 
 // Modal.setAppElement("#root");
@@ -19,10 +20,16 @@ const StatsModal = ({ tasks }) => {
         overlayClassName="stats-modal-overlay"
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
+        ariaHideApp={false}
       >
-        <h2>TaskList</h2>
+        <h2 className="stats-modal-heading">TaskList</h2>
         <div className="stats-modal-group">
-          <StatsProgress tasks={tasks} />
+          <div className="stats-modal-progress-group">
+            <StatsProgress tasks={tasks} />
+          </div>
+          <div className="stats-modal-chart-group">
+            <StatsChart tasks={tasks} />
+          </div>
         </div>
       </Modal>
     </>

@@ -1,0 +1,40 @@
+.chart-section {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .recharts-wrapper {
+  width: 500px;
+}
+
+.recharts-surface {
+  width: 500px;
+  margin-right: -2em;
+} */
+
+.stats-chart-legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 2em;
+  width: 50%;
+}
+
+.stats-chart-key {
+  display: flex;
+  justify-content: center;
+}
+
+.stats-chart-value {
+  margin: 0 auto 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: teal;
+  border-radius: 2em;
+  height: 2em;
+  width: 2em;
+  color: white;
+}
