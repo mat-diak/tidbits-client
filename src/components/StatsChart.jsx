@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react"
-import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Tooltip } from "recharts";
 import "./StatsChart.css"
 
 // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
