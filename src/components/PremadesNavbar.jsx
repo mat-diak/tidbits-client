@@ -4,7 +4,7 @@ import { useState } from "react";
 import PremadeTaskList from "./PremadeTaskList";
 import "./PremadeTask.css";
 
-function PremadesNavbar({ name, premadeTasks, onCopy }) {
+function PremadesNavbar({ name, premadeTasks, onCopy, onRecipe }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -24,7 +24,7 @@ function PremadesNavbar({ name, premadeTasks, onCopy }) {
           <Offcanvas.Title>Premade tidbits</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} />
+          <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} onRecipe={onRecipe}/>
         </Offcanvas.Body>
       </Offcanvas>
     </>

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { MdHelpOutline } from "react-icons/md";
 
 function Dashboard() {
   // For redirecting to different pages
@@ -134,13 +135,29 @@ function Dashboard() {
     (task) => task.completedReps === task.targetReps
   );
 
+  const onRecipe = async (task) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    };
+
+    const recipePremade = await axios.post(
+      "http://localhost:5000/api/recipes",
+      task,
+      config
+    );
+    
+    setTasks([recipePremade.data, ...tasks])
+  }
+
   return (
     <div className="row d-flex justify-content-between">
       {/* -------- */}
       <div className="col-3">
-        <Navbar premadeTasks={premadeTasks} onCopy={onCopy} onAdd={addTask} />
+        <Navbar premadeTasks={premadeTasks} onCopy={onCopy} onAdd={addTask} onRecipe={onRecipe}/>
       </div>
-
+      
       <div className="col-4">
        
           <TaskList
