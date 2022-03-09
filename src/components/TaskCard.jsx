@@ -15,9 +15,9 @@ function TaskCard({ task, onDone, onDelete }) {
     <>
       {/* render task */}
       <Task key={task._id} task={task} onDone={onDone} onDelete={onDelete} />
-
+      {/* {console.log("task...", task)} */}
       {/* render options if in ongoing tasks*/}
-      {!taskFinished(task) && (
+      {!taskFinished(task) && task.options.length > 0 &&(
         <Button
           className="navbar-button"
           variant="outline-info"
@@ -26,7 +26,7 @@ function TaskCard({ task, onDone, onDelete }) {
           <MdOutlineExpandMore />
         </Button>
       )}
-      {showOptions && <PremadeTaskOptions />}
+      {showOptions && <PremadeTaskOptions taskOptions={task.options} />}
     </>
   );
 }
