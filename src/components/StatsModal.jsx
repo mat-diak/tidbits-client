@@ -13,7 +13,7 @@ const StatsModal = ({ tasks }) => {
   return (
     <>
       <button className="stats-btn" onClick={() => setModalIsOpen(true)}>
-        Stats
+        tidbits overview
       </button>
       <Modal
         className="stats-modal"
@@ -22,7 +22,7 @@ const StatsModal = ({ tasks }) => {
         onRequestClose={() => setModalIsOpen(false)}
         ariaHideApp={false}
       >
-        <h2 className="stats-modal-heading">TaskList</h2>
+        <h2 className="stats-modal-heading">Today's overview</h2>
         <div className="stats-modal-group">
           <div className="stats-modal-progress-group">
             <StatsProgress tasks={tasks} />

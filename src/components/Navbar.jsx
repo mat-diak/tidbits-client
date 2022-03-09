@@ -3,8 +3,10 @@ import { MdKitchen } from "react-icons/md";
 import { BiCookie } from "react-icons/bi";
 import PremadesNavbar from "./PremadesNavbar";
 import AddNavbar from "./AddNavbar";
+import StatsModal from "./StatsModal";
+import "./StatsModal.css";
 
-function Navbar({ premadeTasks, onCopy, onAdd }) {
+function Navbar({ tasks, premadeTasks, onCopy, onAdd }) {
   return (
     <div className="col-7 main-navbar">
       <AddNavbar
@@ -24,6 +26,9 @@ function Navbar({ premadeTasks, onCopy, onAdd }) {
         premadeTasks={premadeTasks}
         onCopy={onCopy}
       />
+      <div className="task-list-stats-btn">
+        <StatsModal tasks={tasks} />
+      </div>
     </div>
   );
 }
