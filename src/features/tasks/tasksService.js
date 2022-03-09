@@ -23,7 +23,6 @@ const createTask = async (data) => {
       Authorization: `Bearer ${token}`,
     },
   };
-
   const req = await axios.post(API_URL, task, config);
   return req.data;
 };
