@@ -22,10 +22,11 @@ div.task-days-to-go {
 
 div.task-details {
   display: flex;
-  justify-content: flex-end;
-  max-height: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  /* max-height: 30px; */
   /* background-color: lightgreen; */
-  font-size: 10px;
+  font-size: 12px;
 }
 
 div.task-text {
@@ -39,20 +40,28 @@ div.task-text {
 div.task-counter {
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: left;
   align-items: center;
-  background-color: salmon;
+  /* background-color: red; */
   /* width: 100; */
   min-width: 50px;
   /* padding: 0.5em; */
 }
 
 div.task-reps {
-  color: #fff;
+  color: rgb(8, 3, 3);
   max-height: 100%;
+  padding-left: 10px;
 }
 
 button.delete-btn {
+  font-size: 0.73em;
   height: 20px;
-  background-color: lightseagreen;
+  align-items: center;
+  /* background-color: lightseagreen; */
+}
+
+.complete-button {
+  background-color: black;
 }
