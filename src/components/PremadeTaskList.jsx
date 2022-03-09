@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 const PremadeTaskList = ({ tasks, onCopy }) => {
   return (
-    <Card className="premade-tasks">
+    <Card className="premade-tidbits">
       <h2>Premade tidbits</h2>
       <div className="task-list">
         {tasks &&
