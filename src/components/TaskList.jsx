@@ -2,6 +2,7 @@ import Task from "./Task";
 import Card from "react-bootstrap/Card";
 import StatsModal from "./StatsModal";
 import "./TaskList.css";
+import TaskCard from "./TaskCard";
 
 const TaskList = ({ tasks, onDone, onDelete, headline }) => {
   return (
@@ -14,13 +15,15 @@ const TaskList = ({ tasks, onDone, onDelete, headline }) => {
             <StatsModal tasks={tasks} />
           </div>
           {tasks &&
-            tasks.map((task) => (
-              <Task
-                key={task._id}
-                task={task}
-                onDone={onDone}
-                onDelete={onDelete}
-              />
+            tasks.map((task, i) => (
+              <>
+                <TaskCard
+                  key={i}
+                  task={task}
+                  onDone={onDone}
+                  onDelete={onDelete}
+                />
+              </>
             ))}
         </div>
       </div>

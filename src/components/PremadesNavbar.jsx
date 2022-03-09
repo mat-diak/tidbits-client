@@ -2,7 +2,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import PremadeTaskList from "./PremadeTaskList";
-import './PremadeTask.css'
+import "./PremadeTask.css";
 
 const options = [
   {
@@ -27,7 +27,7 @@ function PremadesNavbar({ name, premadeTasks, onCopy }) {
       >
         {name}
       </Button>
-      <Offcanvas className='premade-tidbits' show={show} onHide={handleClose}>
+      <Offcanvas className="premade-tidbits" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Premade tidbits</Offcanvas.Title>
         </Offcanvas.Header>

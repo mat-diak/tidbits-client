@@ -23,8 +23,8 @@ div.task-days-to-go {
 div.task-details {
   display: flex;
   justify-content: flex-end;
-  max-height: 20px;
-  background-color: lightgreen;
+  max-height: 30px;
+  /* background-color: lightgreen; */
   font-size: 10px;
 }
 
@@ -50,11 +50,6 @@ div.task-counter {
 div.task-reps {
   color: #fff;
   max-height: 100%;
-}
-
-div.task-btn {
-  /* align-items: center;  */
-  /* margin: 0.5em; */
 }
 
 button.delete-btn {
