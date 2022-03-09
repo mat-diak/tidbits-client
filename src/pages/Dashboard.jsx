@@ -7,6 +7,7 @@ import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import axios from "axios";
 
+
 function Dashboard() {
   // For redirecting to different pages
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ function Dashboard() {
         },
       };
       const premadeTasks = await axios.get(
-        "http://localhost:5000/api/premadetasks",
+        "https://snack-server-test.herokuapp.com/api/premadetasks",
         config
       );
 
@@ -142,7 +143,6 @@ function Dashboard() {
       </div>
 
       <div className="col-4">
-       
           <TaskList
             key={"ongoingTasks"}
             tasks={ongoingTasks}
