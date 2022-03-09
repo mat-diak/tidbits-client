@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import React, { useState } from "react";
 import StatsProgress from "./StatsProgress";
 import StatsChart from "./StatsChart";
+import Button from "react-bootstrap/Button";
 import "./StatsModal.css";
 
 // Modal.setAppElement("#root");
@@ -12,9 +13,9 @@ const StatsModal = ({ tasks }) => {
 
   return (
     <>
-      <button className="stats-btn" onClick={() => setModalIsOpen(true)}>
+      <Button variant="secondary" className="stats-btn" onClick={() => setModalIsOpen(true)}>
         tidbits overview
-      </button>
+      </Button>
       <Modal
         className="stats-modal"
         overlayClassName="stats-modal-overlay"
