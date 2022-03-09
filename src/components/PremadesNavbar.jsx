@@ -24,7 +24,11 @@ function PremadesNavbar({ name, premadeTasks, onCopy, onRecipe }) {
           <Offcanvas.Title>Premade tidbits</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <PremadeTaskList tasks={premadeTasks} onCopy={onCopy} onRecipe={onRecipe}/>
+          <PremadeTaskList
+            tasks={premadeTasks}
+            onCopy={onCopy}
+            onRecipe={onRecipe}
+          />
         </Offcanvas.Body>
       </Offcanvas>
     </>

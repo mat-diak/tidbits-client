@@ -8,12 +8,10 @@ function PremadeTaskOptions({ taskOptions }) {
       <ListGroup variant="flush">
         {taskOptions &&
           taskOptions.map((option, index) => {
-            console.log(option)
+            console.log(option);
             return (
               <ListGroup.Item key={index} className="premade-option">
-                <a href={option.url}>
-                {option.name}
-                  </a>
+                <a href={option.url}>{option.name}</a>
               </ListGroup.Item>
             );
           })}
