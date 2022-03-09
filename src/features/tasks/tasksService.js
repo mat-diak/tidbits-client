@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/tasks/";
+const API_URL = "https://snack-server-test.herokuapp.com/api/tasks/";
 
 const getTasks = async (data) => {
   const { token } = data;
