@@ -118,7 +118,7 @@ function Dashboard() {
       token: user.token,
     });
 
-    setTasks([...tasks, createdTask]);
+    setTasks([createdTask, ...tasks]);
   };
 
   const onDelete = async (id) => {
