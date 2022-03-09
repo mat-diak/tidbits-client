@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react"
-import { PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer } from "recharts";
 import "./StatsChart.css"
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+// const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 export default function StatsChart({ tasks }) {
   let stats = [
@@ -38,10 +38,14 @@ export default function StatsChart({ tasks }) {
         </PieChart>
       </div>
       <div className="stats-chart-legend">
-        <h6 className="stats-chart-key">Number of tasks: </h6><h6 className="stats-chart-value">{stats[0].value}</h6>
-        <h6 className="stats-chart-key">Tasks completed: </h6><h6 className="stats-chart-value">{stats[1].value}</h6>
-        <h6 className="stats-chart-key">Tasks started: </h6><h6 className="stats-chart-value">{stats[2].value}</h6>
-        <h6 className="stats-chart-key">Incompleted tasks: </h6><h6 className="stats-chart-value">{stats[3].value}</h6>
+        <h6 className="stats-chart-key">Number of tasks: </h6>
+        <h6 className="stats-chart-value">{stats[0].value}</h6>
+        <h6 className="stats-chart-key">Tasks completed: </h6>
+        <h6 className="stats-chart-value">{stats[1].value}</h6>
+        <h6 className="stats-chart-key">Tasks started: </h6>
+        <h6 className="stats-chart-value">{stats[2].value}</h6>
+        <h6 className="stats-chart-key">Incompleted tasks: </h6>
+        <h6 className="stats-chart-value">{stats[3].value}</h6>
       </div>
     </div>
   );
