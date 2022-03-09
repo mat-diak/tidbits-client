@@ -11,21 +11,19 @@ function TaskCard({ task, onDone, onDelete }) {
     return task.targetReps === task.completedReps;
   };
 
-  console.log(taskFinished(task));
-
   return (
     <>
       {/* render task */}
       <Task key={task._id} task={task} onDone={onDone} onDelete={onDelete} />
 
       {/* render options if in ongoing tasks*/}
-      <Button
+      {!taskFinished(task) && <Button
         className="navbar-button"
         variant="outline-info"
         onClick={() => toggleOptions(!showOptions)}
       >
         <MdOutlineExpandMore />
-      </Button>
+      </Button>}
       {showOptions && <PremadeTaskOptions />}
     </>
   );
