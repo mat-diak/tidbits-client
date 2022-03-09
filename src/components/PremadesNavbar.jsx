@@ -16,7 +16,7 @@ function PremadesNavbar({ name, premadeTasks, onCopy }) {
         variant="secondary"
         onClick={toggleShow}
         className="me-2 navbar-button"
-        style={{borderRadius: "1em", width: "110px"}}
+        style={{borderRadius: "1em", width: "180px"}}
       >
         {name}
       </Button>
