@@ -1,59 +1,53 @@
 import React from "react";
 import { useState } from "react"
 import { PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer } from "recharts";
-
-const data = [
-  // { name: "Group A", value: 400 },
-  // { name: "Group B", value: 300 },
-  // { name: "Group C", value: 300 },
-  // { name: "Group D", value: 200 },
-  // { name: "Group E", value: 278 },
-  // { name: "Group F", value: 189 }
-];
+import "./StatsChart.css"
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-
 export default function StatsChart({ tasks }) {
-  let data = [];
-  let numberOfTasks = 0;
-
-
+  let stats = [
+    { name: "Number of tasks", value: 0 }, 
+    { name: "Tasks completed", value: 0 },
+    { name: "Tasks started", value: 0 },
+    { name: "Incomplete tasks", value: 0 },
+  ];
 
   return (
     <div className="chart-section">
-      {tasks.forEach((task) => console.log(task.text))}
-      
-      {/* {numberOfTasks = 0} */}
-      {tasks && tasks.map((task, i) => {
-          numberOfTasks += 1;
-          data.push({name: `Task ${i+1}`, value: ((task.completedReps / task.targetReps) * 100)})
+      {tasks.forEach((task) => {
+        stats[0].value += 1;
+        if (task.completedReps === task.targetReps) { stats[1].value += 1 };
+        if (task.completedReps !== 0 && task.completedReps < task.targetReps) { stats[2].value += 1 };
+        if (task.completedReps < task.targetReps) { stats[3].value += 1 };
       })}
-      {console.log(Pie.inspect)}
-      <PieChart width={400} height={400}>
-        <Pie
-          dataKey="value"
-          isAnimationActive={true}
-          data={data}
-          cx={200}
-          cy={200}
-          outerRadius={80}
-          fill={`${COLORS[Math.floor((Math.random() * COLORS.length))]}`}
-          label
-        />
-        <Tooltip />
-      </PieChart>
+
+      <div className="stats-pie-chart">
+        <PieChart width={400} height={400}>
+          <Pie
+            dataKey="value"
+            isAnimationActive={true}
+            data={stats}
+            cx={200}
+            cy={200}
+            outerRadius={80}
+            fill="#FF8042"
+            label
+          />
+          <Tooltip />
+        </PieChart>
+      </div>
+      <div className="stats-chart-legend">
+        <h6 className="stats-chart-key">Number of tasks: </h6><h6 className="stats-chart-value">{stats[0].value}</h6>
+        <h6 className="stats-chart-key">Tasks completed: </h6><h6 className="stats-chart-value">{stats[1].value}</h6>
+        <h6 className="stats-chart-key">Tasks started: </h6><h6 className="stats-chart-value">{stats[2].value}</h6>
+        <h6 className="stats-chart-key">Incompleted tasks: </h6><h6 className="stats-chart-value">{stats[3].value}</h6>
+      </div>
     </div>
   );
 }
 
+// default colour
 // fill="#8884d8"
-
-{/* <div key={task._id} className="progress-task-card">
-<div className="progress-bar-task">
-  <div className="progress-task-text">{task.text}</div>
-  <div className="progress-task-reps">
-    {task.completedReps}/{task.targetReps}
-  </div>
-</div>
-</div> */}
+// random colour
+// fill={`${COLORS[Math.floor((Math.random() * COLORS.length))]}`}
