@@ -1,0 +1,18 @@
+.main-navbar {
+  /* background-color: red; */
+  margin: 0;
+  padding-left: 10px;
+}
+
+.icons {
+  /* background-color: blue; */
+}
+
+.navbar-button {
+  margin: 0.2em auto;
+  width: 100%;
+}
+
+.premade-tidbits {
+  background-color: rgb(245, 247, 255);
+}
