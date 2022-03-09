@@ -7,7 +7,7 @@ import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Login";
 import { Container } from "react-bootstrap";
 import Spinner from "../components/Spinner";
-import './Hello.css'
+import "./Hello.css";
 
 function Hello() {
   const [registerData, setRegisterData] = useState({

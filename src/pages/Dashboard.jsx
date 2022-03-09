@@ -1,4 +1,3 @@
-// import AddTask from "../components/AddTask";
 import Navbar from "../components/Navbar";
 import TaskList from "../components/TaskList";
 import PremadeTaskList from "../components/PremadeTaskList";
@@ -7,9 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
-import Button from "react-bootstrap/Button";
 import axios from "axios";
-import { Container } from "react-bootstrap";
 
 function Dashboard() {
   // For redirecting to different pages

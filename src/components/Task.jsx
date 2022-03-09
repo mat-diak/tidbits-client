@@ -7,10 +7,22 @@ import "./Task.css";
 const Task = ({ task, onDone, onDelete }) => {
   return (
     <Card key={task._id} className="task-card">
-      <DeleteTaskButton task={task} onDelete={onDelete} />
-      <TaskDaysToGo task={task} />
-      <div className="task-text">{task.text}</div>
-      <TaskReps task={task} onDone={onDone} />
+      <div className="row">
+        <div className="col">
+          <div className="row task-details">
+            <div className="col-4 task-days-to-go">
+              <TaskDaysToGo task={task} />
+            </div>
+            <div className="col-1 task-delete-btn">
+              <DeleteTaskButton task={task} onDelete={onDelete} />
+            </div>
+          </div>
+          <div className="row task-text">{task.text}</div>
+        </div>
+        <div className="col-2">
+          <TaskReps className="col-3" task={task} onDone={onDone} />
+        </div>
+      </div>
     </Card>
   );
 };
