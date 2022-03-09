@@ -3,7 +3,7 @@ import StatsModal from "./StatsModal";
 import "./TaskList.css";
 import TaskCard from "./TaskCard";
 
-const TaskList = ({ tasks, onDone, onDelete, headline }) => {
+const TaskList = ({ tasks, onDone, onDelete, headline, message }) => {
   return (
     <Card className="task-list-card">
       <div className="task-list-header">
@@ -12,18 +12,21 @@ const TaskList = ({ tasks, onDone, onDelete, headline }) => {
           <h2>{headline}</h2>
           <div className="task-list-stats-btn">
             <StatsModal tasks={tasks} />
-          </div>
-          {tasks &&
-            tasks.map((task, i) => (
-              <TaskCard
-                key={task._id}
-                task={task}
-                onDone={onDone}
-                onDelete={onDelete}
-              />
-            ))}
         </div>
-      </div>
+          </div>
+        </div>
+        {tasks.length > 0 ? (
+          tasks.map((task, i) => (
+            <TaskCard
+              key={task._id}
+              task={task}
+              onDone={onDone}
+              onDelete={onDelete}
+            />
+          ))
+        ) : (
+          <div className="task-message">{message}</div>
+        )}
     </Card>
   );
 };

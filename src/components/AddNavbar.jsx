@@ -20,7 +20,7 @@ function AddNavbar({ name, onAdd }) {
       </Button>
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Premade tidbits</Offcanvas.Title>
+          <Offcanvas.Title>Make a tidbit</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <AddTask onAdd={onAdd} />
