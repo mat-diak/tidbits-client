@@ -91,7 +91,6 @@ function Dashboard() {
 
     // combine premade task with task owenr details
     const task = { ...consideredTask, ...taskOwner };
-    // console.log("task...", task);
     // add task to the task list
     const createdTask = await restApi.createTask({
       task,
@@ -100,8 +99,6 @@ function Dashboard() {
 
     // set task using created tasks
     setTasks([...tasks, createdTask]);
-    // console.log("tasks...", tasks);
-    // console.log("createdTask...", createdTask);
   };
 
   const addTask = async (text, reps, endInDays) => {

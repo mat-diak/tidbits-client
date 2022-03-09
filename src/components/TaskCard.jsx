@@ -15,7 +15,6 @@ function TaskCard({ task, onDone, onDelete }) {
     <>
       {/* render task */}
       <Task key={task._id} task={task} onDone={onDone} onDelete={onDelete} />
-      {/* {console.log("task...", task)} */}
       {/* render options if in ongoing tasks*/}
       {!taskFinished(task) && task.options.length > 0 &&(
         <Button
