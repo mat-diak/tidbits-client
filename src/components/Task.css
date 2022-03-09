@@ -1,35 +1,67 @@
 .task-card.card {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 1.5em auto;
+  justify-content: space-between; */
+  margin: 0.2em auto;
   padding: 0;
   width: 100%;
   max-width: 700px;
   border: none;
   border-radius: 1em;
   overflow: hidden;
-  box-shadow: 0 0.5em 1em 0.4em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5em 1em 0.4em rgba(0, 0, 0, 0.1);
+  /* min-height: px; */
+  max-height: 200px;
+}
+
+div.task-days-to-go {
+  font-size: 13px;
+  max-height: 20px;
+  /* background-color: grey; */
+}
+
+div.task-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* max-height: 30px; */
+  /* background-color: lightgreen; */
+  font-size: 12px;
 }
 
 div.task-text {
-  margin: 1em;
-  display: flex;
-  align-items: center;
+  /* background-color: lightgreen; */
+  margin-left: 8px;
+  /* margin: 1em; */
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 div.task-counter {
   margin: 0;
-  background-color: #afafaf;
-  padding: 0.5em;
-  /* border-radius: 1em; */
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  /* background-color: red; */
+  /* width: 100; */
+  min-width: 50px;
+  /* padding: 0.5em; */
 }
 
 div.task-reps {
-  color: #fff;
+  color: rgb(8, 3, 3);
+  max-height: 100%;
+  padding-left: 10px;
 }
 
-div.task-btn {
+button.delete-btn {
+  font-size: 0.73em;
+  height: 20px;
   align-items: center;
-  margin: 0.5em;
+  /* background-color: lightseagreen; */
+}
+
+.complete-button {
+  background-color: black;
 }

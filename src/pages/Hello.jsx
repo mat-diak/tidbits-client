@@ -7,6 +7,7 @@ import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Login";
 import { Container } from "react-bootstrap";
 import Spinner from "../components/Spinner";
+import "./Hello.css";
 
 function Hello() {
   const [registerData, setRegisterData] = useState({
@@ -91,9 +92,9 @@ function Hello() {
 
   return (
     <>
-      <Container>
-        <div className="row">
-          <div className="col-6">
+      <Container className="login-container">
+        <div className="row d-flex justify-content-around">
+          <div className="col-3">
             <Login
               onSubmit={onLoginSubmit}
               onChange={onLoginChange}
@@ -101,7 +102,7 @@ function Hello() {
             />
           </div>
 
-          <div className="col-6">
+          <div className="col-3">
             <Register
               onSubmit={onRegisterSubmit}
               onChange={onRegisterChange}

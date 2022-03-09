@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { toast } from "react-toastify";
-import "./AddTask.css"
+import "./AddTask.css";
 
 const AddTask = ({ onAdd }) => {
   const [inputText, setinputText] = useState("");
