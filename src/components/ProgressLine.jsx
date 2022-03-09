@@ -24,7 +24,7 @@ const ProgressLine = ({
   useEffect(() => {
     // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
     // You need to wrap it to trigger the animation
-    requestAnimationFrame(() => {
+    const x = requestAnimationFrame(() => {
       // Set a new array of percentage widths based on the props
       setWidths(
         visualParts.map((item) => {
@@ -34,14 +34,7 @@ const ProgressLine = ({
     });
 
     return () => {
-      cancelAnimationFrame(() => {
-        // Set a new array of percentage widths based on the props
-        setWidths(
-          visualParts.map((item) => {
-            return item.percentage;
-          })
-        );
-      });
+      cancelAnimationFrame(x);
     }
 
   }, [visualParts]);
