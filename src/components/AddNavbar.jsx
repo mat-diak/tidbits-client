@@ -3,14 +3,6 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import AddTask from "./AddTask";
 
-const options = [
-  {
-    name: "Enable both scrolling & backdrop",
-    scroll: true,
-    backdrop: true,
-  },
-];
-
 function AddNavbar({ name, onAdd }) {
   const [show, setShow] = useState(false);
 
