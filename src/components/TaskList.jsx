@@ -12,21 +12,21 @@ const TaskList = ({ tasks, onDone, onDelete, headline, message }) => {
           <h2>{headline}</h2>
           <div className="task-list-stats-btn">
             <StatsModal tasks={tasks} />
-        </div>
           </div>
         </div>
-        {tasks.length > 0 ? (
-          tasks.map((task, i) => (
-            <TaskCard
-              key={task._id}
-              task={task}
-              onDone={onDone}
-              onDelete={onDelete}
-            />
-          ))
-        ) : (
-          <div className="task-message">{message}</div>
-        )}
+      </div>
+      {tasks.length > 0 ? (
+        tasks.map((task, i) => (
+          <TaskCard
+            key={task._id}
+            task={task}
+            onDone={onDone}
+            onDelete={onDelete}
+          />
+        ))
+      ) : (
+        <div className="task-message">{message}</div>
+      )}
     </Card>
   );
 };

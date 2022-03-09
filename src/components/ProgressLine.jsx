@@ -11,7 +11,6 @@ const ProgressLine = ({
     },
   ],
 }) => {
-
   const [widths, setWidths] = useState(
     visualParts.map(() => {
       return 0;
@@ -19,7 +18,6 @@ const ProgressLine = ({
   );
 
   useEffect(() => {
-
     const x = requestAnimationFrame(() => {
       setWidths(
         visualParts.map((item) => {
@@ -30,8 +28,7 @@ const ProgressLine = ({
 
     return () => {
       cancelAnimationFrame(x);
-    }
-
+    };
   }, [visualParts]);
 
   return (

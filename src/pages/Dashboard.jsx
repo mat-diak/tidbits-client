@@ -134,24 +134,43 @@ function Dashboard() {
     (task) => task.completedReps === task.targetReps
   );
 
+  const onRecipe = async (task) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    };
+
+    const recipePremade = await axios.post(
+      "http://localhost:5000/api/recipes",
+      task,
+      config
+    );
+
+    setTasks([recipePremade.data, ...tasks]);
+  };
+
   return (
     <div className="row d-flex justify-content-between">
       {/* -------- */}
       <div className="col-3">
-        <Navbar premadeTasks={premadeTasks} onCopy={onCopy} onAdd={addTask} />
+        <Navbar
+          premadeTasks={premadeTasks}
+          onCopy={onCopy}
+          onAdd={addTask}
+          onRecipe={onRecipe}
+        />
       </div>
 
       <div className="col-4">
-       
-          <TaskList
-            key={"ongoingTasks"}
-            tasks={ongoingTasks}
-            onDone={onDone}
-            onDelete={onDelete}
-            headline={"Tidbits for today"}
-            message={'No tidbits left for today'}
-          />
-       
+        <TaskList
+          key={"ongoingTasks"}
+          tasks={ongoingTasks}
+          onDone={onDone}
+          onDelete={onDelete}
+          headline={"Tidbits for today"}
+          message={"No tidbits left for today"}
+        />
       </div>
       <div className="col-4">
         <TaskList

@@ -1,12 +1,12 @@
 import React from "react";
 import { PieChart, Pie, Tooltip } from "recharts";
-import "./StatsChart.css"
+import "./StatsChart.css";
 
 // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 export default function StatsChart({ tasks }) {
   let stats = [
-    { name: "Number of tasks", value: 0 }, 
+    { name: "Number of tasks", value: 0 },
     { name: "Tasks completed", value: 0 },
     { name: "Tasks started", value: 0 },
     { name: "Incomplete tasks", value: 0 },
@@ -16,9 +16,15 @@ export default function StatsChart({ tasks }) {
     <div className="chart-section">
       {tasks.forEach((task) => {
         stats[0].value += 1;
-        if (task.completedReps === task.targetReps) { stats[1].value += 1 };
-        if (task.completedReps !== 0 && task.completedReps < task.targetReps) { stats[2].value += 1 };
-        if (task.completedReps < task.targetReps) { stats[3].value += 1 };
+        if (task.completedReps === task.targetReps) {
+          stats[1].value += 1;
+        }
+        if (task.completedReps !== 0 && task.completedReps < task.targetReps) {
+          stats[2].value += 1;
+        }
+        if (task.completedReps < task.targetReps) {
+          stats[3].value += 1;
+        }
       })}
 
       <div className="stats-pie-chart">
