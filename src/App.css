@@ -17,3 +17,8 @@
 .navbar-button .me-2 {
   background-color: teal;
 }
+
+a {
+  color: teal;
+  text-decoration: none;
+}
