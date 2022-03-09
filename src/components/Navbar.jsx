@@ -6,7 +6,9 @@ import AddNavbar from "./AddNavbar";
 import StatsModal from "./StatsModal";
 import "./StatsModal.css";
 
-function Navbar({ tasks, premadeTasks, onCopy, onAdd }) {
+
+function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
+
   return (
     <div className="col-7 main-navbar">
       <AddNavbar
@@ -25,6 +27,7 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd }) {
         }
         premadeTasks={premadeTasks}
         onCopy={onCopy}
+        onRecipe={onRecipe}
       />
       <div className="task-list-stats-btn">
         <StatsModal tasks={tasks} />
