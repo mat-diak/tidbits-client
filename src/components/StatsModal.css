@@ -43,4 +43,24 @@
 
 .stats-modal-group {
   display: flex;
+  justify-content: space-between;
+}
+
+.stats-modal-heading {
+  margin-bottom: 1em;
+}
+
+.stats-modal-progress-group {
+  width: 55%;
+}
+
+.stats-modal-chart-group {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #eeeeee;
+  overflow: hidden;
+  height: 100%;
+  width: 45%;
+  border-radius: 1em;
 }
