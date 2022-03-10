@@ -107,7 +107,6 @@ function Hello() {
 	   })
     })
   }
-
   return (
     <>
   <section className="forms-section">
@@ -128,18 +127,6 @@ function Hello() {
             />
           </div>
         </div>
-        {/* <fieldset>
-          <legend>Please, enter your email and password for login.</legend>
-          <div className="input-block">
-            <label htmlFor="login-email">E-mail</label>
-            <input id="login-email" type="email" required />
-          </div>
-          <div className="input-block">
-            <label htmlFor="login-password">Password</label>
-            <input id="login-password" type="password" required />
-          </div>
-        </fieldset> */}
-        {/* <button type="submit" className="btn-login">Login</button> */}
       </div>
     </div>
     <div className="form-wrapper">
@@ -155,46 +142,10 @@ function Hello() {
               registerData={registerData}
             />
         </div>
-
-        {/* <fieldset>
-          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
-          <div className="input-block">
-            <label htmlFor="signup-email">E-mail</label>
-            <input id="signup-email" type="email" required />
-          </div>
-          <div className="input-block">
-            <label htmlFor="signup-password">Password</label>
-            <input id="signup-password" type="password" required />
-          </div>
-          <div className="input-block">
-            <label htmlFor="signup-password-confirm">Confirm password</label>
-            <input id="signup-password-confirm" type="password" required />
-          </div>
-        </fieldset> */}
-        {/* <button type="submit" className="btn-signup">Continue</button> */}
       </form>
     </div>
   </div>
 </section>
-      {/* <Container classNameName="login-container">
-        <div classNameName="row d-flex justify-content-around">
-          <div classNameName="col-3">
-            <Login
-              onSubmit={onLoginSubmit}
-              onChange={onLoginChange}
-              loginData={loginData}
-            />
-          </div>
-
-          <div classNameName="col-3">
-            <Register
-              onSubmit={onRegisterSubmit}
-              onChange={onRegisterChange}
-              registerData={registerData}
-            />
-          </div>
-        </div>
-      </Container> */}
     </>
   );
 }
