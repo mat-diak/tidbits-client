@@ -12,7 +12,7 @@ body {
   margin: 0;
   font-family: Roboto, -apple-system, "Helvetica Neue", "Segoe UI", Arial,
     sans-serif;
-  background: #3b4465;
+  /* background: #3b4465; */
 }
 
 .forms-section {
@@ -20,7 +20,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #7d8ec5;
+  /* background-color: #7d8ec5; */
+  background-color: rgb(80, 80, 80);
 }
 
 .section-title {

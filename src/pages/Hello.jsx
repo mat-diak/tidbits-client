@@ -118,8 +118,17 @@ function Hello() {
         Login
         <span className="underline"></span>
       </button>
-      <form className="form form-login">
-        <fieldset>
+      <div className="form form-login">
+      <div classNameName="row d-flex justify-content-around">
+          <div classNameName="col-3">
+            <Login
+              onSubmit={onLoginSubmit}
+              onChange={onLoginChange}
+              loginData={loginData}
+            />
+          </div>
+        </div>
+        {/* <fieldset>
           <legend>Please, enter your email and password for login.</legend>
           <div className="input-block">
             <label htmlFor="login-email">E-mail</label>
@@ -129,9 +138,9 @@ function Hello() {
             <label htmlFor="login-password">Password</label>
             <input id="login-password" type="password" required />
           </div>
-        </fieldset>
-        <button type="submit" className="btn-login">Login</button>
-      </form>
+        </fieldset> */}
+        {/* <button type="submit" className="btn-login">Login</button> */}
+      </div>
     </div>
     <div className="form-wrapper">
       <button type="button" className="switcher switcher-signup" onClick={handleSwitch}>
@@ -139,7 +148,15 @@ function Hello() {
         <span className="underline"></span>
       </button>
       <form className="form form-signup">
-        <fieldset>
+        <div classNameName="col-3">
+            <Register
+              onSubmit={onRegisterSubmit}
+              onChange={onRegisterChange}
+              registerData={registerData}
+            />
+        </div>
+
+        {/* <fieldset>
           <legend>Please, enter your email, password and password confirmation for sign up.</legend>
           <div className="input-block">
             <label htmlFor="signup-email">E-mail</label>
@@ -153,8 +170,8 @@ function Hello() {
             <label htmlFor="signup-password-confirm">Confirm password</label>
             <input id="signup-password-confirm" type="password" required />
           </div>
-        </fieldset>
-        <button type="submit" className="btn-signup">Continue</button>
+        </fieldset> */}
+        {/* <button type="submit" className="btn-signup">Continue</button> */}
       </form>
     </div>
   </div>
