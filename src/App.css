@@ -1,10 +1,19 @@
 * {
   text-align: center;
   box-sizing: border-box;
+  color: rgb(11, 51, 66);
+}
+
+.nav-link {
+  color: #364d4d;
+}
+
+.nav-link:hover {
+  color: #ff7843a2;
 }
 
 #root {
-  background-color: rgba(255, 255, 255, 0.123);
+  background-color: rgba(0, 128, 128, 0.123);
 }
 
 .tasks-page-body {
@@ -25,11 +34,11 @@ a {
 
 .btn-secondary {
   text-align: left;
-  background-color: #6c757d;
+  background-color: #5d8181;
 }
 
 .btn-secondary:hover {
-  background-color: #ff7843;
+  background-color: #ff7843a2;
   border-color: #ff7843;
 }
 
@@ -37,4 +46,8 @@ header {
   margin-left: 50px;
   width: 100%;
   margin-right: 50px;
+}
+
+.navbar-light .navbar-brand {
+  color: rgb(11 51 66);
 }

@@ -22,12 +22,16 @@
 }
 
 .add-task-button {
-  background-color: rgb(255, 120, 67);
+  background-color: #ff7843a2;
   color: white;
   border: none;
   border-radius: 2em;
   padding: 0.5em 1em;
   margin: 10px;
+}
+.add-task-button:hover {
+  background-color: #ff7843d3;
+  color: white;
 }
 
 .add-task-button:hover {
