@@ -22,3 +22,19 @@ a {
   color: teal;
   text-decoration: none;
 }
+
+.btn-secondary {
+  text-align: left;
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #ff7843;
+  border-color: #ff7843;
+}
+
+header {
+  margin-left: 50px;
+  width: 100%;
+  margin-right: 50px;
+}

@@ -19,7 +19,7 @@ function Header() {
 
   return (
     <header>
-      <Navbar>
+      <Navbar> 
         <Container>
           <Navbar.Brand>Tidbits</Navbar.Brand>
           <Navbar.Collapse className="justify-content-end">

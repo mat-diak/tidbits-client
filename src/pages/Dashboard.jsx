@@ -98,7 +98,7 @@ function Dashboard() {
     });
 
     // set task using created tasks
-    setTasks([...tasks, createdTask]);
+    setTasks([createdTask, ...tasks]);
   };
 
   const addTask = async (text, reps, endInDays) => {
@@ -153,7 +153,7 @@ function Dashboard() {
   return (
     <div className="row d-flex justify-content-between">
       {/* -------- */}
-      <div className="col-3">
+      <div className="col-2">
         <Navbar
           tasks={tasks}
           premadeTasks={premadeTasks}
@@ -163,7 +163,7 @@ function Dashboard() {
         />
       </div>
 
-      <div className="col-4">
+      <div className="col-5">
         <TaskList
           key={"ongoingTasks"}
           tasks={ongoingTasks}
@@ -173,7 +173,7 @@ function Dashboard() {
           message={"No tidbits left for today"}
         />
       </div>
-      <div className="col-4">
+      <div className="col-5">
         <TaskList
           key={"completedTasks"}
           tasks={completedTasks}
