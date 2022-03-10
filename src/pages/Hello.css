@@ -10,8 +10,8 @@
 
 body {
   margin: 0;
-  font-family: Roboto, -apple-system, "Helvetica Neue", "Segoe UI", Arial,
-    sans-serif;
+  /* font-family: Roboto, -apple-system, "Helvetica Neue", "Segoe UI", Arial,
+    sans-serif; */
   /* background: #3b4465; */
 }
 
@@ -21,13 +21,14 @@ body {
   justify-content: center;
   align-items: center;
   /* background-color: #7d8ec5; */
-  background-color: rgb(80, 80, 80);
+  /* background-color: rgba(0, 128, 128, 0.486); */
 }
 
 .section-title {
+  margin-top: 50px;
   font-size: 32px;
   letter-spacing: 1px;
-  color: #fff;
+  color: rgb(214, 31, 31);
 }
 
 .forms {
@@ -70,7 +71,7 @@ body {
   margin-left: auto;
   padding: 0;
   text-transform: uppercase;
-  font-family: inherit;
+  /* font-family: inherit; */
   font-size: 16px;
   letter-spacing: 0.5px;
   color: #999;
@@ -144,14 +145,14 @@ body {
 
 @keyframes showLogin {
   0% {
-    background: #d7e7f1;
+    background: #5d8eac;
     transform: translate(40%, 10px);
   }
   50% {
     transform: translate(0, 0);
   }
   100% {
-    background-color: #fff;
+    background-color: rgb(212, 210, 230);
     transform: translate(35%, -20px);
   }
 }
@@ -165,7 +166,8 @@ body {
     transform: translate(0, 0);
   }
   100% {
-    background: #d7e7f1;
+    /* HERE ---------- */
+    background: #99808059;
     transform: translate(40%, 10px);
   }
 }
@@ -180,7 +182,7 @@ body {
 
 @keyframes showSignup {
   0% {
-    background: #d7e7f1;
+    background: #ffffff;
     transform: translate(-40%, 10px) scaleY(0.8);
   }
   50% {
@@ -201,7 +203,7 @@ body {
     transform: translate(0, 0) scaleY(0.8);
   }
   100% {
-    background: #d7e7f1;
+    background: #70706f50;
     transform: translate(-40%, 10px) scaleY(0.8);
   }
 }
@@ -214,6 +216,7 @@ body {
   border: 0;
   transition: all 0.3s ease-out;
 }
+
 
 .form-login fieldset {
   transform: translateX(-50%);
@@ -254,7 +257,7 @@ body {
   padding-left: 15px;
   font-size: 16px;
   line-height: 40px;
-  color: #3b4465;
+  color: #333749;
   background: #eef9fe;
   border: 1px solid #cddbef;
   border-radius: 2px;

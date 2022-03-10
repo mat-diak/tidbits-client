@@ -152,7 +152,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="row d-flex justify-content-between">
+    <div className="container row d-flex justify-content-between">
       {/* -------- */}
       <div className="col-2">
         <Navbar

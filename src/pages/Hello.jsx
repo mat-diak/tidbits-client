@@ -110,7 +110,7 @@ function Hello() {
   return (
     <>
   <section className="forms-section">
-  <h1 className="section-title">Welcome</h1>
+  <h1 className="section-title">Hello...</h1>
   <div className="forms">
     <div className="form-wrapper is-active">
       <button type="button" className="switcher switcher-login" onClick={handleSwitch}>

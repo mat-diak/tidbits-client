@@ -25,6 +25,12 @@ a {
 
 .btn-secondary {
   text-align: left;
+  background-color: #3186d1c7;
+  border-color: #3186d196;
+}
+
+.btn-hello {
+  text-align: center;
   background-color: #6c757d;
 }
 

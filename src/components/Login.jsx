@@ -40,7 +40,7 @@ function Login({ onChange, onSubmit, loginData }) {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
-        <Button variant="secondary" type="submit">
+        <Button className="btn-hello" type="submit">
           Log in
         </Button>
       </Form>

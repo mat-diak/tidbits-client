@@ -61,7 +61,7 @@ function Register({ onChange, onSubmit, registerData }) {
             onChange={onChange}
           />
         </Form.Group>
-        <Button variant="secondary" type="submit">
+        <Button variant="btn-hello" type="submit">
           Register
         </Button>
       </Form>
