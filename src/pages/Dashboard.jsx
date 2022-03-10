@@ -46,7 +46,7 @@ function Dashboard() {
         },
       };
       const premadeTasks = await axios.get(
-        "http://localhost:5000/api/premadetasks",
+        "https://snack-server-test.herokuapp.com/api/premadetasks",
         config
       );
 
@@ -142,7 +142,7 @@ function Dashboard() {
     };
 
     const recipePremade = await axios.post(
-      "http://localhost:5000/api/recipes",
+      "https://snack-server-test.herokuapp.com/api/recipes",
       task,
       config
     );
