@@ -27,6 +27,7 @@
   border: none;
   border-radius: 2em;
   padding: 0.5em 1em;
+  margin: 10px;
 }
 
 .add-task-button:hover {
