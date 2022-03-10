@@ -2,14 +2,14 @@
   /* display: flex;
   flex-direction: row;
   justify-content: space-between; */
-  margin: 0.2em auto;
+  margin: 0.8em auto;
   padding: 0;
   width: 100%;
   max-width: 700px;
   border: none;
   border-radius: 1em;
   overflow: hidden;
-  box-shadow: 0 0.5em 1em 0.4em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5em 1em 0.4em rgba(0, 0, 0, 0.103);
   /* min-height: px; */
   /* max-height: 200px; */
 }
@@ -27,6 +27,10 @@ div.task-details {
   /* max-height: 30px; */
   /* background-color: lightgreen; */
   /* font-size: 12px; */
+}
+
+.card-header {
+  background-color: rgba(218, 161, 56, 0.671);
 }
 
 div.task-text {
