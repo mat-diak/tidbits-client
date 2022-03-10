@@ -71,7 +71,7 @@ const AddTask = ({ onAdd }) => {
             className="add-task-button"
             onClick={handleSubmit}
           >
-            Submit
+            Add
           </button>
         </Form.Group>
       </Form>

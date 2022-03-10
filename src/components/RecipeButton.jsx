@@ -1,6 +1,6 @@
 const RecipeButton = ({ task, onRecipe }) => {
   return (
-    <button className="btn btn-outline-info" onClick={() => onRecipe(task)}>
+    <button className="add-task-button" onClick={() => onRecipe(task)}>
       Add
     </button>
   );
