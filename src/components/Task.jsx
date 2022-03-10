@@ -4,8 +4,18 @@ import DeleteTaskButton from "./DeleteTaskButton";
 import Card from "react-bootstrap/Card";
 import Nav from "react-bootstrap/Nav";
 import "./Task.css";
+import PremadeTaskOptions from "./PremadeTaskOptions";
+import Button from "react-bootstrap/Button";
+import { MdOutlineExpandMore } from "react-icons/md";
+import { useState } from "react";
 
 const Task = ({ task, onDone, onDelete }) => {
+  const [showOptions, toggleOptions] = useState(false);
+
+  const taskFinished = (task) => {
+    return task.targetReps === task.completedReps;
+  };
+  
   return (
     <Card className="task-card" key={task._id}>
       <Card.Header>
@@ -23,6 +33,18 @@ const Task = ({ task, onDone, onDelete }) => {
       </Card.Header>
       <Card.Body>
         <Card.Text>{task.text}</Card.Text>
+        {task.options &&
+        !taskFinished(task) &&
+        Object.keys(task.options).length > 0 && (
+          <Button
+            className="options-button"
+            variant="outline-danger"
+            onClick={() => toggleOptions(!showOptions)}
+          >
+            <MdOutlineExpandMore />
+          </Button>
+        )}
+      {showOptions && <PremadeTaskOptions taskOptions={task.options} />}
       </Card.Body>
     </Card>
   );
