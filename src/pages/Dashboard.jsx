@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import axios from "axios";
+import './Dashboard.css'
 
 function Dashboard() {
   // For redirecting to different pages
@@ -46,7 +47,7 @@ function Dashboard() {
         },
       };
       const premadeTasks = await axios.get(
-        "http://localhost:5000/api/premadetasks",
+        "https://snack-server-test.herokuapp.com/api/premadetasks",
         config
       );
 
@@ -98,7 +99,7 @@ function Dashboard() {
     });
 
     // set task using created tasks
-    setTasks([...tasks, createdTask]);
+    setTasks([createdTask, ...tasks]);
   };
 
   const addTask = async (text, reps, endInDays) => {
@@ -142,7 +143,7 @@ function Dashboard() {
     };
 
     const recipePremade = await axios.post(
-      "http://localhost:5000/api/recipes",
+      "https://snack-server-test.herokuapp.com/api/recipes",
       task,
       config
     );
@@ -153,7 +154,7 @@ function Dashboard() {
   return (
     <div className="row d-flex justify-content-between">
       {/* -------- */}
-      <div className="col-3">
+      <div className="col-2">
         <Navbar
           tasks={tasks}
           premadeTasks={premadeTasks}
@@ -163,7 +164,7 @@ function Dashboard() {
         />
       </div>
 
-      <div className="col-4">
+      <div className="col-5">
         <TaskList
           key={"ongoingTasks"}
           tasks={ongoingTasks}
@@ -173,7 +174,7 @@ function Dashboard() {
           message={"No tidbits left for today"}
         />
       </div>
-      <div className="col-4">
+      <div className="col-5">
         <TaskList
           key={"completedTasks"}
           tasks={completedTasks}

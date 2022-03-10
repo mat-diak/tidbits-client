@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   font-weight: bolder;
-  color: white;
+  color: teal;
   height: 2em;
   width: 2em;
   border-radius: 1em;
-  background-color: teal;
+  background-color: rgb(213, 252, 252);
   border: none;
 }
 

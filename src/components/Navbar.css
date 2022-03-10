@@ -1,18 +1,23 @@
 .main-navbar {
   /* background-color: red; */
-  margin: 0;
+  margin-top: 75px;
   padding-left: 10px;
 }
 
-.icons {
-  /* background-color: blue; */
-}
+/* .icons {
+  background-color: blue;
+} */
 
 .navbar-button {
   margin: 0.3em auto;
   width: 100%;
 }
 
-.premade-tidbits {
+/* .premade-tidbits {
   background-color: rgb(212, 173, 100);
+  
+} */
+
+.card {
+  border: 0px;
 }

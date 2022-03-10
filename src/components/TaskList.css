@@ -7,7 +7,7 @@
   width: 95%;
   max-width: 850px;
   padding: 1em;
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
   border-radius: 1em;
   border: none;
 }
@@ -32,4 +32,8 @@
 
 .task-message {
   padding: 5rem;
+}
+
+h2 {
+  margin-bottom: 25px;
 }

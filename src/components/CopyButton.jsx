@@ -1,7 +1,7 @@
 const CopyButton = ({ taskId, onCopy }) => {
   return (
-    <button className="btn btn-outline-info" onClick={() => onCopy(taskId)}>
-      Add to my tidbits
+    <button className="add-task-button" onClick={() => onCopy(taskId)}>
+      Add
     </button>
   );
 };
