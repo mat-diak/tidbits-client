@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import axios from "axios";
+import './Dashboard.css'
 
 function Dashboard() {
   // For redirecting to different pages
@@ -151,7 +152,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="row d-flex justify-content-between">
+    <div className="container row d-flex justify-content-between">
       {/* -------- */}
       <div className="col-2">
         <Navbar
