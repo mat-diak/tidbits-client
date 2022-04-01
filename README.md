@@ -1,6 +1,6 @@
 ## Description
 
-This is the client-side of snacks-app. It works alongside a rest API - https://snacks-server.herokuapp.com/api/tasks
+This is the client-side of snacks-app. It works alongside a rest API - http://snack-server-test.herokuapp.com/
 
 ## Features
 
@@ -20,7 +20,7 @@ This is the client-side of snacks-app. It works alongside a rest API - https://s
 
 1. Have the server-side running in the background.
 
-_You can find more info on how to set up the server side here: https://github.com/mikitaro-27/snacks-server_
+_You can find more info on how to set up the server side here: https://github.com/mat-diak/tidbits-server
 
 2. In command line:
 
