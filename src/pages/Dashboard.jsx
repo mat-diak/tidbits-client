@@ -7,32 +7,26 @@ import restApi from "../features/tasks/tasksService";
 import { toast } from "react-toastify";
 import axios from "axios";
 import './Dashboard.css'
+import useAuth from '../hooks/useAuth'
 
 function Dashboard() {
-  // For redirecting to different pages
-  const navigate = useNavigate();
+  // Redirects to hello page if no user
+  useAuth()
 
   // Find the current user state; i.e. is someone logged in?
   const { user } = useSelector((state) => state.auth);
 
-  // redirects to Hello page if not logged in
-  useEffect(() => {
-    if (!user) {
-      navigate("/hello");
-    }
-  }, [user, navigate]);
-
   const [tasks, setTasks] = useState([]);
   const [premadeTasks, setPremadeTasks] = useState([]);
-
+  
   // gets all user tasks
   useEffect(() => {
     async function fetchTasks() {
       const tasks = await restApi.getTasks(user);
-
+      
       setTasks(tasks);
     }
-
+    
     if (user) {
       fetchTasks();
     }
@@ -47,7 +41,7 @@ function Dashboard() {
         },
       };
       const premadeTasks = await axios.get(
-        "https://snack-server-test.herokuapp.com/api/premadetasks",
+        "http://localhost:5000/api/premadetasks",
         config
       );
 
@@ -111,20 +105,13 @@ function Dashboard() {
       endInDays: endInDays,
     };
 
-    const createdTask = await restApi.createTask({
-      task,
-      token: user.token,
-    });
+    const createdTask = await restApi.createTask({task, token: user.token});
 
     setTasks([createdTask, ...tasks]);
   };
 
   const onDelete = async (id) => {
-    const res = await restApi.deleteTask({
-      id,
-      user,
-    });
-
+    const res = await restApi.deleteTask({id, user});
     setTasks(tasks.filter((task) => task._id !== res.id));
   };
 
@@ -143,7 +130,7 @@ function Dashboard() {
     };
 
     const recipePremade = await axios.post(
-      "https://snack-server-test.herokuapp.com/api/recipes",
+      "http://localhost:5000/api/recipes",
       task,
       config
     );
@@ -153,7 +140,6 @@ function Dashboard() {
 
   return (
     <div className="container row d-flex justify-content-between">
-      {/* -------- */}
       <div className="col-2">
         <Navbar
           tasks={tasks}
