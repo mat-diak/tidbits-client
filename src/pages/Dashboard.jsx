@@ -9,6 +9,7 @@ import axios from "axios";
 import './Dashboard.css'
 import useAuth from '../hooks/useAuth'
 import useTasks from '../hooks/useTasks'
+import usePremadeTasks from '../hooks/useTasks'
 
 function Dashboard() {
   // Redirects to hello page if no user
@@ -18,28 +19,28 @@ function Dashboard() {
   const { user } = useSelector((state) => state.auth);
 
   const [tasks, setTasks] = useTasks([]);
-  const [premadeTasks, setPremadeTasks] = useState([]);
+  const [premadeTasks, setPremadeTasks] = usePremadeTasks([]);
 
   // gets all premade tasks
-  useEffect(() => {
-    async function fetchPremadeTasks() {
-      const config = {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      };
-      const premadeTasks = await axios.get(
-        "http://localhost:5000/api/premadetasks",
-        config
-      );
+  // useEffect(() => {
+  //   async function fetchPremadeTasks() {
+  //     const config = {
+  //       headers: {
+  //         Authorization: `Bearer ${user.token}`,
+  //       },
+  //     };
+  //     const premadeTasks = await axios.get(
+  //       "http://localhost:5000/api/premadetasks",
+  //       config
+  //     );
 
-      setPremadeTasks(premadeTasks.data);
-    }
+  //     setPremadeTasks(premadeTasks.data);
+  //   }
 
-    if (user) {
-      fetchPremadeTasks();
-    }
-  }, [user]);
+  //   if (user) {
+  //     fetchPremadeTasks();
+  //   }
+  // }, [user]);
 
   // Add Count to Completed Reps
   const onDone = async (id) => {
