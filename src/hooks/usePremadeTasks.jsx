@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
@@ -27,5 +27,5 @@ export default function usePremadeTasks(initialValue) {
     }
   }, [user]);
 
-  return premadeTasks
+  return premadeTasks;
 }

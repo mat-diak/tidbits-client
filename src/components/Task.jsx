@@ -15,7 +15,7 @@ const Task = ({ task, onDone, onDelete }) => {
   const taskFinished = (task) => {
     return task.targetReps === task.completedReps;
   };
-  
+
   return (
     <Card className="task-card" key={task._id}>
       <Card.Header>
@@ -34,17 +34,17 @@ const Task = ({ task, onDone, onDelete }) => {
       <Card.Body>
         <Card.Text>{task.text}</Card.Text>
         {task.options &&
-        !taskFinished(task) &&
-        Object.keys(task.options).length > 0 && (
-          <Button
-            className="options-button"
-            variant="outline-danger"
-            onClick={() => toggleOptions(!showOptions)}
-          >
-            <MdOutlineExpandMore />
-          </Button>
-        )}
-      {showOptions && <PremadeTaskOptions taskOptions={task.options} />}
+          !taskFinished(task) &&
+          Object.keys(task.options).length > 0 && (
+            <Button
+              className="options-button"
+              variant="outline-danger"
+              onClick={() => toggleOptions(!showOptions)}
+            >
+              <MdOutlineExpandMore />
+            </Button>
+          )}
+        {showOptions && <PremadeTaskOptions taskOptions={task.options} />}
       </Card.Body>
     </Card>
   );

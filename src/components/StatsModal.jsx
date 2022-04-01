@@ -4,7 +4,7 @@ import StatsProgress from "./StatsProgress";
 import StatsChart from "./StatsChart";
 import Button from "react-bootstrap/Button";
 import "./StatsModal.css";
-import {GoGraph} from 'react-icons/go'
+import { GoGraph } from "react-icons/go";
 
 // Modal.setAppElement("#root");
 // if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
@@ -18,7 +18,7 @@ const StatsModal = ({ tasks }) => {
         variant="secondary"
         className="navbar-button me-2"
         onClick={() => setModalIsOpen(true)}
-        style={{borderRadius: "1em", width: "180px"}}
+        style={{ borderRadius: "1em", width: "180px" }}
       >
         <GoGraph /> Tidbits overview
       </Button>

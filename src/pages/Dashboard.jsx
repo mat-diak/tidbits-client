@@ -4,15 +4,14 @@ import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import recipeApi from "../features/suggestedTasks/suggestedTasksService";
 import { toast } from "react-toastify";
-import axios from "axios";
-import './Dashboard.css'
-import useAuth from '../hooks/useAuth'
-import useTasks from '../hooks/useTasks'
-import usePremadeTasks from '../hooks/usePremadeTasks'
+import "./Dashboard.css";
+import useAuth from "../hooks/useAuth";
+import useTasks from "../hooks/useTasks";
+import usePremadeTasks from "../hooks/usePremadeTasks";
 
 function Dashboard() {
   // Redirects to hello page if no user
-  useAuth()
+  useAuth();
 
   // Find the current user state; i.e. is someone logged in?
   const { user } = useSelector((state) => state.auth);
@@ -74,18 +73,18 @@ function Dashboard() {
       endInDays: endInDays,
     };
 
-    const createdTask = await restApi.createTask({task, token: user.token});
+    const createdTask = await restApi.createTask({ task, token: user.token });
 
     setTasks([createdTask, ...tasks]);
   };
 
   const onDelete = async (id) => {
-    const res = await restApi.deleteTask({id, user});
+    const res = await restApi.deleteTask({ id, user });
     setTasks(tasks.filter((task) => task._id !== res.id));
   };
 
   const onRecipe = async (task) => {
-    const recipePremade = await recipeApi.createRecipeTask(task, user.token)
+    const recipePremade = await recipeApi.createRecipeTask(task, user.token);
 
     setTasks([recipePremade, ...tasks]);
   };

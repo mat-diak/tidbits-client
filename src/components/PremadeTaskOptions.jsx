@@ -10,7 +10,9 @@ function PremadeTaskOptions({ taskOptions }) {
           taskOptions.map((option, index) => {
             return (
               <ListGroup.Item key={index} className="premade-option">
-                <a href={option.url} rel="noreferrer" target="_blank">{option.name}</a>
+                <a href={option.url} rel="noreferrer" target="_blank">
+                  {option.name}
+                </a>
               </ListGroup.Item>
             );
           })}

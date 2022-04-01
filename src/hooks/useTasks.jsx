@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import restApi from "../features/tasks/tasksService";
 import { useSelector } from "react-redux";
 
@@ -10,14 +10,14 @@ export default function useTasks(initialValue) {
   useEffect(() => {
     async function fetchTasks() {
       const tasks = await restApi.getTasks(user);
-      
+
       setTasks(tasks);
     }
-    
+
     if (user) {
       fetchTasks();
     }
   }, [user]);
 
-  return [tasks, setTasks]
+  return [tasks, setTasks];
 }

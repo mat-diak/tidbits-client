@@ -1,22 +1,20 @@
 import axios from "axios";
-import config from '../helpers/reqHeadersGenerator'
+import config from "../helpers/reqHeadersGenerator";
 
-const API_URL = "http://localhost:5000/api/tasks/";
+const API_URL = "http://localhost:5000/api/recipes";
 
 const createRecipeTask = async (task, token) => {
-
   const recipePremade = await axios.post(
-    "http://localhost:5000/api/recipes",
+    API_URL,
     task,
     config(token)
   );
 
-
-  return recipePremade.data
-}
+  return recipePremade.data;
+};
 
 const recipeApi = {
-  createRecipeTask
-}
+  createRecipeTask,
+};
 
 export default recipeApi;

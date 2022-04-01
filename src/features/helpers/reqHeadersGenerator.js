@@ -4,6 +4,6 @@ const config = (token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-}
+};
 
 module.exports = config;
