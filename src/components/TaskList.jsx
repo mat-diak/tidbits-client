@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import "./TaskList.css";
-import TaskCard from "./TaskCard";
+import Task from "./Task";
 
 const TaskList = ({ tasks, onDone, onDelete, headline, message }) => {
   return (
@@ -13,7 +13,7 @@ const TaskList = ({ tasks, onDone, onDelete, headline, message }) => {
       </div>
       {tasks.length > 0 ? (
         tasks.map((task, i) => (
-          <TaskCard
+          <Task
             key={task._id}
             task={task}
             onDone={onDone}
