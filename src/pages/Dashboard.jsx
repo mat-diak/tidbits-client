@@ -1,63 +1,30 @@
 import Navbar from "../components/Navbar";
 import TaskList from "../components/TaskList";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
+import recipeApi from "../features/suggestedTasks/suggestedTasksService";
 import { toast } from "react-toastify";
-import axios from "axios";
-import './Dashboard.css'
+import "./Dashboard.css";
+import useAuth from "../hooks/useAuth";
+import useTasks from "../hooks/useTasks";
+import usePremadeTasks from "../hooks/usePremadeTasks";
 
 function Dashboard() {
-  // For redirecting to different pages
-  const navigate = useNavigate();
+  // Redirects to hello page if no user
+  useAuth();
 
   // Find the current user state; i.e. is someone logged in?
   const { user } = useSelector((state) => state.auth);
 
-  // redirects to Hello page if not logged in
-  useEffect(() => {
-    if (!user) {
-      navigate("/hello");
-    }
-  }, [user, navigate]);
+  const [tasks, setTasks] = useTasks([]);
+  const premadeTasks = usePremadeTasks([]);
 
-  const [tasks, setTasks] = useState([]);
-  const [premadeTasks, setPremadeTasks] = useState([]);
-
-  // gets all user tasks
-  useEffect(() => {
-    async function fetchTasks() {
-      const tasks = await restApi.getTasks(user);
-
-      setTasks(tasks);
-    }
-
-    if (user) {
-      fetchTasks();
-    }
-  }, [user]);
-
-  // gets all premade tasks
-  useEffect(() => {
-    async function fetchPremadeTasks() {
-      const config = {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      };
-      const premadeTasks = await axios.get(
-        "https://snack-server-test.herokuapp.com/api/premadetasks",
-        config
-      );
-
-      setPremadeTasks(premadeTasks.data);
-    }
-
-    if (user) {
-      fetchPremadeTasks();
-    }
-  }, [user]);
+  const ongoingTasks = tasks.filter(
+    (task) => task.completedReps !== task.targetReps
+  );
+  const completedTasks = tasks.filter(
+    (task) => task.completedReps === task.targetReps
+  );
 
   // Add Count to Completed Reps
   const onDone = async (id) => {
@@ -83,15 +50,10 @@ function Dashboard() {
   // copies tasks from Premade to Usermade
   const onCopy = async (id) => {
     // find the task that we were interacting with
-    const consideredTask = premadeTasks.find((task) => {
+    const task = premadeTasks.find((task) => {
       return task._id === id;
     });
 
-    // add taskOwner ID to the task
-    const taskOwner = { user: user.id };
-
-    // combine premade task with task owenr details
-    const task = { ...consideredTask, ...taskOwner };
     // add task to the task list
     const createdTask = await restApi.createTask({
       task,
@@ -111,49 +73,24 @@ function Dashboard() {
       endInDays: endInDays,
     };
 
-    const createdTask = await restApi.createTask({
-      task,
-      token: user.token,
-    });
+    const createdTask = await restApi.createTask({ task, token: user.token });
 
     setTasks([createdTask, ...tasks]);
   };
 
   const onDelete = async (id) => {
-    const res = await restApi.deleteTask({
-      id,
-      user,
-    });
-
+    const res = await restApi.deleteTask({ id, user });
     setTasks(tasks.filter((task) => task._id !== res.id));
   };
 
-  const ongoingTasks = tasks.filter(
-    (task) => task.completedReps !== task.targetReps
-  );
-  const completedTasks = tasks.filter(
-    (task) => task.completedReps === task.targetReps
-  );
-
   const onRecipe = async (task) => {
-    const config = {
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    };
+    const recipePremade = await recipeApi.createRecipeTask(task, user.token);
 
-    const recipePremade = await axios.post(
-      "https://snack-server-test.herokuapp.com/api/recipes",
-      task,
-      config
-    );
-
-    setTasks([recipePremade.data, ...tasks]);
+    setTasks([recipePremade, ...tasks]);
   };
 
   return (
     <div className="container row d-flex justify-content-between">
-      {/* -------- */}
       <div className="col-2">
         <Navbar
           tasks={tasks}
