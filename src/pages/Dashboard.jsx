@@ -1,15 +1,14 @@
 import Navbar from "../components/Navbar";
 import TaskList from "../components/TaskList";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
+import recipeApi from "../features/suggestedTasks/suggestedTasksService";
 import { toast } from "react-toastify";
 import axios from "axios";
 import './Dashboard.css'
 import useAuth from '../hooks/useAuth'
 import useTasks from '../hooks/useTasks'
-import usePremadeTasks from '../hooks/useTasks'
+import usePremadeTasks from '../hooks/usePremadeTasks'
 
 function Dashboard() {
   // Redirects to hello page if no user
@@ -19,28 +18,14 @@ function Dashboard() {
   const { user } = useSelector((state) => state.auth);
 
   const [tasks, setTasks] = useTasks([]);
-  const [premadeTasks, setPremadeTasks] = usePremadeTasks([]);
+  const premadeTasks = usePremadeTasks([]);
 
-  // gets all premade tasks
-  // useEffect(() => {
-  //   async function fetchPremadeTasks() {
-  //     const config = {
-  //       headers: {
-  //         Authorization: `Bearer ${user.token}`,
-  //       },
-  //     };
-  //     const premadeTasks = await axios.get(
-  //       "http://localhost:5000/api/premadetasks",
-  //       config
-  //     );
-
-  //     setPremadeTasks(premadeTasks.data);
-  //   }
-
-  //   if (user) {
-  //     fetchPremadeTasks();
-  //   }
-  // }, [user]);
+  const ongoingTasks = tasks.filter(
+    (task) => task.completedReps !== task.targetReps
+  );
+  const completedTasks = tasks.filter(
+    (task) => task.completedReps === task.targetReps
+  );
 
   // Add Count to Completed Reps
   const onDone = async (id) => {
@@ -66,15 +51,10 @@ function Dashboard() {
   // copies tasks from Premade to Usermade
   const onCopy = async (id) => {
     // find the task that we were interacting with
-    const consideredTask = premadeTasks.find((task) => {
+    const task = premadeTasks.find((task) => {
       return task._id === id;
     });
 
-    // add taskOwner ID to the task
-    const taskOwner = { user: user.id };
-
-    // combine premade task with task owenr details
-    const task = { ...consideredTask, ...taskOwner };
     // add task to the task list
     const createdTask = await restApi.createTask({
       task,
@@ -104,27 +84,10 @@ function Dashboard() {
     setTasks(tasks.filter((task) => task._id !== res.id));
   };
 
-  const ongoingTasks = tasks.filter(
-    (task) => task.completedReps !== task.targetReps
-  );
-  const completedTasks = tasks.filter(
-    (task) => task.completedReps === task.targetReps
-  );
-
   const onRecipe = async (task) => {
-    const config = {
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    };
+    const recipePremade = await recipeApi.createRecipeTask(task, user.token)
 
-    const recipePremade = await axios.post(
-      "http://localhost:5000/api/recipes",
-      task,
-      config
-    );
-
-    setTasks([recipePremade.data, ...tasks]);
+    setTasks([recipePremade, ...tasks]);
   };
 
   return (

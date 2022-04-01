@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import restApi from "../features/tasks/tasksService";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
-export default function useTasks(initialValue) {
+export default function usePremadeTasks(initialValue) {
   const [premadeTasks, setPremadeTasks] = useState(initialValue);
 
   const { user } = useSelector((state) => state.auth);
@@ -27,5 +27,5 @@ export default function useTasks(initialValue) {
     }
   }, [user]);
 
-  return [tasks, setTasks]
+  return premadeTasks
 }

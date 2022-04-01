@@ -8,7 +8,6 @@ function PremadeTaskOptions({ taskOptions }) {
       <ListGroup variant="flush">
         {taskOptions &&
           taskOptions.map((option, index) => {
-            console.log(option);
             return (
               <ListGroup.Item key={index} className="premade-option">
                 <a href={option.url} rel="noreferrer" target="_blank">{option.name}</a>
