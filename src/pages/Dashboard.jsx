@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import './Dashboard.css'
 import useAuth from '../hooks/useAuth'
+import useTasks from '../hooks/useTasks'
 
 function Dashboard() {
   // Redirects to hello page if no user
@@ -16,21 +17,8 @@ function Dashboard() {
   // Find the current user state; i.e. is someone logged in?
   const { user } = useSelector((state) => state.auth);
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useTasks([]);
   const [premadeTasks, setPremadeTasks] = useState([]);
-  
-  // gets all user tasks
-  useEffect(() => {
-    async function fetchTasks() {
-      const tasks = await restApi.getTasks(user);
-      
-      setTasks(tasks);
-    }
-    
-    if (user) {
-      fetchTasks();
-    }
-  }, [user]);
 
   // gets all premade tasks
   useEffect(() => {
