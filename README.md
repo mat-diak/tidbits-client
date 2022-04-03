@@ -20,7 +20,7 @@ This is the client-side of snacks-app. It works alongside a rest API - http://sn
 
 1. Have the server-side running in the background.
 
-_You can find more info on how to set up the server side here: https://github.com/mat-diak/tidbits-server
+\_You can find more info on how to set up the server side here: https://github.com/mat-diak/tidbits-server
 
 2. In command line:
 
