@@ -3,7 +3,7 @@
 describe("user can register", () => {
   describe("when user with email does not exist", () => {
     it("user registers", () => {
-      cy.visit("/");
+      cy.visit("/", { timeout: 120000 });
       cy.url().should("match", /.*\/hello/);
 
       // the data comes from fixtures
