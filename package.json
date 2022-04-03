@@ -48,6 +48,9 @@
     ]
   },
   "devDependencies": {
+    "colors": "^1.4.0",
+    "cypress": "^9.5.3",
+    "mongoose": "^6.2.9",
     "prettier": "2.5.1"
   }
 }

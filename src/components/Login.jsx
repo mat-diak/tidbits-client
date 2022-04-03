@@ -17,7 +17,7 @@ function Login({ onChange, onSubmit, loginData }) {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
-            className="form-control"
+            className="login-email form-control"
             name="loginEmail"
             value={loginEmail}
             placeholder="enter your email"
@@ -32,7 +32,7 @@ function Login({ onChange, onSubmit, loginData }) {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            className="form-control"
+            className="login-password form-control"
             name="loginPassword"
             value={loginPassword}
             placeholder="enter your password"
