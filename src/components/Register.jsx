@@ -19,7 +19,7 @@ function Register({ onChange, onSubmit, registerData }) {
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
-            className="form-control"
+            className="register-name form-control"
             name="registerName"
             value={registerName}
             placeholder="enter your name"
@@ -31,7 +31,7 @@ function Register({ onChange, onSubmit, registerData }) {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
-            className="form-control"
+            className="register-email form-control"
             name="registerEmail"
             value={registerEmail}
             placeholder="enter your email"
@@ -43,7 +43,7 @@ function Register({ onChange, onSubmit, registerData }) {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            className="form-control"
+            className="register-password form-control"
             name="registerPassword"
             value={registerPassword}
             placeholder="enter your password"
@@ -54,7 +54,7 @@ function Register({ onChange, onSubmit, registerData }) {
           <Form.Label>Confirm password</Form.Label>
           <Form.Control
             type="password"
-            className="form-control"
+            className="register-password2 form-control"
             name="registerPassword2"
             value={registerPassword2}
             placeholder="confirm password"
