@@ -1,5 +1,5 @@
 Cypress.Commands.add("login", () => {
-  cy.visit("/");
+  cy.visit("/", {timeout: 120000});
   cy.url().should("match", /.*\/hello/);
 
   // the data comes from fixtures
@@ -17,5 +17,6 @@ Cypress.Commands.add("login", () => {
     "premadeTasksResponse"
   );
 
-  cy.get("button").contains("Log in").click();
+  cy.get("button").contains("Log in")
+    .click()
 });
