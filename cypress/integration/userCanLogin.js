@@ -1,24 +1,22 @@
-describe("user can register", () => {
+describe("user can log in", () => {
   describe("when successfully registered", () => {
     it("users logs in", () => {
       cy.visit("/");
       cy.url().should("match", /.*\/hello/);
 
       // the data comes from fixtures
-      cy.get(".register-name").type("tidbit1");
-      cy.get(".register-email").type("tidbit1@gmail.com");
-      cy.get(".register-password").type("123456");
-      cy.get(".register-password2").type("123456");
+      cy.get(".login-email").type("tidbits1@gmail.com");
+      cy.get(".login-password").type("123456");
 
-      cy.intercept("POST", "http://localhost:5000/api/users/", {
-        fixture: "register.json",
-      });
+      cy.intercept("POST", "http://localhost:5000/api/users/login", {
+        fixture: "login.json",
+      }).as('loginReponse');
 
-      cy.intercept("GET", "http://localhost:5000/api/tasks/", []);
-      cy.intercept("GET", "http://localhost:5000/api/premadetasks", []);
+      cy.intercept("GET", "http://localhost:5000/api/tasks/", []).as('tasksResponse');
+      cy.intercept("GET", "http://localhost:5000/api/premadetasks", []).as('premadeTasksResponse');
 
       cy.get("button")
-        .contains("Register")
+        .contains("Log in")
         .click()
         .should(() => {
           const userData = JSON.parse(localStorage.user);
