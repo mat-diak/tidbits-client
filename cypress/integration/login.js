@@ -1,7 +1,7 @@
 describe("user can log in", () => {
   describe("when successfully registered", () => {
     it("users logs in", () => {
-      cy.visit("/", {timeout: 120000});
+      cy.visit("/", { timeout: 120000 });
       cy.url().should("match", /.*\/hello/);
 
       // the data comes from fixtures
