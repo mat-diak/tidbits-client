@@ -17,8 +17,6 @@ function Hello() {
     registerPassword2: "",
   });
 
-  console.log('Hello page', localStorage)
-
   const { registerName, registerEmail, registerPassword, registerPassword2 } =
     registerData;
 

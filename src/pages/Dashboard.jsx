@@ -89,8 +89,6 @@ function Dashboard() {
     setTasks([recipePremade, ...tasks]);
   };
 
-  console.log('Dashboard', localStorage)
-
   return (
     <div className="container row d-flex justify-content-between">
       <div className="col-2">
