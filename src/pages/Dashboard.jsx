@@ -101,7 +101,7 @@ function Dashboard() {
         />
       </div>
 
-      <div className="col-5">
+      <div className="col-5 ongoing-tasks">
         <TaskList
           key={"ongoingTasks"}
           tasks={ongoingTasks}
@@ -111,7 +111,7 @@ function Dashboard() {
           message={"No tidbits left for today"}
         />
       </div>
-      <div className="col-5">
+      <div className="col-5 completed-tasks">
         <TaskList
           key={"completedTasks"}
           tasks={completedTasks}
