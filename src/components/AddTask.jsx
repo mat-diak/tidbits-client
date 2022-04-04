@@ -49,7 +49,7 @@ const AddTask = ({ onAdd }) => {
           <p>
             How many days do you wanna keep the habit for?
             <button
-              className="counter-btn"
+              className="counter-btn days-button"
               type="submit"
               onClick={incrementDayCount}
             >
@@ -59,7 +59,7 @@ const AddTask = ({ onAdd }) => {
           <p>
             How many times a day?{" "}
             <button
-              className="counter-btn"
+              className="counter-btn reps-button"
               type="submit"
               onClick={incrementRepCount}
             >
