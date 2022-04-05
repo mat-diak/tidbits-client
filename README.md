@@ -64,23 +64,3 @@ Demo images:
 <p style="text-align: center">
   <img src="https://i.imgur.com/I1MTF1g.png">
 </p>
-
-MVP domain model
-
-<p style="text-align: center">
-  <img src="https://i.imgur.com/hJGuyFs.png">
-</p>
-
-## Wireframing
-
-### MVP
-
-<p style="text-align: center">
-  <img src="https://i.imgur.com/kYopD3o.png">
-</p>
-
-### Premade snacks
-
-<p style="text-align: center">
-  <img src="https://i.imgur.com/jb9aPvo.png">
-</p>
