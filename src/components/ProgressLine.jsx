@@ -36,19 +36,11 @@ const ProgressLine = ({
       <div className="progressLabel">{label}</div>
       <div
         className="progressVisualFull"
-        style={{
-          backgroundColor,
-        }}
       >
         {visualParts.map((item, index) => {
           return (
             <div
               key={index}
-              style={{
-                width: widths[index],
-                backgroundColor: item.color,
-                borderRadius: "1em",
-              }}
               className="progressVisualPart"
             />
           );

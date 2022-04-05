@@ -15,7 +15,6 @@ function AddNavbar({ name, onAdd }) {
         variant="secondary"
         onClick={toggleShow}
         className="navbar-button me-2"
-        style={{ borderRadius: "1em", width: "180px" }}
       >
         {name}
       </Button>

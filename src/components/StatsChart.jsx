@@ -53,28 +53,24 @@ export default function StatsChart({ tasks }) {
         <h6 className="stats-chart-key">Number of tasks: </h6>
         <h6
           className="stats-chart-value"
-          style={{ backgroundColor: "#0088FE" }}
         >
           {numberOfTasks}
         </h6>
         <h6 className="stats-chart-key">Tasks completed: </h6>
         <h6
           className="stats-chart-value"
-          style={{ backgroundColor: COLORS[0] }}
         >
           {stats[0].value}
         </h6>
         <h6 className="stats-chart-key">Tasks started: </h6>
         <h6
           className="stats-chart-value"
-          style={{ backgroundColor: COLORS[1] }}
         >
           {stats[1].value}
         </h6>
         <h6 className="stats-chart-key">Incompleted tasks: </h6>
         <h6
           className="stats-chart-value"
-          style={{ backgroundColor: COLORS[2] }}
         >
           {stats[2].value}
         </h6>

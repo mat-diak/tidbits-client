@@ -18,7 +18,6 @@ const StatsModal = ({ tasks }) => {
         variant="secondary"
         className="navbar-button me-2"
         onClick={() => setModalIsOpen(true)}
-        style={{ borderRadius: "1em", width: "180px" }}
       >
         <GoGraph /> Tidbits overview
       </Button>

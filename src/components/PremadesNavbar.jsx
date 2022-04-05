@@ -15,8 +15,7 @@ function PremadesNavbar({ name, premadeTasks, onCopy, onRecipe }) {
       <Button
         variant="secondary"
         onClick={toggleShow}
-        className="me-2 navbar-button"
-        style={{ borderRadius: "1em", width: "180px" }}
+        className="woops"
       >
         {name}
       </Button>
@@ -24,7 +23,7 @@ function PremadesNavbar({ name, premadeTasks, onCopy, onRecipe }) {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Premade tidbits</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body style={{ backgroudColor: "white" }}>
+        <Offcanvas.Body>
           <PremadeTaskList
             tasks={premadeTasks}
             onCopy={onCopy}
