@@ -1,18 +1,19 @@
 ## Description
 
-This is the client-side of snacks-app. It works alongside a rest API - http://snack-server-test.herokuapp.com/
+Deployed app: https://tidbits-tidbits.netlify.app/
+This is the client-side of snacks-app. It works alongside a rest API - https://github.com/mat-diak/tidbits-server
 
 ## Features
 
-- user can add habits they wanna pick up
-- user can specify how many times they want to do a task a day
-- user can update the task each time they have had done it
+- user Authentication using JWT
+- adding habits
+  - specifying how long to keep the habit for and how many times a day to do it
+  - incrementing the rep count of the habit that is completed
+  - selecting from suggested habits list (e.g. 5 random recipes a day)
 
 ## Features in development:
 
-- user can sign in
-- user sees their own habit page
-- user can pick a task from premade selection of tasks
+- user can rearrange the habits by dragging them
 
 ## To run locally
 
@@ -20,7 +21,7 @@ This is the client-side of snacks-app. It works alongside a rest API - http://sn
 
 1. Have the server-side running in the background.
 
-\_You can find more info on how to set up the server side here: https://github.com/mat-diak/tidbits-server
+You can find more info on how to set up the server side here: https://github.com/mat-diak/tidbits-server
 
 2. In command line:
 
@@ -35,8 +36,34 @@ http://localhost:3000
 To run tests
 
 ```
-npm test
+npm run cy:run
 ```
+
+Demo images:
+
+<p style="text-align: center">
+  <img src="https://i.imgur.com/QJ5jqJL.png">
+</p>
+
+<p style="text-align: center">
+  <img src="https://i.imgur.com/Vr4e6yz.png">
+</p>
+
+<p style="text-align: center">
+  <img src="https://i.imgur.com/WHgIfJ6.png">
+</p>
+
+<p style="text-align: center">
+  <img src="https://i.imgur.com/hyN5OHC.png">
+</p>
+
+<p style="text-align: center">
+  <img src="https://i.imgur.com/MWp7LdN.png">
+</p>
+
+<p style="text-align: center">
+  <img src="https://i.imgur.com/I1MTF1g.png">
+</p>
 
 MVP domain model
 

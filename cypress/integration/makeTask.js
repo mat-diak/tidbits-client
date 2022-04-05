@@ -26,7 +26,7 @@ describe("user makes a task", () => {
 
       tasks.get("div.task-reps").should("have.text", "0/3");
 
-      tasks.get("div.task-dueDate").should("have.text", "4 days to go!");
+      tasks.get("div.task-dueDate").should("have.text", "3 days to go!");
     });
   });
 });
