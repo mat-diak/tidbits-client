@@ -1,6 +1,6 @@
 ## Description
 
-Deployed app: https://tidbits-tidbits.netlify.app/
+Deployed app: https://tidbits-tidbits.netlify.app/  
 This is the client-side of snacks-app. It works alongside a rest API - https://github.com/mat-diak/tidbits-server
 
 ## Features
