@@ -51,29 +51,13 @@ export default function StatsChart({ tasks }) {
       </div>
       <div className="stats-chart-legend">
         <h6 className="stats-chart-key">Number of tasks: </h6>
-        <h6
-          className="stats-chart-value"
-        >
-          {numberOfTasks}
-        </h6>
+        <h6 className="stats-chart-value">{numberOfTasks}</h6>
         <h6 className="stats-chart-key">Tasks completed: </h6>
-        <h6
-          className="stats-chart-value"
-        >
-          {stats[0].value}
-        </h6>
+        <h6 className="stats-chart-value">{stats[0].value}</h6>
         <h6 className="stats-chart-key">Tasks started: </h6>
-        <h6
-          className="stats-chart-value"
-        >
-          {stats[1].value}
-        </h6>
+        <h6 className="stats-chart-value">{stats[1].value}</h6>
         <h6 className="stats-chart-key">Incompleted tasks: </h6>
-        <h6
-          className="stats-chart-value"
-        >
-          {stats[2].value}
-        </h6>
+        <h6 className="stats-chart-value">{stats[2].value}</h6>
       </div>
     </div>
   );

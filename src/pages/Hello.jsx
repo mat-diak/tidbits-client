@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import Register from "../components/Register";
 import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Login";
-import { Container } from "react-bootstrap";
 import Spinner from "../components/Spinner";
 import "./Hello.css";
 
@@ -91,27 +90,23 @@ function Hello() {
   }
 
   return (
-    <>
-      <Container className="login-container">
-        <div className="row d-flex justify-content-around">
-          <div className="col-3">
-            <Login
-              onSubmit={onLoginSubmit}
-              onChange={onLoginChange}
-              loginData={loginData}
-            />
-          </div>
+    <div className="main-container">
+      <div>
+        <Login
+          onSubmit={onLoginSubmit}
+          onChange={onLoginChange}
+          loginData={loginData}
+        />
+      </div>
 
-          <div className="col-3">
-            <Register
-              onSubmit={onRegisterSubmit}
-              onChange={onRegisterChange}
-              registerData={registerData}
-            />
-          </div>
-        </div>
-      </Container>
-    </>
+      <div>
+        <Register
+          onSubmit={onRegisterSubmit}
+          onChange={onRegisterChange}
+          registerData={registerData}
+        />
+      </div>
+    </div>
   );
 }
 

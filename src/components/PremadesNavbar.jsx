@@ -12,11 +12,7 @@ function PremadesNavbar({ name, premadeTasks, onCopy, onRecipe }) {
 
   return (
     <>
-      <Button
-        variant="secondary"
-        onClick={toggleShow}
-        className="woops"
-      >
+      <Button variant="secondary" onClick={toggleShow} className="woops">
         {name}
       </Button>
       <Offcanvas className="premade-tidbits" show={show} onHide={handleClose}>

@@ -1,6 +1,4 @@
 import { FaUser } from "react-icons/fa";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 function Register({ onChange, onSubmit, registerData }) {
   const { registerName, registerEmail, registerPassword, registerPassword2 } =
@@ -8,63 +6,71 @@ function Register({ onChange, onSubmit, registerData }) {
 
   return (
     <>
-      <section>
+      <div className="heading">
         <h1>
           <FaUser /> Join here
         </h1>
-      </section>
+      </div>
+      <div className="form-group">
+        <form className="register-form" onSubmit={onSubmit}>
+          <div className="form-label">
+            <label>Name</label>
+          </div>
 
-      <Form onSubmit={onSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
+          <input
             type="text"
-            className="register-name form-control"
+            className="form-control"
             name="registerName"
             value={registerName}
             placeholder="enter your name"
             onChange={onChange}
           />
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
+          <div className="form-label">
+            <label>Email address</label>
+          </div>
+          <input
             type="email"
-            className="register-email form-control"
+            className="form-control"
             name="registerEmail"
             value={registerEmail}
             placeholder="enter your email"
             onChange={onChange}
           />
-        </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
+          <div className="form-label">
+            <label>Password</label>
+          </div>
+          <input
             type="password"
-            className="register-password form-control"
+            className="form-control"
             name="registerPassword"
             value={registerPassword}
             placeholder="enter your password"
             onChange={onChange}
           />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Confirm password</Form.Label>
-          <Form.Control
-            type="password"
-            className="register-password2 form-control"
-            name="registerPassword2"
-            value={registerPassword2}
-            placeholder="confirm password"
-            onChange={onChange}
-          />
-        </Form.Group>
-        <Button variant="secondary" type="submit">
-          Register
-        </Button>
-      </Form>
+
+          <div className="form-label">
+            <label>Confirm password</label>
+          </div>
+
+          <div className="form-label">
+            <input
+              type="password"
+              className="form-control"
+              name="registerPassword2"
+              value={registerPassword2}
+              placeholder="confirm password"
+              onChange={onChange}
+            />
+          </div>
+
+          <div className="form-button">
+            <button variant="secondary" type="submit">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

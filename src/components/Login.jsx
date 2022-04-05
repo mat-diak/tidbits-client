@@ -1,21 +1,22 @@
 import { FaSignInAlt } from "react-icons/fa";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 function Login({ onChange, onSubmit, loginData }) {
   const { loginEmail, loginPassword } = loginData;
 
   return (
     <>
-      <section>
+      <div className="heading">
         <h1>
           <FaSignInAlt /> Log in
         </h1>
-      </section>
-      <Form onSubmit={onSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
+      </div>
+      <div className="form-group">
+        <form onSubmit={onSubmit}>
+          <div className="form-label">
+            <label>Email address</label>
+          </div>
+
+          <input
             type="email"
             className="login-email form-control"
             name="loginEmail"
@@ -23,14 +24,11 @@ function Login({ onChange, onSubmit, loginData }) {
             placeholder="enter your email"
             onChange={onChange}
           />
-          <Form.Text className="text-muted">
-            Don't trust us with your email!
-          </Form.Text>
-        </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
+          <div className="form-label">
+            <label>Password</label>
+          </div>
+          <input
             type="password"
             className="login-password form-control"
             name="loginPassword"
@@ -38,12 +36,12 @@ function Login({ onChange, onSubmit, loginData }) {
             placeholder="enter your password"
             onChange={onChange}
           />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
-        <Button variant="secondary" type="submit">
-          Log in
-        </Button>
-      </Form>
+
+          <div className="form-button">
+            <button variant="secondary">Log in</button>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

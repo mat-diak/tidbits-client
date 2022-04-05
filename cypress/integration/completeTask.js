@@ -14,8 +14,8 @@ describe("user completes a task", () => {
         createdAt: "2022-04-04T16:40:27.427Z",
         updatedAt: "2022-04-04T16:40:27.427Z",
         __v: 0,
-      }
-    }
+      };
+    };
 
     // stub the put request
     cy.intercept(
