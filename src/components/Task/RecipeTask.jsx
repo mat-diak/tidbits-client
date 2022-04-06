@@ -1,4 +1,3 @@
-import Card from "react-bootstrap/Card";
 import RecipeButton from "./RecipeButton";
 import { GiCookingPot } from "react-icons/gi";
 
@@ -10,14 +9,12 @@ const RecipeTask = ({ onRecipe }) => {
   };
 
   return (
-    <Card className="premade-card">
-      <Card.Body>
+    <div className="card-body card-navbar">
+      <div>
         {task.text} <GiCookingPot />
-      </Card.Body>
-      <div className="f-flex flex-row justify-content-end">
-        <RecipeButton onRecipe={onRecipe} task={task} />
       </div>
-    </Card>
+        <RecipeButton onRecipe={onRecipe} task={task} />
+    </div>
   );
 };
 

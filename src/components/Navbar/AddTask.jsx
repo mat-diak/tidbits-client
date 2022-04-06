@@ -35,40 +35,44 @@ const AddTask = ({ onAdd }) => {
   };
 
   return (
-    <div className="add-task-card">
+    <div className="form-group add-task">
       <div>Make a tidbit</div>
       <form className="add-task-form">
-        <div className="form-group">
-          <div
+        <div className="form-group add-task">
+          <input
             type="text"
-            className="add-task-input"
+            className="task-input"
             value={inputText}
             onChange={updatedInput}
-            placeholder="Add a task.."
-          ></div>
-          <p>
-            How many days do you wanna keep the habit for?
+            placeholder="Describe the tidbit..."
+          ></input>
+          <div className="task-opt" >
+            <div className="text">
+              Days goal:
+            </div>
             <button
-              className="counter-btn days-button"
+              className="btn-counter days-button"
               type="submit"
               onClick={incrementDayCount}
             >
               {inputDayCounter}
             </button>
-          </p>
-          <p>
-            How many times a day?{" "}
+          </div>
+          <div className="task-opt" >
+            <div className="text">
+            Times a day goal:
+            </div>
             <button
-              className="counter-btn reps-button"
+              className="btn-counter reps-button"
               type="submit"
               onClick={incrementRepCount}
             >
               {inputRepCounter}
             </button>
-          </p>
+          </div>
           <button
             type="submit"
-            className="add-task-button"
+            className="btn btn-navbar"
             onClick={handleSubmit}
           >
             Add

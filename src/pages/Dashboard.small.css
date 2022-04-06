@@ -40,8 +40,6 @@
   display: flex;
   flex-direction: column;
 
-  /* border: 2px solid blue; */
-
   margin: 0 0 0.5em 0;
 }
 
@@ -60,6 +58,15 @@
   border-radius: 0 0 5px 5px;
 
   margin-top: -1px;
+}
+
+.card-body.card-navbar {
+  flex-direction: row;
+  justify-content: space-between;
+  
+  border-radius: 5px 5px 5px 5px;
+  padding: 0.25em 0.25em 0.25em 0.6em;
+  margin: 0 0 0.3em 0;
 }
 
 .card-header {
@@ -113,4 +120,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-group.add-task {
+  border: 0;
+}
+
+.task-opt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2em 0 0.2em 0;
+}
+
+.btn-counter {
+  margin: 0 0 0 0.3em;
+}
+
+.task-input {
+  width: 100%;
 }
