@@ -1,0 +1,43 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+@media (min-width: 800px) {
+
+}
+/* .dashboard-container {
+  display: grid;
+  grid-template: 1fr / 1fr 2fr 2fr;
+} */
+
+.task-list {
+  background-color: pink;;
+}
+
+.card {
+  border: 2px solid blue;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  
+}
+
+.card-body {
+  background-color: red;
+}
+
+.card-header {
+  display: flex;
+
+}
+
+/* NAVBAR */
+
+.main-navbar {
+  background-color: aliceblue;
+  height: 100%;
+}

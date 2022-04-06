@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import TaskList from "../components/TaskList";
+import Navbar from "../components/Navbar/Navbar";
+import TaskList from "../components/Task/TaskList";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import recipeApi from "../features/suggestedTasks/suggestedTasksService";
@@ -90,8 +90,8 @@ function Dashboard() {
   };
 
   return (
-    <div className="container row d-flex justify-content-between">
-      <div className="col-2">
+    <div className="dashboard-container">
+      <div>
         <Navbar
           tasks={tasks}
           premadeTasks={premadeTasks}

@@ -1,4 +1,4 @@
-import CopyButton from "./CopyButton";
+import CopyButton from "../Navbar/CopyButton";
 import Card from "react-bootstrap/Card";
 
 const PremadeTask = ({ task, onCopy }) => {

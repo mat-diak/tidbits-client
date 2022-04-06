@@ -1,5 +1,4 @@
 import ProgressLine from "./ProgressLine";
-import "./StatsProgress.css";
 
 const StatsProgress = ({ tasks }) => {
   return (

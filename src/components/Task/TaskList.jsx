@@ -1,16 +1,10 @@
-import Card from "react-bootstrap/Card";
-import "./TaskList.css";
 import Task from "./Task";
 
 const TaskList = ({ tasks, onDone, onDelete, headline, message }) => {
   return (
-    <Card className="task-list-card">
-      <div className="task-list-header">
-        <div className="task-list">
+    <div className="task-list">
           <div className="task-list-header-spacer"></div>
           <h2>{headline}</h2>
-        </div>
-      </div>
       {tasks.length > 0 ? (
         tasks.map((task, i) => (
           <Task
@@ -23,7 +17,7 @@ const TaskList = ({ tasks, onDone, onDelete, headline, message }) => {
       ) : (
         <div className="task-message">{message}</div>
       )}
-    </Card>
+    </div>
   );
 };
 

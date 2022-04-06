@@ -1,8 +1,7 @@
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
-import PremadeTaskList from "./PremadeTaskList";
-import "./PremadeTask.css";
+import PremadeTaskList from "../PremadeTask/PremadeTaskList";
 
 function PremadesNavbar({ name, premadeTasks, onCopy, onRecipe }) {
   const [show, setShow] = useState(false);

@@ -1,14 +1,12 @@
-import "./Navbar.css";
 import { MdKitchen } from "react-icons/md";
 import { BiCookie } from "react-icons/bi";
 import PremadesNavbar from "./PremadesNavbar";
 import AddNavbar from "./AddNavbar";
-import StatsModal from "./StatsModal";
-import "./StatsModal.css";
+import StatsModal from "../Stats/Modal";
 
 function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
   return (
-    <div className="col-7 main-navbar">
+    <div className="main-navbar">
       <AddNavbar
         name={
           <>

@@ -1,6 +1,6 @@
 import PremadeTask from "./PremadeTask";
 import Card from "react-bootstrap/Card";
-import RecipeTask from "./RecipeTask";
+import RecipeTask from "../Task/RecipeTask";
 
 const PremadeTaskList = ({ tasks, onCopy, onRecipe }) => {
   return (

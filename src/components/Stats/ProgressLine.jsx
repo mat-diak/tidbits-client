@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./ProgressLine.css";
 
 const ProgressLine = ({
   label,

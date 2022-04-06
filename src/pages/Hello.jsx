@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Register from "../components/Register";
+import Register from "../components/Auth/Register";
 import { register, login, reset } from "../features/auth/authSlice";
-import Login from "../components/Login";
-import Spinner from "../components/Spinner";
+import Login from "../components/Auth/Login";
+import Spinner from "../components/Shared/Spinner";
 import "./Hello.css";
 
 function Hello() {
