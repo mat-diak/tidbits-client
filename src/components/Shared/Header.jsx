@@ -2,9 +2,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../../features/auth/authSlice";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
+import './header.css'
 
 function Header() {
   const navigate = useNavigate();
@@ -19,22 +17,20 @@ function Header() {
 
   return (
     <header>
-      <Navbar>
-        <Container>
-          <Navbar.Brand>Tidbits</Navbar.Brand>
-          <Navbar.Collapse className="justify-content-end">
+      <div className="header-main">
+          <div className="header-title">Tidbits</div>
+          <div className="header-user">
             {user && (
               <>
-                <Navbar.Text>Hello, {user.name}</Navbar.Text>
-                <Nav.Link onClick={onLogout}>
+                <div className="header-greeting">Hello, {user.name}</div>
+                <a className="header-logout" onClick={onLogout}>
                   <FaSignOutAlt />
                   Log out
-                </Nav.Link>
+                </a>
               </>
             )}
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+          </div>
+      </div>
     </header>
   );
 }

@@ -1,10 +1,10 @@
 import PremadeTask from "./PremadeTask";
-import Card from "react-bootstrap/Card";
 import RecipeTask from "../Task/RecipeTask";
 
 const PremadeTaskList = ({ tasks, onCopy, onRecipe }) => {
   return (
-    <Card className="premade-tidbits">
+    <div className="task-list">
+      <div>Premade tidbits</div>
       <div className="task-list">
         <RecipeTask onRecipe={onRecipe} />
         {tasks &&
@@ -12,7 +12,7 @@ const PremadeTaskList = ({ tasks, onCopy, onRecipe }) => {
             <PremadeTask key={task._id} task={task} onCopy={onCopy} />
           ))}
       </div>
-    </Card>
+    </div>
   );
 };
 

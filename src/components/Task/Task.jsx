@@ -16,9 +16,9 @@ const Task = ({ task, onDone, onDelete }) => {
   return (
     <div className="card" key={task._id}>
       <div className="card-header">
-            <TaskReps task={task} onDone={onDone} />
-            <TaskDaysToGo task={task} />
-            <DeleteTaskButton task={task} onDelete={onDelete} />
+        <TaskReps task={task} onDone={onDone} />
+        <TaskDaysToGo task={task} />
+        <DeleteTaskButton task={task} onDelete={onDelete} />
       </div>
       <div className="card-body">
         <div className="card-text">{task.text}</div>
@@ -26,14 +26,12 @@ const Task = ({ task, onDone, onDelete }) => {
           !taskFinished(task) &&
           Object.keys(task.options).length > 0 && (
             <div className="btn-container">
-
-            <button
-              className="options-btn"
-              onClick={() => toggleOptions(!showOptions)}
-            >
-              <MdOutlineExpandMore />
-            </button>
-
+              <button
+                className="options-btn"
+                onClick={() => toggleOptions(!showOptions)}
+              >
+                <MdOutlineExpandMore />
+              </button>
             </div>
           )}
         {showOptions && <PremadeTaskOptions taskOptions={task.options} />}

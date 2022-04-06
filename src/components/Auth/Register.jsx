@@ -65,9 +65,7 @@ function Register({ onChange, onSubmit, registerData }) {
           </div>
 
           <div className="form-button">
-            <button className="btn">
-              Register
-            </button>
+            <button className="btn">Register</button>
           </div>
         </form>
       </div>

@@ -2,29 +2,18 @@ import Modal from "react-modal";
 import React, { useState } from "react";
 import StatsProgress from "./StatsProgress";
 import StatsChart from "./StatsChart";
-import Button from "react-bootstrap/Button";
-import { GoGraph } from "react-icons/go";
 
 // Modal.setAppElement("#root");
 // if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
-const StatsModal = ({ tasks }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
+const StatsModal = ({ tasks, modalIsOpen, toggleModal }) => {
   return (
     <>
-      <Button
-        variant="secondary"
-        className="navbar-button me-2"
-        onClick={() => setModalIsOpen(true)}
-      >
-        <GoGraph /> Tidbits overview
-      </Button>
-      <Modal
-        className="stats-modal"
+      <div // Modal
+        className="modal-content"
         overlayClassName="stats-modal-overlay"
         isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
+        onRequestClose={() => toggleModal()}
         ariaHideApp={false}
       >
         <h2 className="stats-modal-heading">Today's overview</h2>
@@ -36,7 +25,7 @@ const StatsModal = ({ tasks }) => {
             <StatsChart tasks={tasks} />
           </div>
         </div>
-      </Modal>
+      </div> // Modal
     </>
   );
 };

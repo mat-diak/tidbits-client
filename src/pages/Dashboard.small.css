@@ -1,18 +1,15 @@
 .dashboard-container {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
+}
 
-@media (min-width: 800px) {
-  .dashboard-container {
-    display: grid;
-    grid-template: 1fr / 1fr 2fr 2fr;
-  }
+.main-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-  .options-btn:hover {
-    background-color: rgb(238, 221, 213);
-    border-radius: 0 0 5px 5px;
-  }
+  height: 100%;
+  width: 100%;
 }
 
 .task-list {
@@ -21,12 +18,20 @@
 
 /* NAVBAR */
 
-.main-navbar {
+.btn.btn-navbar {
   display: flex;
-  flex-direction: column;
-  
-  height: 100%;
-  width: 70%;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: rgb(219, 163, 139);
+
+  color: rgb(239, 250, 250);
+}
+
+.btn.btn-navbar:hover {
+  background-color: rgb(211, 144, 115);
+
+  color: rgb(239, 250, 250);
 }
 
 /* TASK */
@@ -34,7 +39,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  
+
   /* border: 2px solid blue; */
 
   margin: 0 0 0.5em 0;
@@ -61,7 +66,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   border-radius: 5px 5px 0 0;
 
   background-color: rgb(219, 163, 139);
@@ -104,8 +109,7 @@
   margin-bottom: -1px;
 }
 
-
-.task-counter{
+.task-counter {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -36,15 +36,16 @@ const AddTask = ({ onAdd }) => {
 
   return (
     <div className="add-task-card">
-      <Form className="add-task-form">
-        <Form.Group>
-          <Form.Control
+      <div>Make a tidbit</div>
+      <form className="add-task-form">
+        <div className="form-group">
+          <div
             type="text"
             className="add-task-input"
             value={inputText}
             onChange={updatedInput}
             placeholder="Add a task.."
-          ></Form.Control>
+          ></div>
           <p>
             How many days do you wanna keep the habit for?
             <button
@@ -72,8 +73,8 @@ const AddTask = ({ onAdd }) => {
           >
             Add
           </button>
-        </Form.Group>
-      </Form>
+        </div>
+      </form>
     </div>
   );
 };
