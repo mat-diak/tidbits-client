@@ -40,7 +40,7 @@
   justify-content: center;
 }
 
-button {
+.btn {
   font-size: 20px;
   border-radius: 5px;
   border: 0px solid transparent;
@@ -53,7 +53,7 @@ button {
     rgb(235 87 87 / 30%) 0px 0px 0px 1px inset;
 }
 
-button:hover {
+.btn:hover {
   background-color: rgb(223, 151, 122);
   cursor: pointer;
 }

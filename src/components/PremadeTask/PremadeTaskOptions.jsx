@@ -1,22 +1,19 @@
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-
 function PremadeTaskOptions({ taskOptions }) {
   return (
-    <Card className="premade-option">
-      <ListGroup variant="flush">
+    <div className="premade-option">
+      <div>
         {taskOptions &&
           taskOptions.map((option, index) => {
             return (
-              <ListGroup.Item key={index} className="premade-option">
+              <div key={index} className="premade-option">
                 <a href={option.url} rel="noreferrer" target="_blank">
                   {option.name}
                 </a>
-              </ListGroup.Item>
+              </div>
             );
           })}
-      </ListGroup>
-    </Card>
+      </div>
+    </div>
   );
 }
 

@@ -38,7 +38,7 @@ function Login({ onChange, onSubmit, loginData }) {
           />
 
           <div className="form-button">
-            <button variant="secondary">Log in</button>
+            <button className="btn">Log in</button>
           </div>
         </form>
       </div>

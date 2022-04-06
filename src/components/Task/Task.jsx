@@ -25,13 +25,16 @@ const Task = ({ task, onDone, onDelete }) => {
         {task.options &&
           !taskFinished(task) &&
           Object.keys(task.options).length > 0 && (
+            <div className="btn-container">
+
             <button
-              className="options-button"
-              variant="outline-danger"
+              className="options-btn"
               onClick={() => toggleOptions(!showOptions)}
             >
               <MdOutlineExpandMore />
             </button>
+
+            </div>
           )}
         {showOptions && <PremadeTaskOptions taskOptions={task.options} />}
       </div>
