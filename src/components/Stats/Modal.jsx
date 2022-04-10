@@ -9,7 +9,7 @@ import StatsChart from "./StatsChart";
 const StatsModal = ({ tasks, modalIsOpen, toggleModal }) => {
   return (
     <>
-      <div // Modal
+      <Modal // Modal
         className="modal-content"
         overlayClassName="stats-modal-overlay"
         isOpen={modalIsOpen}
@@ -25,7 +25,7 @@ const StatsModal = ({ tasks, modalIsOpen, toggleModal }) => {
             <StatsChart tasks={tasks} />
           </div>
         </div>
-      </div> // Modal
+      </Modal> // Modal
     </>
   );
 };

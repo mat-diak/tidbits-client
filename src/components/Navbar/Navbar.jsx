@@ -47,7 +47,7 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
           <MdKitchen /> Grab a tidbit
         </button>
         <button className="btn btn-navbar" onClick={toggleModal}>
-          <GoGraph /> Tidbits overview
+          <GoGraph /> Daily stats
         </button>
       </div>
 

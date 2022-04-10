@@ -6,7 +6,7 @@ import Register from "../components/Auth/Register";
 import { register, login, reset } from "../features/auth/authSlice";
 import Login from "../components/Auth/Login";
 import Spinner from "../components/Shared/Spinner";
-import "./Hello.css";
+import "./Hello.scss";
 
 function Hello() {
   const [registerData, setRegisterData] = useState({

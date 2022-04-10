@@ -9,7 +9,7 @@ function TaskDaysToGo({ task }) {
     <>
       {task.endDate ? (
         <div className="task-dueDate">
-          {countDaysLeft(task.endDate)} days to go!
+          {countDaysLeft(task.endDate)} days left...
         </div>
       ) : (
         <></>

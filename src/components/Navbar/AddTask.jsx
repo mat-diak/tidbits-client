@@ -46,24 +46,24 @@ const AddTask = ({ onAdd }) => {
             onChange={updatedInput}
             placeholder="Describe the tidbit..."
           ></input>
-          <div className="task-opt" >
+          <div className="add-task-opt" >
             <div className="text">
               Days goal:
             </div>
             <button
-              className="btn-counter days-button"
+              className="btn btn-counter days-button"
               type="submit"
               onClick={incrementDayCount}
             >
               {inputDayCounter}
             </button>
           </div>
-          <div className="task-opt" >
+          <div className="add-task-opt" >
             <div className="text">
             Times a day goal:
             </div>
             <button
-              className="btn-counter reps-button"
+              className="btn btn-counter reps-button"
               type="submit"
               onClick={incrementRepCount}
             >

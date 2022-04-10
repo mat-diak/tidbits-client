@@ -2,7 +2,6 @@ import TaskDaysToGo from "./TaskDaysToGo";
 import TaskReps from "./TaskReps";
 import DeleteTaskButton from "./DeleteTaskButton";
 import PremadeTaskOptions from "../PremadeTask/PremadeTaskOptions";
-import Button from "react-bootstrap/Button";
 import { MdOutlineExpandMore } from "react-icons/md";
 import { useState } from "react";
 
@@ -17,8 +16,10 @@ const Task = ({ task, onDone, onDelete }) => {
     <div className="card" key={task._id}>
       <div className="card-header">
         <TaskReps task={task} onDone={onDone} />
-        <TaskDaysToGo task={task} />
-        <DeleteTaskButton task={task} onDelete={onDelete} />
+        <div className="card-details">
+          <TaskDaysToGo task={task} />
+          <DeleteTaskButton task={task} onDelete={onDelete} />
+        </div>
       </div>
       <div className="card-body">
         <div className="card-text">{task.text}</div>
