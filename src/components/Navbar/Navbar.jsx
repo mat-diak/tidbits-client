@@ -69,7 +69,6 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
           tasks={tasks}
           modalIsOpen={show.modal}
           toggleModal={toggleModal}
-          className="stats-modal"
           />
         }
 

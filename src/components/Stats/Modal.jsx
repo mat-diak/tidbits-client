@@ -10,7 +10,7 @@ const StatsModal = ({ tasks, modalIsOpen, toggleModal }) => {
   return (
     <>
       <Modal // Modal
-        className="modal-content"
+        className="stats-modal"
         overlayClassName="stats-modal-overlay"
         isOpen={modalIsOpen}
         onRequestClose={() => toggleModal()}
