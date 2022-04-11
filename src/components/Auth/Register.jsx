@@ -19,7 +19,7 @@ function Register({ onChange, onSubmit, registerData }) {
 
           <input
             type="text"
-            className="form-control"
+            className="form-control register-name"
             name="registerName"
             value={registerName}
             placeholder="enter your name"
@@ -30,7 +30,7 @@ function Register({ onChange, onSubmit, registerData }) {
           </div>
           <input
             type="email"
-            className="form-control"
+            className="form-control register-email"
             name="registerEmail"
             value={registerEmail}
             placeholder="enter your email"
@@ -42,7 +42,7 @@ function Register({ onChange, onSubmit, registerData }) {
           </div>
           <input
             type="password"
-            className="form-control"
+            className="form-control register-password"
             name="registerPassword"
             value={registerPassword}
             placeholder="enter your password"
@@ -56,7 +56,7 @@ function Register({ onChange, onSubmit, registerData }) {
           <div className="form-label">
             <input
               type="password"
-              className="form-control"
+              className="form-control register-password2"
               name="registerPassword2"
               value={registerPassword2}
               placeholder="confirm password"

@@ -2,7 +2,7 @@ describe("user can log out", () => {
   it("logs out", () => {
     cy.login();
 
-    cy.get(".nav-link")
+    cy.get(".header-logout")
       .contains("Log out")
       .click()
       .should(() => {

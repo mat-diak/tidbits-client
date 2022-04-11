@@ -72,7 +72,7 @@ const AddTask = ({ onAdd }) => {
           </div>
           <button
             type="submit"
-            className="btn btn-navbar"
+            className="btn btn-navbar add-task-button"
             onClick={handleSubmit}
           >
             Add
