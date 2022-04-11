@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar/Navbar";
+import NavbarLarge from "../components/Navbar/NavbarLarge";
 import TaskList from "../components/Task/TaskList";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
@@ -92,7 +93,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <div>
+      <div className="navbar-mobile">
         <Navbar
           tasks={tasks}
           premadeTasks={premadeTasks}
@@ -100,6 +101,17 @@ function Dashboard() {
           onAdd={addTask}
           onRecipe={onRecipe}
         />
+      </div>
+
+      <div className="navbar-large">
+        <NavbarLarge 
+          tasks={tasks}
+          premadeTasks={premadeTasks}
+          onCopy={onCopy}
+          onAdd={addTask}
+          onRecipe={onRecipe}
+        />
+
       </div>
 
       <div className="col-5 ongoing-tasks">

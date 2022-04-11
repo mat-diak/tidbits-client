@@ -12,6 +12,12 @@
   width: 100%;
 }
 
+@media (max-width: 800px) {
+  .navbar-large {
+    display: none;
+  }
+}
+
 .task-list {
   padding: 0.2em;
 }
