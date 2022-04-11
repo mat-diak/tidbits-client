@@ -10,6 +10,8 @@
 
   height: 100%;
   width: 100%;
+
+  padding: 2em 0 0 0;
 }
 
 @media (max-width: 800px) {
@@ -19,7 +21,7 @@
 }
 
 .task-list {
-  padding: 0.2em;
+  padding: 0.5em;
 }
 
 /* NAVBAR */

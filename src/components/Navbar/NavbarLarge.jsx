@@ -44,9 +44,7 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
           <BiCookie /> Make a tidbit
         </button>
         {show.add && (
-          <div>
             <AddTask onAdd={onAdd} />
-          </div>
         )}
         <button className="btn btn-navbar" onClick={toggleGrab}>
           <MdKitchen /> Grab a tidbit
