@@ -1,5 +1,4 @@
 import Modal from "react-modal";
-import React, { useState } from "react";
 import StatsProgress from "./StatsProgress";
 import StatsChart from "./StatsChart";
 
