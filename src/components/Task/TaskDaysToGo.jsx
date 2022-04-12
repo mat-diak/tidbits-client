@@ -5,6 +5,8 @@ function TaskDaysToGo({ task }) {
     );
   };
 
+  console.log(new Date())
+
   return (
     <>
       {task.endDate ? (

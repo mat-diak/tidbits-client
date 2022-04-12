@@ -41,13 +41,13 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
     <>
       <div className="main-navbar">
         <button className="btn btn-navbar" onClick={toggleAdd}>
-          <BiCookie /> Make a tidbit
+          <BiCookie />Make a tidbit
         </button>
         {show.add && (
             <AddTask onAdd={onAdd} />
         )}
         <button className="btn btn-navbar" onClick={toggleGrab}>
-          <MdKitchen /> Grab a tidbit
+          <MdKitchen />Grab a tidbit
         </button>
         {show.grab && (
           <PremadeTaskList
@@ -57,7 +57,7 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
           />
         )}
         <button className="btn btn-navbar" onClick={toggleModal}>
-          <GoGraph /> Daily stats
+          <GoGraph />Daily stats
         </button>
         {show.modal && 
           <StatsModal 

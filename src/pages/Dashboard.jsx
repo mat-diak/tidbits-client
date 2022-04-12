@@ -93,15 +93,6 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <div className="navbar-mobile">
-        <Navbar
-          tasks={tasks}
-          premadeTasks={premadeTasks}
-          onCopy={onCopy}
-          onAdd={addTask}
-          onRecipe={onRecipe}
-        />
-      </div>
 
       <div className="navbar-large">
         <NavbarLarge 
@@ -112,6 +103,15 @@ function Dashboard() {
           onRecipe={onRecipe}
         />
 
+      </div>
+      <div className="navbar-mobile">
+        <Navbar
+          tasks={tasks}
+          premadeTasks={premadeTasks}
+          onCopy={onCopy}
+          onAdd={addTask}
+          onRecipe={onRecipe}
+        />
       </div>
 
       <div className="col-5 ongoing-tasks">
