@@ -23,7 +23,7 @@ function Header() {
             {user && (
               <>
                 <div className="header-greeting">Hello, {user.name}</div>
-                <a className="header-logout" onClick={onLogout}>
+                <a href="/#" className="header-logout" onClick={onLogout}>
                   <FaSignOutAlt />
                   Log out
                 </a>
