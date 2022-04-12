@@ -1,10 +1,12 @@
-import Navbar from "../components/Navbar";
-import TaskList from "../components/TaskList";
+import Navbar from "../components/Navbar/Navbar";
+import NavbarLarge from "../components/Navbar/NavbarLarge";
+import TaskList from "../components/Task/TaskList";
 import { useSelector } from "react-redux";
 import restApi from "../features/tasks/tasksService";
 import recipeApi from "../features/suggestedTasks/suggestedTasksService";
 import { toast } from "react-toastify";
-import "./Dashboard.css";
+import "./Dashboard.small.scss";
+import "./Dashboard.large.scss";
 import useAuth from "../hooks/useAuth";
 import useTasks from "../hooks/useTasks";
 import usePremadeTasks from "../hooks/usePremadeTasks";
@@ -90,8 +92,19 @@ function Dashboard() {
   };
 
   return (
-    <div className="container row d-flex justify-content-between">
-      <div className="col-2">
+    <div className="dashboard-container">
+
+      <div className="navbar-large">
+        <NavbarLarge 
+          tasks={tasks}
+          premadeTasks={premadeTasks}
+          onCopy={onCopy}
+          onAdd={addTask}
+          onRecipe={onRecipe}
+        />
+
+      </div>
+      <div className="navbar-mobile">
         <Navbar
           tasks={tasks}
           premadeTasks={premadeTasks}

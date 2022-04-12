@@ -1,0 +1,29 @@
+@media (min-width: 800px) {
+  .dashboard-container {
+    display: grid;
+    grid-template: 1fr / 1fr 2fr 2fr;
+  }
+
+  .options-btn:hover {
+    background-color: rgb(238, 221, 213);
+    border-radius: 0 0 5px 5px;
+  }
+
+  .main-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 280px;
+  }
+
+  .navbar-mobile {
+    display: none;
+  }
+
+  .form-group.add-task {
+    width: 100%;
+    margin: 0;
+    padding: 2em 0 1em 0;
+    height: auto;
+  }
+}

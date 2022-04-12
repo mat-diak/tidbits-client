@@ -1,0 +1,96 @@
+$dark-color: #0b3342;
+$orange-color: rgb(219, 163, 139);
+$orange-color-dark: rgb(223, 151, 122);
+$placeholder-color: rgb(168, 199, 199);
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin-top: 5rem;
+  height: 30rem;
+  width: 100%;
+  height: 100%;
+}
+
+.form-group {
+  width: 400px;
+  height: 90%;
+
+  margin: 2rem 1rem 1em 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 5px;
+  border: 2px solid $dark-color;
+}
+
+.form-control {
+  text-align: left;
+  height: 2.5rem;
+  width: 240px;
+  margin: 0.2rem 0 1rem 0;
+
+  padding: 0 0 0 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 20px;
+  border-radius: 5px;
+  border: 0px solid transparent;
+
+  padding: 0.5em;
+
+  color: #ffffff;
+  background-color: $orange-color;
+  box-shadow: rgb(15 15 15 / 10%) 0px 1px 2px,
+    rgb(235 87 87 / 30%) 0px 0px 0px 1px inset;
+}
+
+.btn:hover {
+  background-color: rgb(223, 151, 122);
+  cursor: pointer;
+}
+
+label {
+  padding: 0 0 0 1rem;
+  text-align: left;
+  width: 100%;
+  color: $dark-color;
+}
+
+input::placeholder {
+  text-align: left;
+  color: $placeholder-color;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-group {
+    width: 90%;
+    padding: 1rem;
+    margin: 0;
+  }
+}

@@ -3,7 +3,7 @@ describe("userDeletesTask", () => {
     cy.login();
     cy.addTask("Task to delete");
 
-    cy.get("div.ongoing-tasks").find("div.task-card").should("have.length", 1);
+    cy.get("div.ongoing-tasks").find("div.card").should("have.length", 1);
 
     cy.intercept(
       "DELETE",
@@ -15,6 +15,6 @@ describe("userDeletesTask", () => {
 
     cy.get(".delete-btn").click();
 
-    cy.get("div.ongoing-tasks").find("div.task-card").should("have.length", 0);
+    cy.get("div.ongoing-tasks").find("div.card").should("have.length", 0);
   });
 });

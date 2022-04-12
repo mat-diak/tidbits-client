@@ -30,7 +30,7 @@ describe("user can log in", () => {
           expect(userData._id).to.eq("1");
         });
 
-      cy.get(".navbar-text").should("have.text", "Hello, tidbits1");
+      cy.get(".header-greeting").should("have.text", "Hello, tidbits1");
     });
   });
 });

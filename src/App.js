@@ -1,11 +1,10 @@
 import Dashboard from "./pages/Dashboard";
 import Hello from "./pages/Hello";
-import Header from "./components/Header";
+import Header from "./components/Shared/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "bootstrap/dist/css/bootstrap.css";
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
   return (

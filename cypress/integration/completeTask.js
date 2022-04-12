@@ -14,8 +14,8 @@ describe("user completes a task", () => {
         createdAt: "2022-04-04T16:40:27.427Z",
         updatedAt: "2022-04-04T16:40:27.427Z",
         __v: 0,
-      }
-    }
+      };
+    };
 
     // stub the put request
     cy.intercept(
@@ -45,7 +45,7 @@ describe("user completes a task", () => {
     cy.get("div.ongoing-tasks").find("div.task-card").should("have.length", 0);
 
     cy.get("div.completed-tasks")
-      .find("div.task-card")
+      .find("div.card")
       .should("have.length", 1);
   });
 });

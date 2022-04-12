@@ -1,7 +1,7 @@
 Cypress.Commands.add("addTask", (text) => {
   cy.get("button").contains("Make a tidbit").click();
 
-  cy.get(".add-task-input").type(text);
+  cy.get(".task-input").type(text);
 
   cy.get("button.reps-button").click().click();
 
@@ -12,6 +12,4 @@ Cypress.Commands.add("addTask", (text) => {
   }).as("addedTaskResponse");
 
   cy.get("button.add-task-button").click();
-
-  cy.get(".btn-close").click();
 });
