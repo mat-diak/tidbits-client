@@ -84,7 +84,7 @@ div.completed-tasks button.btn {
 
 .card-text {
   text-align: center;
-  padding: 0.6em;
+  padding: 1.1em;
 }
 
 .card-body {
@@ -92,7 +92,6 @@ div.completed-tasks button.btn {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.7em 0 0.7em 0;
 
   // border: 1px solid $orange;
   border-radius: 0 0 5px 5px;
@@ -173,17 +172,12 @@ div.card-details {
   border: none;
   font-weight: bolder;
   font-size: 15px;
+  border: 1px solid $orange-ll;
+  border-radius: 0 0 5px 5px;
 }
 
 .options-btn:hover {
   background-color: $light;
-}
-
-.btn-container {
-  width: 100%;
-  border: 1px solid $orange;
-  border-radius: 0 0 5px 5px;
-  margin-bottom: -1px;
 }
 
 .task-counter {
@@ -238,6 +232,7 @@ a.opt-link {
 }
 
 a.opt-link:hover {
+  font-size: 17px;
   background-color: $orange-ll;
   /* color: $light; */
   animation-name: example;
