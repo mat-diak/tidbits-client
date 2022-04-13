@@ -10,44 +10,50 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
   const [show, setShow] = useState({
     add: false,
     grab: false,
-    modal: false
+    modal: false,
   });
 
-  const toggleAdd = () => setShow((s) => {
-    return {
-      add: !s.add,
-      grab: false,
-      overview: false
-    }
-  });
+  const toggleAdd = () =>
+    setShow((s) => {
+      return {
+        add: !s.add,
+        grab: false,
+        overview: false,
+      };
+    });
 
-  const toggleGrab = () => setShow((s) => {
-    return { 
-      add: false,
-      grab: !s.grab,
-      overview: false
-  }
-  })
+  const toggleGrab = () =>
+    setShow((s) => {
+      return {
+        add: false,
+        grab: !s.grab,
+        overview: false,
+      };
+    });
 
-  const toggleModal = () => setShow((s) => {
-    return {
-      add: false,
-      grab: false,
-      modal: !s.modal
-    }
-  } );
+  const toggleModal = () =>
+    setShow((s) => {
+      return {
+        add: false,
+        grab: false,
+        modal: !s.modal,
+      };
+    });
 
   return (
     <>
       <div className="main-navbar">
         <button className="btn btn-navbar" onClick={toggleAdd}>
-          <BiCookie />Make a tidbit
+          <BiCookie /> <div className="btn-text">
+          Make a tidbit
+          </div>
         </button>
-        {show.add && (
-            <AddTask onAdd={onAdd} />
-        )}
+        {show.add && <AddTask onAdd={onAdd} />}
         <button className="btn btn-navbar" onClick={toggleGrab}>
-          <MdKitchen />Grab a tidbit
+          <MdKitchen />
+          <div className="btn-text">Grab a tidbit</div>
+          
+          
         </button>
         {show.grab && (
           <PremadeTaskList
@@ -57,15 +63,17 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
           />
         )}
         <button className="btn btn-navbar" onClick={toggleModal}>
-          <GoGraph />Daily stats
+          <GoGraph />
+          <div className="btn-text">Daily stats</div>
+          
         </button>
-        {show.modal && 
-          <StatsModal 
-          tasks={tasks}
-          modalIsOpen={show.modal}
-          toggleModal={toggleModal}
+        {show.modal && (
+          <StatsModal
+            tasks={tasks}
+            modalIsOpen={show.modal}
+            toggleModal={toggleModal}
           />
-        }
+        )}
       </div>
     </>
   );

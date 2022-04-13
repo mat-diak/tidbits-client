@@ -44,8 +44,6 @@ describe("user completes a task", () => {
 
     cy.get("div.ongoing-tasks").find("div.task-card").should("have.length", 0);
 
-    cy.get("div.completed-tasks")
-      .find("div.card")
-      .should("have.length", 1);
+    cy.get("div.completed-tasks").find("div.card").should("have.length", 1);
   });
 });

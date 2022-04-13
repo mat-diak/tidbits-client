@@ -1,9 +1,9 @@
 /* COLOUR SCHEME */
-
+$dark: rgb(11, 51, 66);
 
 * {
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(11, 51, 66);
+  color: $dark;
 }
 
 #root {

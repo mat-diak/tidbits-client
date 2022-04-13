@@ -10,44 +10,50 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
   const [show, setShow] = useState({
     add: false,
     grab: false,
-    modal: false
+    modal: false,
   });
 
-  const toggleAdd = () => setShow((s) => {
-    return {
-      add: !s.add,
-      grab: false,
-      overview: false
-    }
-  });
+  const toggleAdd = () =>
+    setShow((s) => {
+      return {
+        add: !s.add,
+        grab: false,
+        overview: false,
+      };
+    });
 
-  const toggleGrab = () => setShow((s) => {
-    return { 
-      add: false,
-      grab: !s.grab,
-      overview: false
-  }
-  })
+  const toggleGrab = () =>
+    setShow((s) => {
+      return {
+        add: false,
+        grab: !s.grab,
+        overview: false,
+      };
+    });
 
-  const toggleModal = () => setShow((s) => {
-    return {
-      add: false,
-      grab: false,
-      modal: !s.modal
-    }
-  } );
+  const toggleModal = () =>
+    setShow((s) => {
+      return {
+        add: false,
+        grab: false,
+        modal: !s.modal,
+      };
+    });
 
   return (
     <>
       <div className="main-navbar">
         <button className="btn btn-navbar" onClick={toggleAdd}>
-          <BiCookie />Make a tidbit
+          <BiCookie/>
+          Make a tidbit
         </button>
         <button className="btn btn-navbar" onClick={toggleGrab}>
-          <MdKitchen />Grab a tidbit
+          <MdKitchen/>
+          Grab a tidbit
         </button>
         <button className="btn btn-navbar" onClick={toggleModal}>
-          <GoGraph />Daily stats
+          <GoGraph />
+          Daily stats
         </button>
       </div>
 
@@ -64,14 +70,13 @@ function Navbar({ tasks, premadeTasks, onCopy, onAdd, onRecipe }) {
             onRecipe={onRecipe}
           />
         )}
-        {show.modal && 
-          <StatsModal 
-          tasks={tasks}
-          modalIsOpen={show.modal}
-          toggleModal={toggleModal}
+        {show.modal && (
+          <StatsModal
+            tasks={tasks}
+            modalIsOpen={show.modal}
+            toggleModal={toggleModal}
           />
-        }
-
+        )}
       </div>
     </>
   );

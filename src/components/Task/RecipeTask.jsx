@@ -13,7 +13,7 @@ const RecipeTask = ({ onRecipe }) => {
       <div>
         {task.text} <GiCookingPot />
       </div>
-        <RecipeButton onRecipe={onRecipe} task={task} />
+      <RecipeButton onRecipe={onRecipe} task={task} />
     </div>
   );
 };

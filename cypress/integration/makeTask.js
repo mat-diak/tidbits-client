@@ -3,7 +3,7 @@ describe("user makes a task", () => {
     it("makes a task", () => {
       cy.login();
       // "createdAt": "2022-04-04T11:04:46.544Z",
-      cy.clock(new Date(2022, 3, 4, 4, 46, 544), ['Date'])
+      cy.clock(new Date(2022, 3, 4, 4, 46, 544), ["Date"]);
 
       cy.get("button").contains("Make a tidbit").click();
 

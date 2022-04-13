@@ -1,7 +1,4 @@
-$dark-color: #0b3342;
-$orange-color: rgb(219, 163, 139);
-$orange-color-dark: rgb(223, 151, 122);
-$placeholder-color: rgb(168, 199, 199);
+@import '../colour-scheme.scss';
 
 .main-container {
   display: flex;
@@ -24,9 +21,9 @@ $placeholder-color: rgb(168, 199, 199);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   border-radius: 5px;
-  border: 2px solid $dark-color;
+  border: 2px solid $dark;
 }
 
 .form-control {
@@ -53,7 +50,7 @@ $placeholder-color: rgb(168, 199, 199);
   padding: 0.5em;
 
   color: #ffffff;
-  background-color: $orange-color;
+  background-color: $orange;
   box-shadow: rgb(15 15 15 / 10%) 0px 1px 2px,
     rgb(235 87 87 / 30%) 0px 0px 0px 1px inset;
 }
@@ -67,7 +64,7 @@ label {
   padding: 0 0 0 1rem;
   text-align: left;
   width: 100%;
-  color: $dark-color;
+  color: $dark;
 }
 
 input::placeholder {

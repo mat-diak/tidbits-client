@@ -5,7 +5,7 @@ function TaskDaysToGo({ task }) {
     );
   };
 
-  console.log(new Date())
+  console.log(new Date());
 
   return (
     <>
